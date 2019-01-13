@@ -16,8 +16,14 @@ import { ElectronService } from './providers/electron.service';
 
 import { WebviewDirective } from './directives/webview.directive';
 
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
+import { FooterComponent } from './footer/footer.component';
+import { UserModule } from './users/user.module';
+
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -28,7 +34,10 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     HomeComponent,
-    WebviewDirective
+    WebviewDirective,
+    SideBarComponent,
+    TopBarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -41,8 +50,11 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: (HttpLoaderFactory),
         deps: [HttpClient]
       }
-    })
+    }),
+    UserModule,
+
   ],
+
   providers: [ElectronService],
   bootstrap: [AppComponent]
 })
