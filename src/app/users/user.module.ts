@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
+// import {FormsModule} from '@angular/forms';
 import { CreateUserComponent } from './create-user/create-user.component';
 // import { RouterModule } from '@angular/router';
 
@@ -8,7 +9,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
   declarations: [CreateUserComponent],
   imports: [
     CommonModule,
-    FormsModule,
+    ReactiveFormsModule
     // RouterModule.forChild([
     //   {path: 'User/Create', component: CreateUserComponent }
     // ])

@@ -1,0 +1,6 @@
+ng-invalid{
+  border-color: rgb(199, 39, 27);
+}
+ng-valid{
+  border-color: rgb(25, 218, 121);
+}
