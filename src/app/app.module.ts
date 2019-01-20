@@ -16,6 +16,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserModule } from './users/user.module';
+import { CreateOrgComponent } from './organisations/create-org/create-org.component';
 
 
 // AoT requires an exported function for factories
@@ -30,7 +31,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     WebviewDirective,
     SideBarComponent,
     TopBarComponent,
-    FooterComponent
+    FooterComponent,
+    CreateOrgComponent
   ],
   imports: [
     BrowserModule,

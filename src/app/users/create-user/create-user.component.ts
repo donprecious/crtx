@@ -9,8 +9,7 @@ import {Inject} from '@angular/core';
   styleUrls: ['./create-user.component.scss']
 })
 export class CreateUserComponent implements OnInit {
-
-   userForm: FormGroup;
+    userForm: FormGroup;
     submitted: boolean;
     baseUrl: string;
     ctrl: any;
@@ -60,11 +59,6 @@ export class CreateUserComponent implements OnInit {
           'FirstName': this.firstName.value,
           'LastName': this.lastName.value,
           'PhoneNumber': this.phoneNumber.value
-          //  'Email': 'james@gmail.com',
-          // 'Password': 'proepoepw',
-          // 'FirstName': 'forpe',
-          // 'LastName': 'kd',
-          // 'PhoneNumber': 'ldp'
        }),
        httpOptions
      ).subscribe(data => {
