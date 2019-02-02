@@ -57,6 +57,7 @@ export class CreateUserComponent implements OnInit {
         phoneNumber: this.phoneNumber.value,
         password: this.password.value
         } as IUser;
+
         // this.userService.addUser(newUser).subscribe(a => {
         //   console.log(a);
         //   this.loading = false;

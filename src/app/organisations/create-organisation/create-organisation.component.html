@@ -1,0 +1,213 @@
+<img class="img-fluid float-right"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
+<div class="row" id="ChoosePackage">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <h4>Choose Package</h4>
+        </div>
+        <div class="x_content">
+
+            <div >
+                <form [formGroup]="packageForm" >
+
+                  <div class="form-group">
+                    <label class="control-label">Select Package </label>
+                    <label  class="text-right text-danger" *ngIf="packageId.invalid && (packageId.touched || packageId.dirty)">Package not selected</label>
+                    <select class="form-control" placeholder="select package"  formControlName="PackageId">
+                    <option value="{{package.id}}" *ngFor="let package of packages" > {{package.name}} </option>
+                    </select>
+
+                  </div>
+                  <div class="form-group">
+
+                      <button (click)="addPackage()" class="btn btn-primary" type="submit">Proceed</button>
+
+                  </div>
+              </form>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row hide-div" id="chooseIfExistingUser" >
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h4>Choose User</h4>
+          </div>
+          <div class="x_content">
+
+              <div >
+                  <form [formGroup]="userKindForm">
+                    <div class="form-group">
+                    <label  class="text-right text-danger" *ngIf="userType.invalid && userType.touched">No User Specified</label>
+
+                        <label class="radio-inline"><input type="radio" class="radio" formControlName="UserType" name ="UserType" value="new">New User</label>
+                        <label class="radio-inline"><input type="radio" class="radio" formControlName="UserType" name ="UserType"  value="existing">Existing User</label>
+                    </div>
+                    <div class="form-group">
+                        <button (click)="showView('ChoosePackage')" class="btn btn-outline-warning" >Previous</button>
+
+                        <button (click)="onChooseExistingForm()" class="btn btn-primary" type="submit">Proceed</button>
+                    </div>
+                  </form>
+                </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+<div class="row hide-div"  id="existingUser" >
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <h4>Search Existing User</h4>
+        </div>
+        <div class="x_content">
+
+            <div>
+                <form [formGroup]="existingUserForm">
+                    <div class="form-group">
+                        <label class="control-label">Enter user email </label>
+                        <label  class="text-right text-danger" *ngIf="extEmail.invalid && (extEmail.touched || extEmail.dirty)">Email Invalid</label>
+
+                        <input type="text" class="form-control" placeholder="enter email" formControlName="Email">
+                    </div>
+
+                  <div class="form-group">
+                      <button (click)="showView('chooseIfExistingUser')" class="btn btn-outline-warning" >Previous</button>
+
+                      <button (click)="onSearchEmail()" [disabled]="loading" class="btn btn-primary" type="submit">Next</button>
+                  </div>
+
+              </form>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="row hide-div" id="newUser">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <h4>Enter User Detail</h4>
+        </div>
+        <div class="x_content">
+            <div>
+                <form [formGroup]="newUserFormGroup">
+                    <div class="form-group">
+                        <label class="control-label">Email</label>
+                        <label  class="text-right text-danger" *ngIf="newEmail.invalid && (newEmail.touched || newEmail.dirty)">Email Not Entered</label>
+
+                  <input type="text" formControlName="Email" placeholder="Email" class="form-control">
+                      </div>
+                      <div class="form-group">
+                          <label  class="text-right text-danger" *ngIf="newFirstname.invalid && (newFirstname.touched || newFirstname.dirty)">Firstname not entered </label>
+
+                          <label class="control-label">First name</label>
+                    <input type="text" class="form-control" formControlName="Firstname" placeholder="Firstname">
+                        </div>
+                        <div class="form-group">
+                            <label  class="text-right text-danger" *ngIf="newLastname.invalid && (newLastname.touched || newLastname.dirty)">Lastname not entered</label>
+
+                            <label class="control-label">Last name</label>
+                      <input type="text" class="form-control" formControlName="Lastname" placeholder="Lastname">
+                          </div>
+                          <div class="form-group">
+                              <label class="control-label">Password</label>
+                          <label  class="text-right text-danger" *ngIf="newPassword.invalid && (newPassword.touched || newPassword.dirty)">Password not entered</label>
+
+                              <input type="text" class="form-control" formControlName="Password" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Phone Number</label>
+                          <label  class="text-right text-danger" *ngIf="newPhoneNumber.invalid && (newPhoneNumber.touched || newPhoneNumber.dirty)">Phone Number not entered</label>
+
+                               <input type="text" class="form-control" formControlName="PhoneNumber" placeholder="Phone number">
+                              </div>
+
+                              <div class="form-group">
+                                <button (click)="showView('existingUser')" class="btn btn-outline-warning" >Previous</button>
+                                <button class="btn btn-primary" [disabled]=loading click="onCreateUser()">Next</button>
+                              </div>
+                </form>
+                </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row hide-div" id="organisation">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h4>Enter Organisation Details</h4>
+          </div>
+          <div class="x_content">
+              <div >
+                  <form [formGroup]="organisationFromGroup">
+                      <div class="form-group">
+                          <label class="control-label">Name of Organisation</label>
+                          <label  class="text-right text-danger" *ngIf="OrgName.invalid && (OrgName.touched || OrgName.dirty)">orgnaistion name not entered</label>
+                          <input type="text" class="form-control" formControlName="OrgName">
+                        </div>
+
+                          <div class="form-group">
+                              <label class="control-label">Registration Number</label>
+                          <label  class="text-right text-danger" *ngIf="RcNumber.invalid && (RcNumber.touched || RcNumber.dirty)">Registration number not entered</label>
+
+                                            <input type="text" class="form-control" formControlName="RcNumber">
+
+                            </div>
+                            <div class="form-group">
+                          <label  class="text-right text-danger" *ngIf="Description.invalid && (Description.touched || Description.dirty)">Description not entered</label>
+
+                                <label class="control-label">Description</label>
+                                              <input type="text" class="form-control" formControlName="Description">
+
+                              </div>
+                              <div class="form-group">
+                          <label  class="text-right text-danger" *ngIf="BusinessAddress.invalid && (BusinessAddress.touched || BusinessAddress.dirty)">Business address not entered</label>
+
+                                  <label class="control-label">Business Address</label>
+                                  <textarea class="form-control" formControlName="BusinessAddress" >
+
+                                  </textarea>
+
+
+                                </div>
+                                <div class="form-group">
+                                    <label  class="text-right text-danger" *ngIf="NatureOfBusiness.invalid && (NatureOfBusiness.touched || NatureOfBusiness.dirty)">Nature of business not entered</label>
+                                    <label class="control-label">Nature of Business</label>
+                                    <textarea formControlName="NatureOfBusiness" class="form-control" cols="30" rows="10"></textarea>
+
+
+                                  </div>
+                                  <div class="form-group">
+                                   <label  class="text-right text-danger" *ngIf="PhoneNumber.invalid && (PhoneNumber.touched || PhoneNumber.dirty)">Phone Number not entered</label>
+                                   <label class="control-label">Business Phone Number</label>
+                                   <input type="text" class="form-control" formControlName="PhoneNumber">
+                                    </div>
+                                <div class="form-group">
+                                  <button (click)="showView('newUser')" class="btn btn-outline-warning" >Previous</button>
+                                  <button class="btn btn-success" [disabled] ="loading" (click)="onCreateOrg()">Complete</button>
+                                </div>
+                  </form>
+
+
+
+                </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+

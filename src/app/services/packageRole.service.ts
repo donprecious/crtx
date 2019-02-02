@@ -4,16 +4,22 @@ import { Observable } from 'rxjs';
 
 // tslint:disable-next-line:no-empty-interface
 export interface IPackageRole {
-Id: number;
-Name: string;
-Description: string;
+id: number;
+name: string;
+description: string;
 }
+export interface IPRole {
+  name: string;
+  }
 
 export interface IPackageRoles {
-Id: number;
-PackageId: number;
-PackageRole: IPackageRole[];
+id: number;
+packageId: number;
+pRoleId: number;
+roleName: string;
+
 }
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json' // ,
@@ -22,9 +28,11 @@ const httpOptions = {
 };
 @Injectable()
 export class PackageRoleService implements IPackageRoles {
-  Id: number;
-  PackageId: number;
-  PackageRole: [];
+
+  id: number;
+  packageId: number;
+  pRoleId: number;
+  roleName: string;
   baseUrl: string;
 
   constructor(private http: HttpClient, @Inject('API_URL') apiUrl: string) {
@@ -34,13 +42,21 @@ export class PackageRoleService implements IPackageRoles {
   AddPackageRole(packageRole: IPackageRole): Observable<IPackageRole>  {
     return this.http.post<IPackageRole>(this.baseUrl + '', packageRole, httpOptions);
   }
+
+  RemovePackageFromRole(packageRole: IPackageRoles): Observable<IPackageRoles>  {
+    return this.http.post<IPackageRoles>(this.baseUrl + 'package/RemoveFromRole', packageRole, httpOptions);
+  }
+
   GetAllPackageRoles(): Observable<IPackageRole[]> {
-    return this.http.get<IPackageRole[]>(this.baseUrl + '', httpOptions);
+    return this.http.get<IPackageRole[]>(this.baseUrl + 'package/GetRoles', httpOptions);
   }
-  AddPackageRoles(packageRoles: IPackageRoles): Observable<IPackageRoles>  {
-    return this.http.post<IPackageRoles>(this.baseUrl + 'package/GetRoles', packageRoles, httpOptions);
+
+  AddPackageToRole(packageRoles: IPackageRoles): Observable<IPackageRoles>  {
+    return this.http.post<IPackageRoles>(this.baseUrl + 'package/AddToRole', packageRoles, httpOptions);
   }
-  GetPackageRoles(packageId): Observable<IPackageRoles> {
-    return this.http.get<IPackageRoles>(this.baseUrl, httpOptions);
+
+  GetPackageRoles(packageId): Observable<IPRole[]> {
+    return this.http.get<IPRole[]>(this.baseUrl + `package/GetPackageRole/${packageId}`, httpOptions);
   }
+
 }

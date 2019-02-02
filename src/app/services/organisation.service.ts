@@ -4,14 +4,15 @@ import { Observable } from 'rxjs';
 
 // tslint:disable-next-line:no-empty-interface
 export interface IOrganisation {
-  Id: string;
-  Name: string;
-  Description: string;
-  Rc_Number: string;
-  Phone: string;
-  BusinnessAddress: string;
-  UserId: string;
-  PackageId: Number;
+  id: string;
+  name: string;
+  description: string;
+  rc_Number: string;
+  phone: string;
+  businnessAddress: string;
+  natureOfBusiness: string;
+  userId: string;
+  packageId: Number;
 }
 const httpOptions = {
   headers: new HttpHeaders({
@@ -21,21 +22,28 @@ const httpOptions = {
 };
 @Injectable()
 export class OrganisationService implements IOrganisation {
-  Id: string;  Name: string;
-  Description: string;
-  Rc_Number: string;
-  Phone: string;
-  BusinnessAddress: string;
-  UserId: string;
-  PackageId: Number;
+  id: string;
+  name: string;
+  description: string;
+  rc_Number: string;
+  phone: string;
+  businnessAddress: string;
+  natureOfBusiness: string;
+  userId: string;
+  packageId: Number;
 
   baseUrl: string;
 
   constructor(private http: HttpClient, @Inject('API_URL') apiUrl: string) {
     this.baseUrl = apiUrl;
-
   }
   AddOrganisation(organisation: IOrganisation): Observable<IOrganisation>  {
-    return this.http.post<IOrganisation>(this.baseUrl + 'user/create', organisation, httpOptions);
+    return this.http.post<IOrganisation>(this.baseUrl + 'Organisation/create', organisation, httpOptions);
+  }
+ get(organisationId: number): Observable<IOrganisation>  {
+    return this.http.get<IOrganisation>(this.baseUrl + `Organisation/ ${organisationId}`,  httpOptions);
+  }
+  getAll(): Observable<IOrganisation[]>  {
+    return this.http.get<IOrganisation[]>(this.baseUrl + `Organisation/List`, httpOptions);
   }
 }

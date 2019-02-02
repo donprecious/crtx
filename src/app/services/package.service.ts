@@ -4,9 +4,9 @@ import { Observable } from 'rxjs';
 
 // tslint:disable-next-line:no-empty-interface
 export interface IPackage {
-  Id: string;
-  Name: string;
-  Description: string;
+  id: string;
+  name: string;
+  description: string;
 
 }
 const httpOptions = {
@@ -17,8 +17,8 @@ const httpOptions = {
 };
 @Injectable()
 export class PackageService implements IPackage {
-  Id: string;  Name: string;
-  Description: string;
+  id: string;  name: string;
+  description: string;
   baseUrl: string;
 
   constructor(private http: HttpClient, @Inject('API_URL') apiUrl: string) {

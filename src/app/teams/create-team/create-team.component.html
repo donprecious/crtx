@@ -1,0 +1,49 @@
+<img class="img-fluid float-right"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
+<div class="row" id="ChoosePackage">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <h4>Create Team</h4>
+        </div>
+
+        <div class="x_content">
+            <div >
+                <form [formGroup]="formGroup" >
+                    <div class="form-group">
+                        <label class="control-label">Choose Organisation </label>
+                        <label  class="text-right text-danger" *ngIf="organisationId.invalid && (organisationId.touched || organisationId.dirty)">Choose Organisation</label>
+                        <select class="form-control" placeholder="Choose Organisation"  formControlName="OrganisationId">
+                          <option value="{{org.id}}" *ngFor="let org of organisations" > {{org.name}} </option>
+                        </select>
+
+                      </div>
+                  <div class="form-group">
+                    <label class="control-label">Choose project these team belong</label>
+                    <label  class="text-right text-danger" *ngIf="projectId.invalid && (projectId.touched || projectId.dirty)">Project not selected</label>
+                    <select class="form-control" placeholder="Choose project"  formControlName="ProjectId">
+                      <option value="{{project.id}}" *ngFor="let project of projects" > {{project.name}} </option>
+                    </select>
+
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Team Name </label>
+                    <label  class="text-right text-danger" *ngIf="name.invalid && (name.touched || name.dirty)">Enter Project name</label>
+                    <input type="text" class="form-control" formControlName="Name">
+
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Description </label>
+                    <label  class="text-right text-danger" *ngIf="description.invalid && (description.touched || description.dirty)">Description not entered</label>
+                     <textarea class="form-control" formControlName="Description">
+                     </textarea>
+                  </div>
+
+                  <div class="form-group">
+                      <button (click)="onSubmit()" [disabled]="loading" class="btn btn-success" type="submit">Create Project</button>
+                  </div>
+              </form>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>

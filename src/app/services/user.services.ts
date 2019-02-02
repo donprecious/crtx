@@ -1,5 +1,5 @@
 export interface IUser {
-  Id: string;
+  id: string;
   firstName: string;
   lastName: string;
   email: string ;
@@ -21,7 +21,7 @@ const httpOptions = {
 };
 @Injectable()
 export class UserService implements IUser {
-  Id: string;
+  id: string;
   firstName: string;
   lastName: string;
   email: string;
@@ -35,6 +35,10 @@ export class UserService implements IUser {
  /** POST: add a new user  to the database */
  addUser (user: IUser): Observable<IUser> {
   return this.http.post<IUser>(this.baseUrl + 'user/create', user, httpOptions);
+
+}
+getUserByEmail(email: string): Observable<IUser> {
+  return this.http.get<IUser>(this.baseUrl + 'user/GetUserByEmail/' + email , httpOptions);
 
 }
 

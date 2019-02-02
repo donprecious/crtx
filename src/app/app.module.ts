@@ -31,6 +31,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     SideBarComponent,
     TopBarComponent,
     FooterComponent
+
+
+
+
   ],
   imports: [
     BrowserModule,

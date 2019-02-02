@@ -1,6 +1,18 @@
-ng-invalid{
-  border-color: rgb(199, 39, 27);
+input[type="text"].ng-invalid{
+  border: 1px solid rgb(199, 39, 27);
+
 }
-ng-valid{
-  border-color: rgb(25, 218, 121);
+input[type="text"].ng-valid{
+  border: 1px solid rgb(25, 218, 121);
+}
+.tag-span{
+  padding: 3px;
+  margin: 5px;
+  background-color: rgb(199, 212, 224);
+}
+.hide-div{
+  display: none;
+}
+.text-right{
+  float: right;
 }
