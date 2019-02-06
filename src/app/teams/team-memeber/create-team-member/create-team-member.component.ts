@@ -13,6 +13,7 @@ import { TeamService, ITeam } from '../../../services/team.service';
 })
 export class CreateTeamMemberComponent implements OnInit {
    userId = '';
+
   myFormGroup = new FormGroup({
     Email: new FormControl('', Validators.required),
     Description: new FormControl('', Validators.required),
@@ -128,6 +129,7 @@ teams: ITeam[];
       });
       this.teamMemberService.createTeam(teamMember).subscribe(data => {
         this.loading = false;
+        console.log(data);
         this.pnotify.alert({
           text: 'request has been sent',
           type: 'success'

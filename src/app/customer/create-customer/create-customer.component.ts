@@ -17,22 +17,25 @@ export class CreateCustomerComponent implements OnInit {
 loading: boolean;
 submited: boolean;
 projects: IProject[];
+
 teams: ITeam[];
 filteredProjects: Observable<IProject[]>;
 filteredTeams: Observable<ITeam[]>;
 
+myControl = new FormControl();
 formGroup = new FormGroup({
-  ProjectId: new FormControl('', [Validators.required]),
-TeamId: new FormControl('', [Validators.required]),
-Firstname : new FormControl('', [Validators.required]),
-Lastname : new FormControl('', [Validators.required]),
-Othername : new FormControl(''),
-Email : new FormControl(''),
-Phonenumber : new FormControl('', [Validators.required]),
-Address : new FormControl(''),
-Sex: new FormControl('', [Validators.required]),
+ProjectId: new FormControl('1', [Validators.required]),
+TeamId: new FormControl('1', [Validators.required]),
+Firstname : new FormControl('james', [Validators.required]),
+Lastname : new FormControl('colins', [Validators.required]),
+Othername : new FormControl('cost'),
+Email : new FormControl('myMail@Gmail.com'),
+Phonenumber : new FormControl('0902893', [Validators.required]),
+Address : new FormControl('No 2, Cab road, Dss'),
+Sex: new FormControl('Male', [Validators.required]),
 });
-  pnotify: any;
+
+pnotify: any;
 
 get projectId() {return this.formGroup.get('ProjectId'); }
 get teamId() {return this.formGroup.get('TeamId'); }
@@ -107,7 +110,6 @@ onSubmit(): void {
       this.pnotify.alert({
         text: 'Submiting Your Request',
         type: 'notice'
-
       });
       const customer = {
         firstName: this.firstname.value,
@@ -146,7 +148,6 @@ onSubmit(): void {
 }
 private _filter(value: string, arr: any[]): string[] {
   const filterValue = value.toLowerCase();
-
   return arr.filter(option => option.toLowerCase().includes(filterValue));
 }
 

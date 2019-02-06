@@ -25,6 +25,14 @@
               <!-- start form for validation -->
               <form [formGroup]="formGroup">
                  <div>
+                  <!-- <mat-form-field class="example-full-width">
+                    <input type="text" matInput placeholder="Pick one" aria-label="Number"   [formControl]="myControl" [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" >
+                      <mat-option *ngFor="let option of projects" [value]="option.id">
+                        {{option.name}}
+                      </mat-option>
+                    </mat-autocomplete>
+                  </mat-form-field> -->
 
               <label >Select Project *:</label>
                 <select  formControlName="ProjectId" class="form-control" >
@@ -53,7 +61,7 @@
 
 
               <label>Gender *:</label>
-              <label  class="text-right text-danger" *ngIf="sex.invalid && (sex.touched || sex.dirty)">Gender not selected</label>
+              <label  class="text-right text-danger" *ngIf="sex?.invalid && (sex.touched || sex.dirty)">Gender not selected</label>
 
               <p>
                 Male:
@@ -63,14 +71,13 @@
               </p>
 
               <label >Phone number * :</label>
-              <label  class="text-right text-danger" *ngIf="phonenumber.invalid && (phonenumber.touched || phonenumber.dirty)">phone number Invalid</label>
-              <input type="number"  class="form-control" formControlName="Phonenumber" />
-
+              <label  class="text-right text-danger" *ngIf="phonenumber?.invalid && (phonenumber.touched || phonenumber.dirty)">phone number Invalid</label>
+              <input type="text" class="form-control" formControlName="Phonenumber">
               <label for="address">address * :</label>
-              <label  class="text-right text-danger" *ngIf="address.invalid && (address.touched || address.dirty)">address Invalid</label>
+              <label  class="text-right text-danger" *ngIf="address?.invalid && (address.touched || address.dirty)">address Invalid</label>
               <textarea  class="form-control" formControlName="Address"></textarea>
 
-              <button type="submit" (click) = "onSubmit()" class="btn btn-primary"> Register </button>
+              <button type="submit" (click) = "onSubmit()" [disabled]="loading" class="btn btn-primary"> Register </button>
 
                  </div>
 

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {MatButtonModule, MatFormField, MatFormFieldModule, MatCheckboxModule, MatAutocompleteModule} from '@angular/material';
+import {MatButtonModule, MatFormFieldModule, MatCheckboxModule, MatAutocompleteModule} from '@angular/material';
 
 @NgModule({
   declarations: [],
@@ -7,14 +7,14 @@ import {MatButtonModule, MatFormField, MatFormFieldModule, MatCheckboxModule, Ma
     MatButtonModule,
      MatCheckboxModule,
      MatAutocompleteModule,
-     MatFormField,
+
      MatFormFieldModule
   ],
   exports: [
     MatButtonModule,
     MatCheckboxModule,
     MatAutocompleteModule,
-    MatFormField,
+
     MatFormFieldModule
   ]
 

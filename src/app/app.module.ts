@@ -15,6 +15,9 @@ import { HomeComponent } from './components/home/home.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { FooterComponent } from './footer/footer.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+
 import { UserModule } from './users/user.module';
 
 
@@ -30,7 +33,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     WebviewDirective,
     SideBarComponent,
     TopBarComponent,
-    FooterComponent
+    FooterComponent,
+
 
 
 
@@ -48,8 +52,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    UserModule,
+    BrowserAnimationsModule,
 
+    UserModule,
   ],
 
   providers: [ElectronService,

@@ -19,8 +19,10 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CreateTeamComponent } from '../teams/create-team/create-team.component';
 import { CreateCustomerComponent } from '../customer/create-customer/create-customer.component';
 import { CreateTeamMemberComponent } from '../teams/team-memeber/create-team-member/create-team-member.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // import { RouterModule } from '@angular/router';
+import { CreateReviewComponent } from '../reviews/create-review/create-review.component';
+
+import { MatButtonModule, MatCheckboxModule, MatAutocompleteModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -32,13 +34,18 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     CreateTeamComponent,
     CreateProjectComponent,
     CreateCustomerComponent,
-    CreateTeamMemberComponent
+    CreateTeamMemberComponent,
+    CreateReviewComponent
   ],
 
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatFormFieldModule
 
     // RouterModule.forChild([
     //   {path: 'User/Create', component: CreateUserComponent }
@@ -46,7 +53,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
   ],
   exports: [
-
+    // MaterialControlsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [
     UserService,

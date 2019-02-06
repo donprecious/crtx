@@ -1,3 +1,62 @@
-<p>
-  create-team-member works!
-</p>
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>Create Team Member</h3>
+        <img class="img-fluid float-right pull-right"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
+
+      </div>
+
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="x_panel">
+            <div class="x_title">
+              <h2>Customer Registration Form </h2>
+
+              <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+
+              <!-- start form for validation -->
+
+              <form [formGroup]="myFormGroup">
+                 <div>
+                  <div class="input-group">
+                    <input type="text" formControlName="Email" class="form-control">
+                    <span class="input-group-btn">
+                                      <button type="button" (click)="CheckEmail()" class="btn btn-primary">Search!</button>
+                                  </span>
+                  </div>
+              <label >Select Project *:</label>
+                <select  formControlName="ProjectId" class="form-control" >
+                  <option value="{{i.id}}" *ngFor="let i of projects">{{i.name}}</option>
+                </select>
+
+                <label >Select Team *:</label>
+                <select formControlName="TeamId" class="form-control" >
+                  <option value="{{i.id}}" *ngFor="let i of teams">{{i.name}}</option>
+                </select>
+
+              <label >Description * :</label>
+              <label  class="text-right text-danger" *ngIf="description.invalid && (description.touched || description.dirty)">Description Invalid</label>
+              <textarea class="form-control" formControlName="Description"> </textarea>
+
+              <button type="submit" (click) = "onSubmit()" class="btn btn-primary"> Register </button>
+
+                 </div>
+
+              </form>
+              <!-- end form for validations -->
+
+            </div>
+          </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
