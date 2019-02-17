@@ -1,6 +1,6 @@
 export interface IReview {
 id: number;
 teamMemberId: number;
-customerId: number;
+customerId: string;
 comment: string;
 }

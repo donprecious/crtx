@@ -1,9 +1,9 @@
 import 'reflect-metadata';
 import '../polyfills';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 // import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 // NG Translate
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -19,6 +19,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 import { UserModule } from './users/user.module';
+import { HttpErrorHandler } from './services/httpErrorHandler.service';
+import { RequestInterceptor } from './services/httpInterceptor.service';
+import { LoginComponent } from './account/login/login.component';
+import { AuthInterceptor } from './services/auth.interceptor';
+import { AdminComponent } from './Admin/admin/admin.component';
 
 
 // AoT requires an exported function for factories
@@ -34,6 +39,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SideBarComponent,
     TopBarComponent,
     FooterComponent,
+    LoginComponent,
+    AdminComponent,
 
 
 
@@ -58,7 +65,18 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
 
   providers: [ElectronService,
-  {provide: 'API_URL', useValue: 'http://localhost:54741/api/'}
+  {provide: 'API_URL', useValue: 'http://localhost:54741/api/'},
+  {provide: ErrorHandler, useClass: HttpErrorHandler},
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true,
+    },
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : AuthInterceptor,
+      multi : true
+    }
   ],
   bootstrap: [AppComponent]
 })

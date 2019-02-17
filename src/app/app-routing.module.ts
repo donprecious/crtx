@@ -9,6 +9,7 @@ import { SetPackageRoleComponent } from './packages/set-package-role/set-package
 import { CreateOrgComponent } from './organisations/create-org/create-org.component';
 import { CreateOrganisationComponent } from './organisations/create-organisation/create-organisation.component';
 import { CreateTeamMemberComponent } from './teams/team-memeber/create-team-member/create-team-member.component';
+import { CreateReviewComponent } from './reviews/create-review/create-review.component';
 
 const routes: Routes = [
    {
@@ -37,8 +38,16 @@ const routes: Routes = [
       component: CreateTeamMemberComponent
     },
     {
+      path: 'review/create',
+      component: CreateReviewComponent
+    },
+    {
       path: 'customer/create',
       component: CreateCustomerComponent
+    },
+    {
+      path: 'admin',
+      component: HomeComponent
     },
     {
         path: '',

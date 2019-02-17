@@ -30,7 +30,6 @@ export class UserService implements IUser {
   baseUrl: string;
   constructor(private http: HttpClient, @Inject('API_URL') apiUrl: string) {
     this.baseUrl = apiUrl;
-
   }
  /** POST: add a new user  to the database */
  addUser (user: IUser): Observable<IUser> {
@@ -39,6 +38,21 @@ export class UserService implements IUser {
 }
 getUserByEmail(email: string): Observable<IUser> {
   return this.http.get<IUser>(this.baseUrl + 'user/GetUserByEmail/' + email , httpOptions);
+}
+getAllRoles() {
+  return this.http.get(this.baseUrl + '/api/GetAllRoles', httpOptions);
+}
+
+roleMatch(allowedRoles): boolean {
+  let isMatch = false;
+  const userRoles: string[] = JSON.parse(localStorage.getItem('userRoles'));
+  allowedRoles.forEach(element => {
+    if (userRoles.indexOf(element) > -1) {
+      isMatch = true;
+      return false;
+    }
+  });
+  return isMatch;
 
 }
 

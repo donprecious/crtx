@@ -1,3 +1,5 @@
+
+
 import { IReviewNotification } from './IReviewNotification';
 import { IReview } from './IReview';
 
@@ -5,7 +7,14 @@ export interface IReviewAndNotification {
 review: IReview;
 reviewNotfication: IReviewNotification;
 }
-
+export interface IReviewKind {
+  id: number;
+  name: string;
+}
+export interface IReviewAction {
+  id: number;
+  name: string;
+}
 
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -37,6 +46,11 @@ export class ReviewService implements IReviewAndNotification {
     getReview(id: number): Observable<IReviewNotification> {
       return this.http.get<IReviewNotification>(this.baseUrl + 'CustomerReview/' + id, httpOptions);
     }
-
+    getReviewKind(): Observable<IReviewKind[]> {
+      return this.http.get<IReviewKind[]>(this.baseUrl + 'review/GetReviewKind', httpOptions);
+    }
+    getReviewAction(): Observable<IReviewAction[]> {
+      return this.http.get<IReviewAction[]>(this.baseUrl + 'review/GetReviewAction', httpOptions);
+    }
 
 }

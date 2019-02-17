@@ -1,5 +1,8 @@
 <div class="">
+    <img class="img-fluid float-right" width="30" height="30"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
+
   <div class="page-title">
+    Customer Reviews
     <div class="title_left">
       <h3>Account Profile</h3>
     </div>
@@ -172,54 +175,56 @@
                 </button>
                   <h4 class="modal-title" id="myModalLabel">Account Name</h4>
               </div>
+              <form [formGroup]="myForm">
               <div class="modal-body">
 
-                <label for="heard">Action *:</label>
-                <select id="heard" class="form-control" required>
-                  <option value="">Choose..</option>
-                  <option value="press">Add Feedback</option>
-                  <option value="net">Add Query</option>
-                </select>
-                <div class="form-group">
-                <div class="radio">
-                  <label>
-                    <input type="radio" class="flat" checked name="iCheck"><span text-type="block"> RESCHEDULE</span>
-                  </label>
-                  <label>
-                    <input type="radio" class="flat" name="iCheck"><span text-type="block">SET REMINDER</span>
-                  </label>
-                  <label>
-                    <input type="radio" class="flat" name="iCheck"><span text-type="block">ADD PAYMENT</span>
-                  </label>
-                  <label>
-                    <input type="radio" class="flat" name="iCheck"><span text-type="block">ADD TO VISIT LIST</span>
-                  </label>
+                    <div class="form-group">
+                        <label class="control-label ">Select Date</label>
+
+                        <input type="text"  id="pick_date" class="form-control" value="01/01/2016 - 01/25/2016">
+                        <input type="hidden" formControlName="StartDate" id="start_date" class="form-control" >
+                        <input type="hidden" formControlName="EndDate" id="end_date" class="form-control">
+
+                      </div>
+
+                  <label for="heard">Action *:</label>
+                  <label  class="text-right text-danger" *ngIf="reviewKindId.invalid && (reviewKindId.touched || reviewKindId.dirty)">Choose Action</label>
+
+                  <select id="heard" class="form-control" formControlName="ReviewKindId" required>
+
+                    <option value="{{i.id}}" *ngFor="let i of reviewKinds">{{i.name}}</option>
+
+                  </select>
+                  <div class="form-group">
+                  <label  class="text-right text-danger" *ngIf="reviewActionId.invalid && (reviewActionId.touched || reviewActionId.dirty)">Choose Action</label>
+
+                  <div class="radio">
+
+                    <label *ngFor="let i of reviewActions">
+                      <input type="radio" class="flat" value="{{i.id}}" formControlName="ReviewActionId" name="ReviewActionId"><span text-type="block"> {{i.name}}</span>
+                    </label>
+
+                  </div>
+
+                  <label for="message">Comment (20 chars min, 100 max) :</label>
+                  <label  class="text-right text-danger" *ngIf="comment.invalid && (comment.touched || comment.dirty)">Enter Comment</label>
+
+                  <textarea id="message" formControlName="Comment" class="form-control" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long comment.."
+                    data-parsley-validation-threshold="10"></textarea>
+
+
+            </div>
+
+
                 </div>
 
-                <label for="message">Comment (20 chars min, 100 max) :</label>
-                <textarea id="message" required="required" class="form-control" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long comment.."
-                  data-parsley-validation-threshold="10"></textarea>
 
-                  <div class="filter">
-            <div id="reportrange" class="pull-middle" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
-              <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-              <span>December 30, 2018</span> <b class="caret"></b>
-            </div>
-          </div>
-
-
-              </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary source antosubmit" onclick="new PNotify({
-                        title: 'Regular Success',
-                        text: 'That thing that you were trying to do worked!',
-                        type: 'success',
-                        styling: 'bootstrap3'
-                    });">Save changes</button>
+                <button type="button" class="btn btn-primary source antosubmit" [disabled]="loading" (click)="onSubmit()" >Save changes</button>
               </div>
 
-
+            </form>
 
           </div>
           </div>

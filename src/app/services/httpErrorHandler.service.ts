@@ -1,20 +1,22 @@
 import { PNotify } from 'pnotify/dist/es/PNotify';
 import { PNotifyService } from './pNotifyService.service';
-import { Injectable } from '@angular/core';
+import { Injectable, ErrorHandler } from '@angular/core';
 
 @Injectable()
-export class HttpErrorHandler {
+export class HttpErrorHandler implements ErrorHandler  {
   pnotify: any;
+  loading: boolean;
   constructor( private pnotice: PNotifyService ) {
    this.pnotify = this.pnotice.getPNotify();
 
   }
 
   public handleError(err: any) {
+    this.loading = false;
     this.pnotify.alert({
-      text: err.message,
+      text: 'Something went wrong please try again later',
       type: 'error'
     });
-    console.log(err.message, 'close');
+    console.log( 'error occured', err.message);
   }
 }

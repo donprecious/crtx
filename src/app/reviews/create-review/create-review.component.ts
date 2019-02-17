@@ -1,6 +1,7 @@
+import { IReviewAction } from './../../services/review.service';
 import { IReview } from './../../services/IReview';
 import { Component, OnInit } from '@angular/core';
-import { ReviewService, IReviewAndNotification } from '../../services/review.service';
+import { ReviewService, IReviewAndNotification, IReviewKind } from '../../services/review.service';
 import { PNotifyService } from '../../services/pNotifyService.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { IReviewNotification } from '../../services/IReviewNotification';
@@ -13,18 +14,22 @@ import { IReviewNotification } from '../../services/IReviewNotification';
 
 export class CreateReviewComponent implements OnInit {
   pnotify: any;
+  reviewKinds: IReviewKind[];
+  reviewActions: IReviewAction[];
+  teamMemberId = 1;
+  customerId = '94af237e-98b8-4b2c-6b0f-08d685fb1a5e';
   myForm = new FormGroup({
-    TeamMemberId: new FormControl('', Validators.required),
-    CustomerId: new FormControl('', Validators.required ),
+    // TeamMemberId: new FormControl('', Validators.required),
+    // CustomerId: new FormControl('', Validators.required ),
     Comment: new FormControl('', Validators.required),
     ReviewKindId: new FormControl('', Validators.required),
     ReviewActionId: new FormControl('', Validators.required),
     StartDate: new FormControl(''),
     EndDate: new FormControl(''),
   });
-  get teamMemberId() { return this.myForm.get('TeamMemberId'); }
-  get customerId() { return this.myForm.get('CustomerId'); }
-  get comment() { return this.myForm.get('Comment'); }
+  // get teamMemberId() { return this.myForm.get('TeamMemberId'); }
+  // get customerId() { return this.myForm.get('CustomerId'); }
+   get comment() { return this.myForm.get('Comment'); }
   get reviewKindId() { return this.myForm.get('ReviewKindId'); }
   get reviewActionId() { return this.myForm.get('ReviewActionId'); }
   get startDate() { return this.myForm.get('StartDate'); }
@@ -41,8 +46,8 @@ export class CreateReviewComponent implements OnInit {
       if (this.myForm.valid) {
         const review = {
           comment: this.comment.value,
-          customerId: this.customerId.value,
-          teamMemberId: this.teamMemberId.value
+          customerId: this.customerId,
+          teamMemberId: this.teamMemberId
         } as IReview ;
 
         const notify = {
@@ -79,6 +84,24 @@ export class CreateReviewComponent implements OnInit {
     }
 
   ngOnInit() {
+    this.loading = true;
+    this.pnotify.alert({
+      text: 'Please Wait while we fetch the data',
+      type: 'notice'
+    });
+    this.reviewService.getReviewKind().subscribe(data => {
+      this.reviewKinds = data;
+
+    });
+    this.reviewService.getReviewAction().subscribe(data => {
+      this.reviewActions = data;
+      this.loading = false;
+      this.pnotify.alert({
+        text: 'Thank you for waiting',
+        type: 'success'
+      });
+    });
+
 
   }
 

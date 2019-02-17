@@ -14,8 +14,6 @@ import { CreateOrgComponent } from '../organisations/create-org/create-org.compo
 import { SetPackageRoleComponent } from '../packages/set-package-role/set-package-role.component';
 import { PackageRoleService } from '../services/packageRole.service';
 import { PNotifyService } from '../services/pNotifyService.service';
-import { RequestInterceptor } from '../services/httpInterceptor.service';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CreateTeamComponent } from '../teams/create-team/create-team.component';
 import { CreateCustomerComponent } from '../customer/create-customer/create-customer.component';
 import { CreateTeamMemberComponent } from '../teams/team-memeber/create-team-member/create-team-member.component';
@@ -66,13 +64,7 @@ import { MatButtonModule, MatCheckboxModule, MatAutocompleteModule, MatFormField
     PackageService,
     PackageRoleService,
     PNotifyService,
-    HttpErrorHandler,
-
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: RequestInterceptor,
-      multi: true,
-    },
+    HttpErrorHandler
   ]
 
 })
