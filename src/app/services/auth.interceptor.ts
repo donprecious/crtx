@@ -1,7 +1,7 @@
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpUserEvent, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import 'rxjs/add/operator/do';
+
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -24,5 +24,6 @@ export class AuthInterceptor implements HttpInterceptor {
             this.router.navigateByUrl('/login');
            // return next.handle(req.clone());
         }
+        return next.handle(req.clone());
     }
 }

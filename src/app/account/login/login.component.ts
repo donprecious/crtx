@@ -40,17 +40,28 @@ export class LoginComponent implements OnInit {
       } as ILogin;
       this.loading = true;
       this.authService.login(login).subscribe(data => {
-        localStorage.setItem('userToken', data.access_token);
+        localStorage.setItem('userToken', data.auth_token);
+        if (data.roles === '') {
+          data.roles = [];
+        }
         localStorage.setItem('userRoles', data.roles);
         // check roles
 
-        if (this.userService.roleMatch(['Admin'])) {
+        if (this.userService.roleMatch('Admin')) {
           this.router.navigate(['/admin']);
         } else {
           this.router.navigate(['/home']);
 
         }
         this.loading = false;
+      }, error => {
+        this.loading = false;
+        this.pnotify.alert({
+          text: 'Invalid Login details',
+          type: 'error'
+
+        });
+        console.log(error);
       });
 
     } else {

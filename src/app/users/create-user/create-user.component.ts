@@ -5,6 +5,7 @@ import {UserService, IUser} from '../../services/user.services';
 
 import {Inject} from '@angular/core';
 import { isBuffer } from 'util';
+import { PNotifyService } from '../../services/pNotifyService.service';
 
 @Component({
    selector: 'app-create-user',
@@ -17,7 +18,14 @@ export class CreateUserComponent implements OnInit {
     baseUrl: string;
     ctrl: any;
     loading: boolean;
-  constructor( private fb: FormBuilder, private userService: UserService, private http: HttpClient, @Inject('API_URL') apiUrl: string ) {
+  pnotify: any;
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private http: HttpClient,
+     @Inject('API_URL') apiUrl: string,
+     private pnotifyService: PNotifyService
+      ) {
     this.baseUrl = apiUrl;
 
    }
@@ -58,11 +66,17 @@ export class CreateUserComponent implements OnInit {
         password: this.password.value
         } as IUser;
 
-        // this.userService.addUser(newUser).subscribe(a => {
-        //   console.log(a);
-        //   this.loading = false;
-        // });
-        this.loading = false;
+        this.userService.addUser(newUser).subscribe(a => {
+          console.log(a);
+          this.loading = false;
+        this.pnotify = this.pnotifyService.getPNotify();
+        this.pnotify.alert({
+          text: 'Hey Dear! Welcome ',
+          type: 'success'
+
+        });
+        });
+        // this.loading = false;
         console.log(this.email.value);
     //     // process input
     //     const url = this.baseUrl + 'user/create';

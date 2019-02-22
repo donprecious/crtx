@@ -8,6 +8,14 @@ export interface IUser {
 
   // CreateUser(firstName, lastName, email, phoneNumber, password): void;
 }
+export interface IRole {
+  id: string;
+  name: string;
+}
+// export interface IRole {
+
+// }
+
 
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -39,21 +47,35 @@ export class UserService implements IUser {
 getUserByEmail(email: string): Observable<IUser> {
   return this.http.get<IUser>(this.baseUrl + 'user/GetUserByEmail/' + email , httpOptions);
 }
-getAllRoles() {
-  return this.http.get(this.baseUrl + '/api/GetAllRoles', httpOptions);
+getAllRoles(): Observable<IRole[]> {
+  return this.http.get<IRole[]>(this.baseUrl + 'user/GetAllRoles', httpOptions);
 }
 
-roleMatch(allowedRoles): boolean {
-  let isMatch = false;
-  const userRoles: string[] = JSON.parse(localStorage.getItem('userRoles'));
-  allowedRoles.forEach(element => {
-    if (userRoles.indexOf(element) > -1) {
-      isMatch = true;
-      return false;
-    }
-  });
-  return isMatch;
+getUserRole(id: string): Observable<IRole[]> {
+  return this.http.get<IRole[]>(this.baseUrl + 'user/GetUserRole/' + id, httpOptions);
+}
 
+addUserToRole(userId: string, roleName: string ) {
+ const userRole = {
+   id: userId,
+   roleName: roleName
+ };
+ return this.http.post(this.baseUrl + 'user/AddUserToRole', userRole, httpOptions);
+}
+roleMatch(allowedRoles): boolean {
+
+  let isMatch = false;
+   const roles = localStorage.getItem('userRoles');
+   if (roles !== '') {
+    const userRoles: string[] = JSON.parse(localStorage.getItem('userRoles'));
+    allowedRoles.forEach(element => {
+      if (userRoles.indexOf(element) > -1) {
+        isMatch = true;
+        return false;
+      }
+    });
+   }
+  return isMatch;
 }
 
 

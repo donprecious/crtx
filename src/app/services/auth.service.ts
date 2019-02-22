@@ -24,7 +24,7 @@ export class AuthService {
     this.baseUrl = apiUrl;
   }
   login(login: ILogin): Observable<any> {
-     return this.http.post(this.baseUrl + ' api/auth/login', login, httpOptions);
+     return this.http.post(this.baseUrl + 'auth/login', login, httpOptions);
   }
 
 // : Observable<ICustomer> {

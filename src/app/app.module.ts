@@ -24,6 +24,9 @@ import { RequestInterceptor } from './services/httpInterceptor.service';
 import { LoginComponent } from './account/login/login.component';
 import { AuthInterceptor } from './services/auth.interceptor';
 import { AdminComponent } from './Admin/admin/admin.component';
+import { LoginLayoutComponent } from './Layouts/login-layout/login-layout.component';
+import { MasterLayoutComponent } from './layouts/master-layout/master-layout.component';
+import { MasterComponent } from './components/master/master.component';
 
 
 // AoT requires an exported function for factories
@@ -39,9 +42,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     SideBarComponent,
     TopBarComponent,
     FooterComponent,
-    LoginComponent,
     AdminComponent,
-
+    LoginLayoutComponent,
+    MasterLayoutComponent,
+    MasterComponent,
+    LoginComponent,
 
 
 

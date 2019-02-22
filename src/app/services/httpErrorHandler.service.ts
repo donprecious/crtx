@@ -17,6 +17,6 @@ export class HttpErrorHandler implements ErrorHandler  {
       text: 'Something went wrong please try again later',
       type: 'error'
     });
-    console.log( 'error occured', err.message);
+    console.error( 'error occured', err.message);
   }
 }

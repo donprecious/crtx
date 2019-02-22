@@ -25,6 +25,7 @@ export class RequestInterceptor implements HttpInterceptor {
 
     return next.handle(request).pipe(tap((err: any) => {
       if (err instanceof HttpErrorResponse) {
+        console.error(err);
         this.errorHandler.handleError(err);
       }
     }));
