@@ -21,13 +21,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { UserModule } from './users/user.module';
 import { HttpErrorHandler } from './services/httpErrorHandler.service';
 import { RequestInterceptor } from './services/httpInterceptor.service';
-import { LoginComponent } from './account/login/login.component';
+
 import { AuthInterceptor } from './services/auth.interceptor';
 import { AdminComponent } from './Admin/admin/admin.component';
 import { LoginLayoutComponent } from './Layouts/login-layout/login-layout.component';
-import { MasterLayoutComponent } from './layouts/master-layout/master-layout.component';
 import { MasterComponent } from './components/master/master.component';
-
+import { MasterLayoutComponent } from './Layouts/master-layout/master-layout.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -46,9 +45,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginLayoutComponent,
     MasterLayoutComponent,
     MasterComponent,
-    LoginComponent,
-
-
 
 
   ],

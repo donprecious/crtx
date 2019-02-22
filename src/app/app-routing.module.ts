@@ -1,3 +1,4 @@
+import { LoginLayoutComponent } from './Layouts/login-layout/login-layout.component';
 import { PUBLIC_ROUTES } from './Layouts/login-layout/public-route';
 import { MasterLayoutComponent } from './Layouts/master-layout/master-layout.component';
 import { MasterComponent } from './components/master/master.component';
@@ -13,16 +14,16 @@ import { CreateOrgComponent } from './organisations/create-org/create-org.compon
 import { CreateOrganisationComponent } from './organisations/create-organisation/create-organisation.component';
 import { CreateTeamMemberComponent } from './teams/team-memeber/create-team-member/create-team-member.component';
 import { CreateReviewComponent } from './reviews/create-review/create-review.component';
-import { LoginComponent } from './account/login/login.component';
 import { MASTER_ROUTES } from './Layouts/master-layout/master.route';
 
 const routes: Routes = [
-  {
-    path: 'login', component: LoginComponent
-  }
+  //  {
+  //   path: 'login', component: LoginComponent
+  // },
   // { path: '', redirectTo: 'login', pathMatch: 'full' },
-  // { path: '', component: LoginComponent, children: PUBLIC_ROUTES },
-  // { path: '', component: MasterLayoutComponent, children: MASTER_ROUTES },
+   { path: '', component: LoginLayoutComponent, children: PUBLIC_ROUTES },
+
+  { path: '', component: MasterLayoutComponent, children: MASTER_ROUTES },
   // { path: '**', redirectTo: 'login' }
   // {
   //     path: 'login',
@@ -72,10 +73,7 @@ const routes: Routes = [
   //     path: 'home',
   //     component: HomeComponent
   //   },
-    {
-        path: '',
-        component: HomeComponent
-    }
+
 
 ];
 

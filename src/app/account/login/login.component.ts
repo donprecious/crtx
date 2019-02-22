@@ -1,3 +1,5 @@
+
+
 import { UserService } from './../../services/user.services';
 import { PNotifyService } from './../../services/pNotifyService.service';
 import { AuthService, ILogin } from './../../services/auth.service';
@@ -11,25 +13,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
   myForm = new FormGroup({
-    Email: new FormControl('', Validators.required) ,
+    Email: new FormControl('', Validators.required),
     Password: new FormControl('', Validators.required)
   });
   pnotify: any;
   loading: boolean;
-
-  get email() {return this.myForm.get('Email'); }
-  get password() {return this.myForm.get('Password'); }
+  get email() { return this.myForm.get('Email'); }
+  get password() { return this.myForm.get('Password'); }
 
   constructor(private authService: AuthService,
      private pnotifyService: PNotifyService,
-     private router: Router,
-     private userService: UserService
-     ) {
+     private router: Router, private userService: UserService) {
     this.pnotify = this.pnotifyService.getPNotify();
-   }
-
+  }
   ngOnInit() {
   }
   onSubmit() {
@@ -46,12 +43,10 @@ export class LoginComponent implements OnInit {
         }
         localStorage.setItem('userRoles', data.roles);
         // check roles
-
         if (this.userService.roleMatch('Admin')) {
           this.router.navigate(['/admin']);
         } else {
           this.router.navigate(['/home']);
-
         }
         this.loading = false;
       }, error => {
@@ -59,20 +54,15 @@ export class LoginComponent implements OnInit {
         this.pnotify.alert({
           text: 'Invalid Login details',
           type: 'error'
-
         });
         console.log(error);
       });
-
     } else {
-
       this.loading = false;
       this.pnotify.alert({
         text: 'Invalid Login details',
         type: 'error'
-
       });
     }
   }
-
 }

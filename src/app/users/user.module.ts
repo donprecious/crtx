@@ -21,8 +21,9 @@ import { CreateTeamMemberComponent } from '../teams/team-memeber/create-team-mem
 import { CreateReviewComponent } from '../reviews/create-review/create-review.component';
 
 import { MatButtonModule, MatCheckboxModule, MatAutocompleteModule, MatFormFieldModule, MatInputModule } from '@angular/material';
-import { LoginComponent } from '../account/login/login.component';
+
 import { AddUserToRolesComponent } from './add-user-to-roles/add-user-to-roles.component';
+import { LoginComponent } from '../account/login/login.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { AddUserToRolesComponent } from './add-user-to-roles/add-user-to-roles.c
     CreateReviewComponent,
 
     AddUserToRolesComponent,
+    LoginComponent
   ],
 
   imports: [
