@@ -119,7 +119,7 @@ teams: ITeam[];
       const teamMember = {
         userId : this.userId,
         description : this.description.value,
-        teamId: this.description.value,
+        teamId: this.teamId.value,
         projectId: this.projectId.value
       }as ITeamMember;
       this.loading = true;

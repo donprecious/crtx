@@ -43,7 +43,7 @@ export class OrganisationService implements IOrganisation {
  get(organisationId: number): Observable<IOrganisation>  {
     return this.http.get<IOrganisation>(this.baseUrl + `Organisation/ ${organisationId}`,  httpOptions);
   }
-  getAll(): Observable<IOrganisation[]>  {
-    return this.http.get<IOrganisation[]>(this.baseUrl + `Organisation/List`, httpOptions);
+  getAll(): Observable<any[]>  {
+    return this.http.get<any[]>(this.baseUrl + `Organisation/List`, httpOptions);
   }
 }

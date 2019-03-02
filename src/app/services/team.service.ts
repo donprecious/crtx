@@ -41,7 +41,11 @@ export class TeamService implements ITeam {
     getProjectTeams(id: number): Observable<ITeam[]> {
       return this.http.get<ITeam[]>(this.baseUrl + 'team/project/' + id, httpOptions);
     }
-    getAll(): Observable<ITeam> {
-      return this.http.get<ITeam>(this.baseUrl + 'team/list', httpOptions);
+    getAll(): Observable<any[]> {
+      return this.http.get<any[]>(this.baseUrl + 'team/list', httpOptions);
+    }
+
+    getTeamMemberId(userId: string): any {
+      return this.http.get(this.baseUrl + 'team/GetTeamMemberId/' + userId , httpOptions);
     }
 }

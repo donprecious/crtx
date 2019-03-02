@@ -52,7 +52,7 @@ getAllRoles(): Observable<IRole[]> {
 }
 
 getUserRole(id: string): Observable<IRole[]> {
-  return this.http.get<IRole[]>(this.baseUrl + 'user/GetUserRole/' + id, httpOptions);
+  return this.http.get<IRole[]>(this.baseUrl + 'user/UserRoles/' + id, httpOptions);
 }
 
 addUserToRole(userId: string, roleName: string ) {
@@ -60,20 +60,38 @@ addUserToRole(userId: string, roleName: string ) {
    id: userId,
    roleName: roleName
  };
- return this.http.post(this.baseUrl + 'user/AddUserToRole', userRole, httpOptions);
+ return this.http.post(this.baseUrl + 'user/AddToRole', userRole, httpOptions);
 }
-roleMatch(allowedRoles): boolean {
+
+RemoveUserFromRole(userId: string, roleName: string ) {
+  const userRole = {
+    id: userId,
+    roleName: roleName
+  };
+  return this.http.post(this.baseUrl + 'user/RemoveFromRole', userRole, httpOptions);
+ }
+
+roleMatch(allowedRoles: string): boolean {
 
   let isMatch = false;
    const roles = localStorage.getItem('userRoles');
-   if (roles !== '') {
-    const userRoles: string[] = JSON.parse(localStorage.getItem('userRoles'));
-    allowedRoles.forEach(element => {
-      if (userRoles.indexOf(element) > -1) {
+   if(roles !== '') {
+    let userRoles = localStorage.getItem('userRoles').split(',');
+
+   // const userRoles: string[] = JSON.parse(localStorage.getItem('userRoles'));
+    // allowedRoles.forEach(element => {
+    //   if (userRoles.indexOf(element) > -1) {
+    //     isMatch = true;
+    //     return false;
+    //   }
+    // });
+    for(let i of userRoles){
+      if(i.toLowerCase() === allowedRoles.toLowerCase() ){
         isMatch = true;
-        return false;
-      }
-    });
+      } else{
+        isMatch = false;
+       }
+    }
    }
   return isMatch;
 }

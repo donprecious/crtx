@@ -16,3 +16,9 @@ input[type="text"].ng-valid{
 .text-right{
   float: right;
 }
+
+.center-div{
+  width:70%;
+  margin-right: auto;
+  margin-left: auto;
+}

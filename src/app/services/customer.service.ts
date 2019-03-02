@@ -47,13 +47,18 @@ export class CustomerService implements ICustomer {
     this.baseUrl = apiUrl;
    }
    createProject (customer: ICustomer): Observable<ICustomer> {
-    return this.http.post<ICustomer>(this.baseUrl + 'customer/create', customer, httpOptions);
+    return this.http.post<ICustomer>(this.baseUrl + 'customers/create', customer, httpOptions);
     }
     getProject(projectId: number): Observable<ICustomer> {
-      return this.http.get<ICustomer>(this.baseUrl + 'customer/' + projectId, httpOptions);
+      return this.http.get<ICustomer>(this.baseUrl + 'customers/' + projectId, httpOptions);
     }
     getAllCustomer(): Observable<ICustomer> {
-      return this.http.get<ICustomer>(this.baseUrl + 'customer/list', httpOptions);
+      return this.http.get<ICustomer>(this.baseUrl + 'customers/list', httpOptions);
   }
-
+  getCustomersInTeam(id): Observable<any[]> {
+    return this.http.get<any[]>(this.baseUrl + `customers/Team/${id}/List`, httpOptions);
+}
+getCustomersInProject(id): Observable<any[]> {
+  return this.http.get<any[]>(this.baseUrl + `customers/project/${id}/List`, httpOptions);
+}
 }

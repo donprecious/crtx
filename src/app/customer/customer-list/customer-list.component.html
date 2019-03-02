@@ -1,0 +1,49 @@
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="x_panel">
+      <img class="img-fluid float-right"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
+
+    <div class="x_title">
+      <h2>Baskets</h2>
+
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="x_content">
+
+      <div class="table-responsive">
+        <table class="table table-striped jambo_table bulk_action">
+          <thead>
+            <tr class="headings">
+
+              <th class="column-title">Name </th>
+
+              <th class="column-title">Description </th>
+              <th class="column-title">Organisation Id</th>
+              <th>
+
+              </th>
+
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr class="even pointer" *ngFor="let i of customers">
+
+              <td class=" ">{{i.firstName}} , {{i.lastName}}</td>
+              <td class=" "> {{i.phoneNumber}} </td>
+              <td class=" ">{{i.address}}</td>
+              <td>
+                <a [routerLink]="['/master/review/create/', i.id]">View</a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+  </div>
+</div>

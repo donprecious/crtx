@@ -13,14 +13,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  myForm = new FormGroup({
+
+  myForm1 = new FormGroup({
     Email: new FormControl('', Validators.required),
     Password: new FormControl('', Validators.required)
   });
   pnotify: any;
   loading: boolean;
-  get email() { return this.myForm.get('Email'); }
-  get password() { return this.myForm.get('Password'); }
+  get email() { return this.myForm1.get('Email'); }
+  get password() { return this.myForm1.get('Password'); }
 
   constructor(private authService: AuthService,
      private pnotifyService: PNotifyService,
@@ -30,13 +31,15 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit() {
-    if (this.myForm.valid) {
+    if (this.myForm1.valid) {
       const login = {
         email: this.email.value,
         password: this.password.value
       } as ILogin;
       this.loading = true;
       this.authService.login(login).subscribe(data => {
+        console.log(data);
+        localStorage.setItem('userId', data.id);
         localStorage.setItem('userToken', data.auth_token);
         if (data.roles === '') {
           data.roles = [];
@@ -44,9 +47,28 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('userRoles', data.roles);
         // check roles
         if (this.userService.roleMatch('Admin')) {
+          localStorage.setItem('routeUrl', 'Master');
           this.router.navigate(['/admin']);
-        } else {
-          this.router.navigate(['/home']);
+
+        } else if (this.userService.roleMatch('Assigned')) {
+          localStorage.setItem('routeUrl', 'Assigned');
+          this.router.navigate(['/Assigned']);
+
+        } else if ( this.userService.roleMatch('Supervisor') ) {
+          localStorage.setItem('routeUrl', 'Supervisor');
+          this.router.navigate(['/supervisor']);
+        } else if ( this.userService.roleMatch('Client') ) {
+          localStorage.setItem('routeUrl', 'Client');
+          this.router.navigate(['/Client']);
+        }  else if ( this.userService.roleMatch('CST') ) {
+          localStorage.setItem('routeUrl', 'CST');
+          this.router.navigate(['/CST']);
+        }  else if ( this.userService.roleMatch('COT') ) {
+          localStorage.setItem('routeUrl', 'COT');
+          this.router.navigate(['/COT']);
+        }
+        else {
+          this.router.navigate(['/master']);
         }
         this.loading = false;
       }, error => {

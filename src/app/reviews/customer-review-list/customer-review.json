@@ -1,0 +1,1370 @@
+[
+  {
+      "id": 2,
+      "reviewKindId": 1,
+      "reviewKind": null,
+      "reviewId": 4,
+      "review": {
+          "id": 4,
+          "comment": "Checking user if they are ok",
+          "teamMemberId": 1,
+          "teamMember": {
+              "id": 1,
+              "userId": "51a4f0b6-6d4b-4182-bea3-38db13e9b3fd",
+              "user": [],
+              "description": "CTO MEMBER",
+              "teamId": 1,
+              "teams": [],
+              "projectId": 4,
+              "projects": null,
+              "reviews": [
+                  {
+                      "id": 5,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 3,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 5,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T15:56:09.9098629"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 6,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 4,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 6,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:03:42.049194"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 7,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 5,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 7,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:17:25.4726326"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 8,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 6,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 8,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:24:12.7237376"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 9,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 7,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 9,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:28:22.359154"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 10,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 8,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 10,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:30:27.7180313"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 11,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 9,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 11,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:31:00.5651734"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+          "customer": null,
+          "reviewNotifications": []
+      },
+      "reviewActionId": 1,
+      "reviewAction": null,
+      "startDate": "0001-01-01T00:00:00",
+      "endDate": "0001-01-01T00:00:00",
+      "dateAdded": "2019-02-09T15:55:37.2963354"
+  },
+  {
+      "id": 3,
+      "reviewKindId": 1,
+      "reviewKind": null,
+      "reviewId": 5,
+      "review": {
+          "id": 5,
+          "comment": "Checking user if they are ok",
+          "teamMemberId": 1,
+          "teamMember": {
+              "id": 1,
+              "userId": "51a4f0b6-6d4b-4182-bea3-38db13e9b3fd",
+              "user": [],
+              "description": "CTO MEMBER",
+              "teamId": 1,
+              "teams": [],
+              "projectId": 4,
+              "projects": null,
+              "reviews": [
+                  {
+                      "id": 4,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 2,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 4,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T15:55:37.2963354"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 6,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 4,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 6,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:03:42.049194"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 7,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 5,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 7,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:17:25.4726326"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 8,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 6,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 8,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:24:12.7237376"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 9,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 7,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 9,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:28:22.359154"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 10,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 8,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 10,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:30:27.7180313"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 11,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 9,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 11,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:31:00.5651734"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+          "customer": null,
+          "reviewNotifications": []
+      },
+      "reviewActionId": 1,
+      "reviewAction": null,
+      "startDate": "0001-01-01T00:00:00",
+      "endDate": "0001-01-01T00:00:00",
+      "dateAdded": "2019-02-09T15:56:09.9098629"
+  },
+  {
+      "id": 4,
+      "reviewKindId": 1,
+      "reviewKind": null,
+      "reviewId": 6,
+      "review": {
+          "id": 6,
+          "comment": "Checking user if they are ok",
+          "teamMemberId": 1,
+          "teamMember": {
+              "id": 1,
+              "userId": "51a4f0b6-6d4b-4182-bea3-38db13e9b3fd",
+              "user": [],
+              "description": "CTO MEMBER",
+              "teamId": 1,
+              "teams": [],
+              "projectId": 4,
+              "projects": null,
+              "reviews": [
+                  {
+                      "id": 4,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 2,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 4,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T15:55:37.2963354"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 5,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 3,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 5,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T15:56:09.9098629"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 7,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 5,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 7,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:17:25.4726326"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 8,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 6,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 8,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:24:12.7237376"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 9,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 7,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 9,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:28:22.359154"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 10,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 8,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 10,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:30:27.7180313"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 11,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 9,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 11,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:31:00.5651734"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+          "customer": null,
+          "reviewNotifications": []
+      },
+      "reviewActionId": 1,
+      "reviewAction": null,
+      "startDate": "0001-01-01T00:00:00",
+      "endDate": "0001-01-01T00:00:00",
+      "dateAdded": "2019-02-09T16:03:42.049194"
+  },
+  {
+      "id": 5,
+      "reviewKindId": 1,
+      "reviewKind": null,
+      "reviewId": 7,
+      "review": {
+          "id": 7,
+          "comment": "Checking user if they are ok",
+          "teamMemberId": 1,
+          "teamMember": {
+              "id": 1,
+              "userId": "51a4f0b6-6d4b-4182-bea3-38db13e9b3fd",
+              "user": [],
+              "description": "CTO MEMBER",
+              "teamId": 1,
+              "teams": [],
+              "projectId": 4,
+              "projects": null,
+              "reviews": [
+                  {
+                      "id": 4,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 2,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 4,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T15:55:37.2963354"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 5,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 3,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 5,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T15:56:09.9098629"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 6,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 4,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 6,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:03:42.049194"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 8,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 6,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 8,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:24:12.7237376"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 9,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 7,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 9,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:28:22.359154"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 10,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 8,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 10,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:30:27.7180313"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 11,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 9,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 11,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:31:00.5651734"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+          "customer": null,
+          "reviewNotifications": []
+      },
+      "reviewActionId": 1,
+      "reviewAction": null,
+      "startDate": "0001-01-01T00:00:00",
+      "endDate": "0001-01-01T00:00:00",
+      "dateAdded": "2019-02-09T16:17:25.4726326"
+  },
+  {
+      "id": 6,
+      "reviewKindId": 1,
+      "reviewKind": null,
+      "reviewId": 8,
+      "review": {
+          "id": 8,
+          "comment": "Checking user if they are ok",
+          "teamMemberId": 1,
+          "teamMember": {
+              "id": 1,
+              "userId": "51a4f0b6-6d4b-4182-bea3-38db13e9b3fd",
+              "user": [],
+              "description": "CTO MEMBER",
+              "teamId": 1,
+              "teams": [],
+              "projectId": 4,
+              "projects": null,
+              "reviews": [
+                  {
+                      "id": 4,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 2,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 4,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T15:55:37.2963354"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 5,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 3,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 5,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T15:56:09.9098629"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 6,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 4,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 6,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:03:42.049194"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 7,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 5,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 7,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:17:25.4726326"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 9,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 7,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 9,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:28:22.359154"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 10,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 8,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 10,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:30:27.7180313"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 11,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 9,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 11,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:31:00.5651734"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+          "customer": null,
+          "reviewNotifications": []
+      },
+      "reviewActionId": 1,
+      "reviewAction": null,
+      "startDate": "0001-01-01T00:00:00",
+      "endDate": "0001-01-01T00:00:00",
+      "dateAdded": "2019-02-09T16:24:12.7237376"
+  },
+  {
+      "id": 7,
+      "reviewKindId": 1,
+      "reviewKind": null,
+      "reviewId": 9,
+      "review": {
+          "id": 9,
+          "comment": "Checking user if they are ok",
+          "teamMemberId": 1,
+          "teamMember": {
+              "id": 1,
+              "userId": "51a4f0b6-6d4b-4182-bea3-38db13e9b3fd",
+              "user": [],
+              "description": "CTO MEMBER",
+              "teamId": 1,
+              "teams": [],
+              "projectId": 4,
+              "projects": null,
+              "reviews": [
+                  {
+                      "id": 4,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 2,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 4,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T15:55:37.2963354"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 5,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 3,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 5,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T15:56:09.9098629"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 6,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 4,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 6,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:03:42.049194"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 7,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 5,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 7,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:17:25.4726326"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 8,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 6,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 8,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:24:12.7237376"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 10,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 8,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 10,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:30:27.7180313"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 11,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 9,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 11,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:31:00.5651734"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+          "customer": null,
+          "reviewNotifications": []
+      },
+      "reviewActionId": 1,
+      "reviewAction": null,
+      "startDate": "0001-01-01T00:00:00",
+      "endDate": "0001-01-01T00:00:00",
+      "dateAdded": "2019-02-09T16:28:22.359154"
+  },
+  {
+      "id": 8,
+      "reviewKindId": 1,
+      "reviewKind": null,
+      "reviewId": 10,
+      "review": {
+          "id": 10,
+          "comment": "Checking user if they are ok",
+          "teamMemberId": 1,
+          "teamMember": {
+              "id": 1,
+              "userId": "51a4f0b6-6d4b-4182-bea3-38db13e9b3fd",
+              "user": [],
+              "description": "CTO MEMBER",
+              "teamId": 1,
+              "teams": [],
+              "projectId": 4,
+              "projects": null,
+              "reviews": [
+                  {
+                      "id": 4,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 2,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 4,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T15:55:37.2963354"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 5,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 3,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 5,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T15:56:09.9098629"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 6,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 4,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 6,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:03:42.049194"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 7,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 5,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 7,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:17:25.4726326"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 8,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 6,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 8,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:24:12.7237376"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 9,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 7,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 9,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:28:22.359154"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 11,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 9,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 11,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:31:00.5651734"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+          "customer": null,
+          "reviewNotifications": []
+      },
+      "reviewActionId": 1,
+      "reviewAction": null,
+      "startDate": "0001-01-01T00:00:00",
+      "endDate": "0001-01-01T00:00:00",
+      "dateAdded": "2019-02-09T16:30:27.7180313"
+  },
+  {
+      "id": 9,
+      "reviewKindId": 1,
+      "reviewKind": null,
+      "reviewId": 11,
+      "review": {
+          "id": 11,
+          "comment": "Checking user if they are ok",
+          "teamMemberId": 1,
+          "teamMember": {
+              "id": 1,
+              "userId": "51a4f0b6-6d4b-4182-bea3-38db13e9b3fd",
+              "user": [],
+              "description": "CTO MEMBER",
+              "teamId": 1,
+              "teams": [],
+              "projectId": 4,
+              "projects": null,
+              "reviews": [
+                  {
+                      "id": 4,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 2,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 4,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T15:55:37.2963354"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 5,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 3,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 5,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T15:56:09.9098629"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 6,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 4,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 6,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:03:42.049194"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 7,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 5,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 7,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:17:25.4726326"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 8,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 6,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 8,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:24:12.7237376"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 9,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 7,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 9,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:28:22.359154"
+                          }
+                      ]
+                  },
+                  {
+                      "id": 10,
+                      "comment": "Checking user if they are ok",
+                      "teamMemberId": 1,
+                      "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+                      "customer": null,
+                      "reviewNotifications": [
+                          {
+                              "id": 8,
+                              "reviewKindId": 1,
+                              "reviewKind": null,
+                              "reviewId": 10,
+                              "reviewActionId": 1,
+                              "reviewAction": null,
+                              "startDate": "0001-01-01T00:00:00",
+                              "endDate": "0001-01-01T00:00:00",
+                              "dateAdded": "2019-02-09T16:30:27.7180313"
+                          }
+                      ]
+                  }
+              ]
+          },
+          "customerId": "94af237e-98b8-4b2c-6b0f-08d685fb1a5e",
+          "customer": null,
+          "reviewNotifications": []
+      },
+      "reviewActionId": 1,
+      "reviewAction": null,
+      "startDate": "0001-01-01T00:00:00",
+      "endDate": "0001-01-01T00:00:00",
+      "dateAdded": "2019-02-09T16:31:00.5651734"
+  }
+]

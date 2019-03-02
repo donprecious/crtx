@@ -1,3 +1,4 @@
+import { CustomerReviewListComponent } from './../reviews/customer-review-list/customer-review-list.component';
 import { CreateProjectComponent } from './../project/create-project/create-project.component';
 import { HttpErrorHandler } from './../services/httpErrorHandler.service';
 import { CreateOrganisationComponent } from './../organisations/create-organisation/create-organisation.component';
@@ -25,6 +26,7 @@ import { MatButtonModule, MatCheckboxModule, MatAutocompleteModule, MatFormField
 import { AddUserToRolesComponent } from './add-user-to-roles/add-user-to-roles.component';
 import { LoginComponent } from '../account/login/login.component';
 
+
 @NgModule({
   declarations: [
     CreateUserComponent,
@@ -37,9 +39,9 @@ import { LoginComponent } from '../account/login/login.component';
     CreateCustomerComponent,
     CreateTeamMemberComponent,
     CreateReviewComponent,
-
+    LoginComponent,
     AddUserToRolesComponent,
-    LoginComponent
+    CustomerReviewListComponent
   ],
 
   imports: [

@@ -41,16 +41,19 @@ export class ReviewService implements IReviewAndNotification {
     this.baseUrl = apiUrl;
    }
    createReview (reviewAndNotification: IReviewAndNotification): Observable<IReviewAndNotification> {
-    return this.http.post<IReviewAndNotification>(this.baseUrl + 'CustomerReview/create', reviewAndNotification, httpOptions);
+    return this.http.post<IReviewAndNotification>(this.baseUrl + 'Review/create', reviewAndNotification, httpOptions);
     }
     getReview(id: number): Observable<IReviewNotification> {
-      return this.http.get<IReviewNotification>(this.baseUrl + 'CustomerReview/' + id, httpOptions);
+      return this.http.get<IReviewNotification>(this.baseUrl + 'Review/' + id, httpOptions);
     }
     getReviewKind(): Observable<IReviewKind[]> {
       return this.http.get<IReviewKind[]>(this.baseUrl + 'review/GetReviewKind', httpOptions);
     }
     getReviewAction(): Observable<IReviewAction[]> {
       return this.http.get<IReviewAction[]>(this.baseUrl + 'review/GetReviewAction', httpOptions);
+    }
+    getCustomerReview(id: string): Observable<any[]>  {
+      return this.http.get<any[]>(this.baseUrl + 'review/GetCustomerReview/' + id, httpOptions);
     }
 
 }

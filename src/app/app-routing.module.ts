@@ -1,3 +1,6 @@
+import { CST_ROUTES } from './Layouts/cst/cst.route';
+import { CstComponent } from './Layouts/cst/cst.component';
+import { SupervisorComponent } from './Layouts/supervisor/supervisor.component';
 import { LoginLayoutComponent } from './Layouts/login-layout/login-layout.component';
 import { PUBLIC_ROUTES } from './Layouts/login-layout/public-route';
 import { MasterLayoutComponent } from './Layouts/master-layout/master-layout.component';
@@ -15,15 +18,26 @@ import { CreateOrganisationComponent } from './organisations/create-organisation
 import { CreateTeamMemberComponent } from './teams/team-memeber/create-team-member/create-team-member.component';
 import { CreateReviewComponent } from './reviews/create-review/create-review.component';
 import { MASTER_ROUTES } from './Layouts/master-layout/master.route';
+import { LoginComponent } from './account/login/login.component';
+import { AssignedComponent } from './Layouts/assigned/assigned.component';
+import { ASSIGNED_ROUTES} from './Layouts/assigned/assigned.routes';
+import { SUPERVISOR_ROUTES } from './Layouts/supervisor/supervisor.route';
+
 
 const routes: Routes = [
-  //  {
-  //   path: 'login', component: LoginComponent
-  // },
-  // { path: '', redirectTo: 'login', pathMatch: 'full' },
+   {
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: 'home', component: HomeComponent
+  },
    { path: '', component: LoginLayoutComponent, children: PUBLIC_ROUTES },
 
   { path: '', component: MasterLayoutComponent, children: MASTER_ROUTES },
+  { path: '', component: AssignedComponent, children: ASSIGNED_ROUTES},
+  { path: '', component: SupervisorComponent, children:  SUPERVISOR_ROUTES},
+  { path: '', component: CstComponent, children:  CST_ROUTES},
+
   // { path: '**', redirectTo: 'login' }
   // {
   //     path: 'login',

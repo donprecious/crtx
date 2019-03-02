@@ -45,7 +45,7 @@ export class AddUserToRolesComponent implements OnInit {
     });
 
 
-  this.email.valueChanges.subscribe(value => {
+  this.roleId.valueChanges.subscribe(value => {
   this.loading = true;
   if (this.userId != null) {
     this.loading = true;
@@ -67,35 +67,30 @@ export class AddUserToRolesComponent implements OnInit {
 
   addUserToRole() {
     if (this.myForm.valid ) {
-
       this.loading = true;   this.pnotify.alert({
         text: 'Sending request please wait',
         type: 'notice'
       });
 
-      this.userService.getUserByEmail(this.email.value).subscribe(data => {
-        this.userService.addUserToRole(data.id, this.roleId.value).subscribe( data1 => {
-          this.loading = true;
-          this.userId = data.id;
-          this.pnotify.alert({
-            text: 'User added to role',
-            type: 'success'
+      if (this.userId != null) {
+        this.userService.addUserToRole(this.userId, this.roleId.value).subscribe( data1 => {
+          this.loading = false;
+          this.userService.getUserRole(this.userId).subscribe(data => {
+            this.userRoles = data;
+            this.loading = false;
+            this.pnotify.alert({
+              text: 'User added to role',
+              type: 'success'
+            });
           });
+
         });
-      }, error => {
-        this.loading = false;
+      } else {
         this.pnotify.alert({
-          text: 'it seems the user was not found',
+          text: 'No User Found, Please send ',
           type: 'error'
         });
-      });
-
-      this.pnotify.alert({
-        text: 'Sending request please wait',
-        type: 'notice'
-      });
-
-
+      }
     } else {
       this.loading = false;
       this.pnotify.alert({
@@ -108,6 +103,61 @@ export class AddUserToRolesComponent implements OnInit {
 
   removeFromRole(): void {
 
+    if (this.myForm.valid ) {
+      this.loading = true;   this.pnotify.alert({
+        text: 'Sending request please wait',
+        type: 'notice'
+      });
+
+      if (this.userId != null) {
+        this.userService.RemoveUserFromRole(this.userId, this.roleId.value).subscribe( data1 => {
+          this.loading = false;
+          this.userService.getUserRole(this.userId).subscribe(data => {
+            this.userRoles = data;
+            this.loading = false;
+            this.pnotify.alert({
+              text: 'User added to role',
+              type: 'success'
+            });
+          });
+
+        });
+      } else {
+        this.pnotify.alert({
+          text: 'No User Found, Please send ',
+          type: 'error'
+        });
+      }
+    } else {
+      this.loading = false;
+      this.pnotify.alert({
+        text: 'It seems the user was not found or you didnt select a role',
+        type: 'error'
+      });
+    }
   }
 
+  searchUser(): void {
+    this.loading = true;
+    this.pnotify.alert({
+      text: 'Searching User, Please wait',
+      type: 'notice'
+    });
+    this.userService.getUserByEmail(this.email.value).subscribe(data => {
+      console.log(data);
+      this.userId = data.id;
+      this.userService.getUserRole(this.userId).subscribe(data1 => {
+        this.userRoles = data1;
+      this.loading = false;
+      this.pnotify.alert({
+        text: 'User Found !',
+        type: 'success'
+      });
+
+    });
+
+  });
 }
+
+}
+

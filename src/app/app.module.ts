@@ -1,3 +1,4 @@
+import { CstComponent } from './Layouts/cst/cst.component';
 import 'reflect-metadata';
 import '../polyfills';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,6 +28,19 @@ import { AdminComponent } from './Admin/admin/admin.component';
 import { LoginLayoutComponent } from './Layouts/login-layout/login-layout.component';
 import { MasterComponent } from './components/master/master.component';
 import { MasterLayoutComponent } from './Layouts/master-layout/master-layout.component';
+import { SiginComponent } from './account/sigin/sigin.component';
+import { ClientComponent } from './layouts/client/client.component';
+import { CotComponent } from './layouts/cot/cot.component';
+import { SupervisorHomeComponent } from './components/supervisor-home/supervisor-home.component';
+import { AssignedComponent } from './Layouts/assigned/assigned.component';
+import { OrganisationListComponent } from './organisations/organisation-list/organisation-list.component';
+import { TeamListComponent } from './teams/team-list/team-list.component';
+import { ProjectListComponent } from './project/project-list/project-list.component';
+import { CstViewComponent } from './components/cst-view/cst-view.component';
+import { CotViewComponent } from './components/cot-view/cot-view.component';
+import { ClientViewComponent } from './components/client-view/client-view.component';
+import { SupervisorComponent } from './Layouts/supervisor/supervisor.component';
+import { CustomerListComponent } from './customer/customer-list/customer-list.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -45,8 +59,20 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginLayoutComponent,
     MasterLayoutComponent,
     MasterComponent,
-
-
+    SiginComponent,
+    ClientComponent,
+    CotComponent,
+    CstComponent,
+    SupervisorComponent,
+    SupervisorHomeComponent,
+    AssignedComponent,
+    OrganisationListComponent,
+    TeamListComponent,
+    ProjectListComponent,
+    CstViewComponent,
+    CotViewComponent,
+    ClientViewComponent,
+    CustomerListComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,4 +107,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

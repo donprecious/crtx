@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { ElectronService } from './providers/electron.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AppConfig } from '../environments/environment';
-import * as $ from '../assets/vendors/jquery/dist/jquery.min.js';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +11,6 @@ import * as $ from '../assets/vendors/jquery/dist/jquery.min.js';
 export class AppComponent {
   constructor(public electronService: ElectronService,
     private translate: TranslateService) {
-
     translate.setDefaultLang('en');
     console.log('AppConfig', AppConfig);
 

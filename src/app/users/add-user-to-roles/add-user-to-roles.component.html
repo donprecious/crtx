@@ -1,30 +1,47 @@
 <img class="img-fluid float-right" width="30" height="30"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
 
-<div class="well">
-  <form [formGroup]="myForm">
-    <div class="form-group">
-      <label> email</label>
-      <label  class="text-right text-danger" *ngIf="email.invalid && (email.touched || email.dirty)">email is required</label>
-      <input class="form-control" type="email" placeholder="email">
-    </div>
-    <div class="form-group">
-      <label> Choose Role</label>
-      <label  class="text-right text-danger" *ngIf="roleId.invalid && (roleId.touched || roleId.dirty)">email is required</label>
-      <select class="form-group" >
-        <option *ngFor="let i of roles"  value="{{i.name}}"> {{i.name}}</option>
-      </select>
-    </div>
-    <div class= well *ngIf="userRoles != null">
-      <p>Associated Roles</p>
-    <span class="badge badge-info" *ngFor="let i of userRoles"> {{ i.name}}</span>
-    </div>
-    <button class="btn btn-primary" (click)="addUserToRole()"> Add to role
-    </button>
-    <button class="btn btn-primary" (click)="removeFromRole()">
-      Remove From Role
-    </button>
+<div class="right_col" role="main">
+  <div class="row">
+    <div class="col-md-12">
+        <div class="well">
+            <form [formGroup]="myForm">
+                <!-- <div class="input-group">
+                    <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-primary">Go!</button>
+                    </span>
+                  </div> -->
+              <div class="input-group">
+                <label> email</label>
+                <label  class="text-right text-danger" *ngIf="email.invalid && (email.touched || email.dirty)">email is required</label>
+                <input class="form-control" type="email" formControlName="Email"  placeholder="email">
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-primary" (click)="searchUser()" >Search !</button>
+                </span>
+              </div>
+              <div class="form-group">
+                <label> Choose Role</label>
+                <label  class="text-right text-danger" *ngIf="roleId.invalid && (roleId.touched || roleId.dirty)">email is required</label>
+                <select class="form-group" formControlName="RoleId" >
+                  <option *ngFor="let i of roles"  value="{{i.name}}"> {{i.name}}</option>
+                </select>
+              </div>
+              <div class= well *ngIf="userRoles != null">
+                <p>Associated Roles</p>
+              <span class="badge badge-info" *ngFor="let i of userRoles"> {{ i}}</span>
+              </div>
+              <button class="btn btn-primary" (click)="addUserToRole()"> Add to role
+              </button>
+              <button class="btn btn-primary" (click)="removeFromRole()">
+                Remove From Role
+              </button>
 
 
 
-  </form>
+            </form>
+          </div>
+    </div>
+  </div>
+
 </div>
+

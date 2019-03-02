@@ -1,3 +1,4 @@
+import { TeamService } from './../../services/team.service';
 import { IReviewAction } from './../../services/review.service';
 import { IReview } from './../../services/IReview';
 import { Component, OnInit } from '@angular/core';
@@ -5,6 +6,7 @@ import { ReviewService, IReviewAndNotification, IReviewKind } from '../../servic
 import { PNotifyService } from '../../services/pNotifyService.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { IReviewNotification } from '../../services/IReviewNotification';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create-review',
@@ -16,8 +18,10 @@ export class CreateReviewComponent implements OnInit {
   pnotify: any;
   reviewKinds: IReviewKind[];
   reviewActions: IReviewAction[];
-  teamMemberId = 1;
-  customerId = '94af237e-98b8-4b2c-6b0f-08d685fb1a5e';
+  teamMemberId: number;
+  userId: string;
+  customerId: any;
+  // customerId = '94af237e-98b8-4b2c-6b0f-08d685fb1a5e';
   myForm = new FormGroup({
     // TeamMemberId: new FormControl('', Validators.required),
     // CustomerId: new FormControl('', Validators.required ),
@@ -27,6 +31,7 @@ export class CreateReviewComponent implements OnInit {
     StartDate: new FormControl(''),
     EndDate: new FormControl(''),
   });
+
   // get teamMemberId() { return this.myForm.get('TeamMemberId'); }
   // get customerId() { return this.myForm.get('CustomerId'); }
    get comment() { return this.myForm.get('Comment'); }
@@ -37,9 +42,14 @@ export class CreateReviewComponent implements OnInit {
 
   loading: boolean;
   constructor(private reviewService: ReviewService,
+    private teamService: TeamService,
+    private route: ActivatedRoute,
     private pnotifyService: PNotifyService,
     ) {
       this.pnotify = this.pnotifyService.getPNotify();
+      route.params.subscribe(data => {
+        this.customerId = data['id'];
+      });
     }
 
     onSubmit() {
@@ -88,6 +98,10 @@ export class CreateReviewComponent implements OnInit {
     this.pnotify.alert({
       text: 'Please Wait while we fetch the data',
       type: 'notice'
+    });
+    this.userId = localStorage.getItem('userId');
+    this.teamService.getTeamMemberId(this.userId).subscribe(data => {
+      this.teamMemberId = data;
     });
     this.reviewService.getReviewKind().subscribe(data => {
       this.reviewKinds = data;
