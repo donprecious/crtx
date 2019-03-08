@@ -6,6 +6,8 @@ import { PNotifyService } from '../../services/pNotifyService.service';
 import * as $ from '../../../assets/vendors/jquery/dist/jquery.js';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { OrganisationService } from '../../services/organisation.service';
 
 @Component({
   selector: 'app-create-customer',
@@ -18,12 +20,17 @@ loading: boolean;
 submited: boolean;
 projects: IProject[];
 
+showOrganisation: boolean;
+routeOrgId: any;
+organisations: any[];
+
 teams: ITeam[];
 filteredProjects: Observable<IProject[]>;
 filteredTeams: Observable<ITeam[]>;
 
 myControl = new FormControl();
 formGroup = new FormGroup({
+OrganisationId: new FormControl(''),
 ProjectId: new FormControl('1', [Validators.required]),
 TeamId: new FormControl('1', [Validators.required]),
 Firstname : new FormControl('james', [Validators.required]),
@@ -44,16 +51,29 @@ get lastname() {return this.formGroup.get('Lastname'); }
 get othername() {return this.formGroup.get('Othername'); }
 get email() {return this.formGroup.get('Email'); }
 get phonenumber() {return this.formGroup.get('Phonenumber'); }
-get address() {return this.formGroup.get('address'); }
-get sex() {return this.formGroup.get('sex'); }
+get address() {return this.formGroup.get('Address'); }
+get sex() {return this.formGroup.get('Sex'); }
+
+get organisationId () { return this.formGroup.get('OrganisationId'); }
 
   constructor(
   private customerService: CustomerService,
   private projectService: ProjectService,
   private teamService: TeamService,
   private pnotifyService: PNotifyService,
+  private route: ActivatedRoute,
+  private orgService: OrganisationService,
   ) {
     this.pnotify = this.pnotifyService.getPNotify();
+
+    route.params.subscribe(data => {
+      this.routeOrgId  = data['id'];
+    });
+    if (this.routeOrgId == null) {
+      this.showOrganisation = true;
+    } else {
+      this.showOrganisation = false;
+    }
   }
 
   ngOnInit() {
@@ -66,36 +86,69 @@ get sex() {return this.formGroup.get('sex'); }
 
     });
 
-  this.projectService.getAllProject().subscribe(data => {
-    this.projects = data;
-    console.log('project', data);
-    this.loading = false;
+    if (this.routeOrgId != null) {
+      // get all organisationTeam organisation
+   //   this.organisationId.value = this.routeOrgId;
+      this.teamService.getOrganisationTeams(this.routeOrgId).subscribe(data => {
+        this.teams = data;
+      });
+      // get organistion project/baskets
+      this.projectService.getAllOrganisationProject(this.routeOrgId).subscribe(data => {
+        this.projects = data;
+      });
+    } else {
+        this.orgService.getAll().subscribe(data => {
+          this.organisations = data;
+       //   this.
+       this.showOrganisation = true;
+        });
+        this.organisationId.valueChanges.subscribe(id => {
+          this.teamService.getOrganisationTeams(id).subscribe( data => {
+           this.teams = data;
+          });
+          this.projectService.getAllOrganisationProject(id).subscribe(data => {
+            this.projects = data;
+              this.loading = false;
     this.pnotify.alert({
       text: 'project Retrived Successfully',
       type: 'notice'
 
     });
-  });
+          });
+        });
+
+    }
+
+  // this.projectService.getAllProject().subscribe(data => {
+  //   this.projects = data;
+  //   console.log('project', data);
+  //   this.loading = false;
+  //   this.pnotify.alert({
+  //     text: 'project Retrived Successfully',
+  //     type: 'notice'
+
+  //   });
+  // });
 
   // get teams when projects has been selected
-this.projectId.valueChanges.subscribe(id => {
-  this.loading = true;
-  // loads Teams from data services
-  this.pnotify.alert({
-    text: 'Please wait, while we load Teams from data center',
-    type: 'notice'
-  });
-  this.teamService.getProjectTeams(id).subscribe(data => {
- this.teams = data;
- console.log('team', data);
- this.loading = false;
- this.pnotify.alert({
-   text: 'Teams Retrived Successfully',
-   type: 'success'
- });
-  });
+// this.projectId.valueChanges.subscribe(id => {
+//   this.loading = true;
+//   loads Teams from data services
+//   this.pnotify.alert({
+//     text: 'Please wait, while we load Teams from data center',
+//     type: 'notice'
+//   });
+//   this.teamService.getProjectTeams(id).subscribe(data => {
+//  this.teams = data;
+//  console.log('team', data);
+//  this.loading = false;
+//  this.pnotify.alert({
+//    text: 'Teams Retrived Successfully',
+//    type: 'success'
+//  });
+//   });
 
-  });
+//   });
 
   // this.filteredProjects = this.projectId.valueChanges
   // .pipe(
@@ -113,25 +166,18 @@ onSubmit(): void {
       });
       const customer = {
         firstName: this.firstname.value,
-       lastName: this.firstname.value,
-         otherName: this.firstname.value,
-        email: this.firstname.value,
-        phoneNumber: this.firstname.value,
-        address: this.firstname.value,
-        sex: this.firstname.value,
-        teamId: this.firstname.value,
+       lastName: this.lastname.value,
+         otherName: this.othername.value,
+        email: this.email.value,
+        phoneNumber: this.phonenumber.value,
+        address: this.address.value,
+        sex: this.sex.value,
+        teamId: this.teamId.value,
       } as ICustomer;
       this.customerService.createProject(customer).subscribe( data => {
         this.loading = false;
         this.submited = true;
-        this.formGroup.setValue({
-          Firstname : '',
-          Lastname : '',
-          Othername : '',
-          Email : '',
-          Phonenumber : '',
-          Address : ''
-        });
+
         this.pnotify.alert({
           text: 'customer Created Successfully',
           type: 'success'
@@ -146,6 +192,7 @@ onSubmit(): void {
       });
   }
 }
+
 private _filter(value: string, arr: any[]): string[] {
   const filterValue = value.toLowerCase();
   return arr.filter(option => option.toLowerCase().includes(filterValue));

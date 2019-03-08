@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { validateConfig } from '@angular/router/src/config';
 import { PNotifyService } from '../../services/pNotifyService.service';
 import { IOrganisation } from '../../services/organisation.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-team',
@@ -17,7 +18,7 @@ export class CreateTeamComponent implements OnInit {
       Name: new FormControl('', Validators.required),
       Description: new FormControl('', Validators.required),
       ProjectId: new FormControl('', Validators.required),
-      OrganisationId: new FormControl('')
+      OrganisationId: new FormControl('', Validators.required)
   });
 
    get name() { return this.formGroup.get('Name'); }
@@ -34,6 +35,7 @@ export class CreateTeamComponent implements OnInit {
   constructor(private projectService: ProjectService,
     private pnotifyService: PNotifyService,
     private teamService: TeamService,
+    private router: Router,
     private orgService: OrganisationService
     ) {
       this.pnotify = this.pnotifyService.getPNotify();
@@ -71,6 +73,9 @@ export class CreateTeamComponent implements OnInit {
           text: 'projectss has been retrieved',
           type: 'success'
         });
+        // get user route
+        const userRoute = localStorage.getItem('routeUrl');
+        this.router.navigate([`${userRoute}/team/list/${this.organisationId}`]);
       });
     });
 
@@ -82,14 +87,17 @@ export class CreateTeamComponent implements OnInit {
       const team: ITeam = {
         description: this.description.value,
         name: this.name.value,
-        projectId: this.projectId.value
+        projectId: this.projectId.value,
+        organisationId: this.organisationId.value
       }as ITeam;
+
       this.teamService.create(team).subscribe(data => {
         this.loading  = false;
         this.pnotify.alert({
           text: 'Team was created Successfully',
           type: 'success'
         });
+
       });
 
     }

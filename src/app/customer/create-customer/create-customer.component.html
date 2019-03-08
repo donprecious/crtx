@@ -33,7 +33,12 @@
                       </mat-option>
                     </mat-autocomplete>
                   </mat-form-field> -->
-
+                  <div class="form-group" *ngIf="showOrganisation" >
+                    <label >Select Organisation *:</label>
+                <select  formControlName="OrganisationId" class="form-control" >
+                  <option value="{{i.id}}" *ngFor="let i of organisations">{{i.name}}</option>
+                </select>
+                  </div>
               <label >Select Project *:</label>
                 <select  formControlName="ProjectId" class="form-control" >
                   <option value="{{i.id}}" *ngFor="let i of projects">{{i.name}}</option>

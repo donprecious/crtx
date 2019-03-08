@@ -44,6 +44,7 @@ export class UserService implements IUser {
   return this.http.post<IUser>(this.baseUrl + 'user/create', user, httpOptions);
 
 }
+
 getUserByEmail(email: string): Observable<IUser> {
   return this.http.get<IUser>(this.baseUrl + 'user/GetUserByEmail/' + email , httpOptions);
 }
@@ -51,6 +52,10 @@ getAllRoles(): Observable<IRole[]> {
   return this.http.get<IRole[]>(this.baseUrl + 'user/GetAllRoles', httpOptions);
 }
 
+getAllUser(): Observable<any[]> {
+  return this.http.get<any[]>(this.baseUrl + 'user/list', httpOptions);
+
+}
 getUserRole(id: string): Observable<IRole[]> {
   return this.http.get<IRole[]>(this.baseUrl + 'user/UserRoles/' + id, httpOptions);
 }
@@ -75,8 +80,8 @@ roleMatch(allowedRoles: string): boolean {
 
   let isMatch = false;
    const roles = localStorage.getItem('userRoles');
-   if(roles !== '') {
-    let userRoles = localStorage.getItem('userRoles').split(',');
+   if (roles !== '') {
+    const userRoles = localStorage.getItem('userRoles').split(',');
 
    // const userRoles: string[] = JSON.parse(localStorage.getItem('userRoles'));
     // allowedRoles.forEach(element => {
@@ -85,10 +90,10 @@ roleMatch(allowedRoles: string): boolean {
     //     return false;
     //   }
     // });
-    for(let i of userRoles){
-      if(i.toLowerCase() === allowedRoles.toLowerCase() ){
+    for (const i of userRoles) {
+      if (i.toLowerCase() === allowedRoles.toLowerCase() ) {
         isMatch = true;
-      } else{
+      } else {
         isMatch = false;
        }
     }

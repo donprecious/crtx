@@ -14,6 +14,13 @@ export interface IOrganisation {
   userId: string;
   packageId: Number;
 }
+
+export interface IUserOrganisation {
+  id: number;
+  userId: string;
+  organisationId: number;
+}
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json' // ,
@@ -40,10 +47,18 @@ export class OrganisationService implements IOrganisation {
   AddOrganisation(organisation: IOrganisation): Observable<IOrganisation>  {
     return this.http.post<IOrganisation>(this.baseUrl + 'Organisation/create', organisation, httpOptions);
   }
+  AddUser(userOrg: IUserOrganisation): Observable<IUserOrganisation>  {
+    return this.http.post<IUserOrganisation>(this.baseUrl + 'Organisation/AddUser', userOrg, httpOptions);
+  }
  get(organisationId: number): Observable<IOrganisation>  {
     return this.http.get<IOrganisation>(this.baseUrl + `Organisation/ ${organisationId}`,  httpOptions);
   }
   getAll(): Observable<any[]>  {
     return this.http.get<any[]>(this.baseUrl + `Organisation/List`, httpOptions);
   }
+
+  getUserOrganisation(userid: string): Observable<any> {
+    return this.http.get<any>(this.baseUrl + `Organisation/GetUserOrganisation/${userid}`, httpOptions);
+  }
+
 }

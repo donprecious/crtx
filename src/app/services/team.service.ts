@@ -3,6 +3,7 @@ id: number ;
 name: string ;
 description: string;
 projectId: number;
+organisationId: number;
 }
 
 import { Injectable, Inject } from '@angular/core';
@@ -25,7 +26,7 @@ export class TeamService implements ITeam {
   name: string;
   description: string;
   projectId: number;
-
+  organisationId: number;
   baseUrl: string;
 
   constructor(private http: HttpClient,
@@ -46,6 +47,12 @@ export class TeamService implements ITeam {
     }
 
     getTeamMemberId(userId: string): any {
-      return this.http.get(this.baseUrl + 'team/GetTeamMemberId/' + userId , httpOptions);
+      return this.http.get(this.baseUrl + 'TeamMember/GetTeamMemberId/' + userId , httpOptions);
     }
+
+   // organisation/{id}/list
+    getOrganisationTeams(id: any): any {
+      return this.http.get(this.baseUrl + `team/organisation/${id}/list` , httpOptions);
+    }
+
 }

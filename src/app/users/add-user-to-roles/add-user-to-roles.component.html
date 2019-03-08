@@ -5,12 +5,7 @@
     <div class="col-md-12">
         <div class="well">
             <form [formGroup]="myForm">
-                <!-- <div class="input-group">
-                    <input type="text" class="form-control">
-                    <span class="input-group-btn">
-                      <button type="button" class="btn btn-primary">Go!</button>
-                    </span>
-                  </div> -->
+
               <div class="input-group">
                 <label> email</label>
                 <label  class="text-right text-danger" *ngIf="email.invalid && (email.touched || email.dirty)">email is required</label>

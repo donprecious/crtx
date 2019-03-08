@@ -25,6 +25,8 @@ import { MatButtonModule, MatCheckboxModule, MatAutocompleteModule, MatFormField
 
 import { AddUserToRolesComponent } from './add-user-to-roles/add-user-to-roles.component';
 import { LoginComponent } from '../account/login/login.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { AddUserComponent } from '../organisations/add-user/add-user.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { LoginComponent } from '../account/login/login.component';
     CreateReviewComponent,
     LoginComponent,
     AddUserToRolesComponent,
-    CustomerReviewListComponent
+    CustomerReviewListComponent,
+    UserListComponent,
+    AddUserComponent
   ],
 
   imports: [

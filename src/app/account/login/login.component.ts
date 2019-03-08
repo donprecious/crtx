@@ -49,13 +49,14 @@ export class LoginComponent implements OnInit {
         if (this.userService.roleMatch('Admin')) {
           localStorage.setItem('routeUrl', 'Master');
           this.router.navigate(['/admin']);
+          localStorage.setItem('routeUrl', 'Master');
 
         } else if (this.userService.roleMatch('Assigned')) {
           localStorage.setItem('routeUrl', 'Assigned');
           this.router.navigate(['/Assigned']);
 
         } else if ( this.userService.roleMatch('Supervisor') ) {
-          localStorage.setItem('routeUrl', 'Supervisor');
+          localStorage.setItem('routeUrl', 'supervisor');
           this.router.navigate(['/supervisor']);
         } else if ( this.userService.roleMatch('Client') ) {
           localStorage.setItem('routeUrl', 'Client');

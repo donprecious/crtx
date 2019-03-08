@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../services/project.service';
 import { PNotifyService } from '../../services/pNotifyService.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-project-list',
@@ -12,10 +13,15 @@ export class ProjectListComponent implements OnInit {
   projects: any[];
   pnotify: any;
   loading: boolean;
-
+  organisationIdFromRoute: any;
   constructor(private projectService: ProjectService,
-    private pnotifyService: PNotifyService) {
+    private pnotifyService: PNotifyService,
+    private route: ActivatedRoute,
+    ) {
       this.pnotify = this.pnotifyService.getPNotify();
+      route.params.subscribe(data => {
+        this. organisationIdFromRoute = data['id'];
+      });
      }
 
   ngOnInit() {
@@ -24,9 +30,16 @@ export class ProjectListComponent implements OnInit {
       type: 'notice'
     });
     this.loading  = false;
-    this.projectService.getAllProject().subscribe(data => {
+    // tslint:disable-next-line:triple-equals
+    if (this.organisationIdFromRoute != null || this.organisationIdFromRoute != undefined) {
+      this.projectService.getAllOrganisationProject(this.organisationIdFromRoute).subscribe(data => {
         this.projects = data;
     });
+    } else {
+      this.projectService.getAllProject().subscribe(data => {
+        this.projects = data;
+    });
+    }
   }
 
 }

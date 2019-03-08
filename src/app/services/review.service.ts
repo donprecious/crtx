@@ -5,7 +5,7 @@ import { IReview } from './IReview';
 
 export interface IReviewAndNotification {
 review: IReview;
-reviewNotfication: IReviewNotification;
+reviewNotification: IReviewNotification;
 }
 export interface IReviewKind {
   id: number;
@@ -20,7 +20,6 @@ import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 
-
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json' // ,
@@ -32,7 +31,7 @@ const httpOptions = {
 })
 export class ReviewService implements IReviewAndNotification {
   review: IReview;
-  reviewNotfication: IReviewNotification;
+  reviewNotification: IReviewNotification;
 
   baseUrl: string;
 
@@ -40,7 +39,8 @@ export class ReviewService implements IReviewAndNotification {
      @Inject('API_URL') apiUrl: string) {
     this.baseUrl = apiUrl;
    }
-   createReview (reviewAndNotification: IReviewAndNotification): Observable<IReviewAndNotification> {
+
+    createReview (reviewAndNotification: IReviewAndNotification): Observable<IReviewAndNotification> {
     return this.http.post<IReviewAndNotification>(this.baseUrl + 'Review/create', reviewAndNotification, httpOptions);
     }
     getReview(id: number): Observable<IReviewNotification> {
@@ -54,6 +54,21 @@ export class ReviewService implements IReviewAndNotification {
     }
     getCustomerReview(id: string): Observable<any[]>  {
       return this.http.get<any[]>(this.baseUrl + 'review/GetCustomerReview/' + id, httpOptions);
+    }
+    getReminder(orgId: number, isToday: boolean): Observable<any[]>  {
+      return this.http.get<any[]>(this.baseUrl + `review/GetOrgReminders/${orgId}/${isToday}`, httpOptions);
+    }
+    getPayments(orgId: number, isToday: boolean): Observable<any[]>  {
+      return this.http.get<any[]>(this.baseUrl + `review/GetDuePayments/${orgId}/${isToday}`, httpOptions);
+    }
+    getReschedule(orgId: number, isToday: boolean): Observable<any[]>  {
+      return this.http.get<any[]>(this.baseUrl + `review/GetReschedule/${orgId}/${isToday}`, httpOptions);
+    }
+    getQueryForUpdate(orgId: number): Observable<any[]>  {
+      return this.http.get<any[]>(this.baseUrl + `review/GetQueryReviews/${orgId}`, httpOptions);
+    }
+    getQueries(orgId: number): Observable<any[]>  {
+      return this.http.get<any[]>(this.baseUrl + `review/GetQueryForUpdate/${orgId}/`, httpOptions);
     }
 
 }

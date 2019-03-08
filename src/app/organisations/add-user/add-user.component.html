@@ -1,0 +1,40 @@
+<img class="img-fluid float-right" width="30" height="30"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
+
+<div class="right_col" role="main">
+  <div class="row">
+    <div class="col-md-12">
+        <div class="well">
+            <form [formGroup] = "myForm" >
+                <!-- <div class="input-group">
+                    <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-primary">Go!</button>
+                    </span>
+                  </div> -->
+              <div class="input-group">
+                <label> email</label>
+                <label  class="text-right text-danger" *ngIf="email.invalid && (email.touched || email.dirty)">email is required</label>
+                <input class="form-control" type="email" formControlName="Email"  placeholder="email">
+
+              </div>
+              <div class="form-group">
+                <label> Choose Organisation</label>
+                <label  class="text-right text-danger" *ngIf="orgainsationId.invalid && (orgainsationId.touched || orgainsationId.dirty)">select orgainisation </label>
+                <select class="form-group" formControlName="OrgainsationId" >
+                  <option *ngFor="let i of organisations"  value="{{i.id}}"> {{i.name}}</option>
+                </select>
+              </div>
+
+              <button class="btn btn-primary" (click)="onAddUser()"> Add to role
+              </button>
+
+
+
+
+            </form>
+          </div>
+    </div>
+  </div>
+
+</div>
+

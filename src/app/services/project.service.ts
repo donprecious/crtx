@@ -8,6 +8,13 @@ organisationId: number;
 
 }
 
+export interface IAssignProject {
+  id: number;
+  projectId: number;
+  assignedToUserId: string;
+  assignedByUserId: string;
+}
+
 
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -36,6 +43,9 @@ export class ProjectService implements IProject {
    createProject (project: IProject): Observable<IProject> {
     return this.http.post<IProject>(this.baseUrl + 'project/create', project, httpOptions);
     }
+    assignProject (Assignproject: IAssignProject): Observable<IAssignProject> {
+      return this.http.post<IAssignProject>(this.baseUrl + 'project/AssignProject', Assignproject, httpOptions);
+      }
     getProject(projectId: number): Observable<IProject> {
       return this.http.get<IProject>(this.baseUrl + 'project/' + projectId, httpOptions);
     }
@@ -44,5 +54,6 @@ export class ProjectService implements IProject {
   }
   getAllOrganisationProject(organisationId: string): Observable<IProject[]> {
     return this.http.get<IProject[]>(this.baseUrl + 'project/organisation/' + organisationId, httpOptions);
-}
+  }
+
 }

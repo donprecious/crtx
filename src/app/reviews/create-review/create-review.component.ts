@@ -21,15 +21,16 @@ export class CreateReviewComponent implements OnInit {
   teamMemberId: number;
   userId: string;
   customerId: any;
+  showItems: boolean;
   // customerId = '94af237e-98b8-4b2c-6b0f-08d685fb1a5e';
   myForm = new FormGroup({
     // TeamMemberId: new FormControl('', Validators.required),
     // CustomerId: new FormControl('', Validators.required ),
     Comment: new FormControl('', Validators.required),
     ReviewKindId: new FormControl('', Validators.required),
-    ReviewActionId: new FormControl('', Validators.required),
+    ReviewActionId: new FormControl(''),
     StartDate: new FormControl(''),
-    EndDate: new FormControl(''),
+  //  EndDate: new FormControl(''),
   });
 
   // get teamMemberId() { return this.myForm.get('TeamMemberId'); }
@@ -38,7 +39,7 @@ export class CreateReviewComponent implements OnInit {
   get reviewKindId() { return this.myForm.get('ReviewKindId'); }
   get reviewActionId() { return this.myForm.get('ReviewActionId'); }
   get startDate() { return this.myForm.get('StartDate'); }
-  get endDate() { return this.myForm.get('EndDate'); }
+ // get endDate() { return this.myForm.get('EndDate'); }
 
   loading: boolean;
   constructor(private reviewService: ReviewService,
@@ -59,18 +60,42 @@ export class CreateReviewComponent implements OnInit {
           customerId: this.customerId,
           teamMemberId: this.teamMemberId
         } as IReview ;
+        let startDate = this.startDate.value;
+        if ( startDate == null ) {
 
+          startDate = new Date();
+
+        }
+        // varables and constants looks somehow because , it was mised Target
+
+        const rKindId = this.reviewKindId.value;
+        let rActionId = this.reviewActionId.value;
+        // review Kind equals Query
+        if ( rKindId == 2 ) {
+          // Set Action to Other
+         // this is a bad pratice because the id is hard coded,
+          rActionId = 5;
+        }
         const notify = {
-            reviewActionId: this.reviewActionId.value,
-            reviewKindId: this.reviewKindId.value,
-            startDate: this.startDate.value,
-            endDate: this.endDate.value
+            reviewActionId: rActionId,
+            reviewKindId:  rKindId,
+             startDate: startDate,
+            // endDate: this.endDate.value
         } as IReviewNotification ;
 
         const reviewAndNotify = {
           review : review,
-          reviewNotfication: notify
+          reviewNotification: notify
         } as IReviewAndNotification;
+        // const reviewAndNotify = {
+        //   comment: this.comment.value,
+        //   customerId: this.customerId,
+        //   teamMemberId: this.teamMemberId,
+        //   reviewActionId: this.reviewActionId.value,
+        //   reviewKindId: this.reviewKindId.value,
+        //   startDate: this.startDate.value,
+        //   endDate: this.endDate.value
+        // } as any;
         this.loading = true;
         this.pnotify.alert({
           text: 'Submiting Entires, Please Wait',
@@ -99,14 +124,26 @@ export class CreateReviewComponent implements OnInit {
       text: 'Please Wait while we fetch the data',
       type: 'notice'
     });
+    this.reviewKindId.valueChanges.subscribe(id => {
+      console.log(id);
+      if ( id === 1 ) {
+          this.showItems = true;
+        } else {
+          this.showItems = false;
+        }
+    });
+
+
     this.userId = localStorage.getItem('userId');
     this.teamService.getTeamMemberId(this.userId).subscribe(data => {
       this.teamMemberId = data;
     });
+
     this.reviewService.getReviewKind().subscribe(data => {
       this.reviewKinds = data;
 
     });
+
     this.reviewService.getReviewAction().subscribe(data => {
       this.reviewActions = data;
       this.loading = false;
