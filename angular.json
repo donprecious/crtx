@@ -18,7 +18,6 @@
             "polyfills": "src/polyfills.ts",
             "assets": [
               "src/assets",
-              "src/assets/vendors",
               "src/favicon.ico",
               "src/favicon.png",
               "src/favicon.icns",
@@ -32,26 +31,17 @@
             "scripts": [
               "src/assets/vendors/jquery/dist/jquery.min.js",
               "src/assets/vendors/bootstrap/dist/js/bootstrap.min.js",
-              "src/assets/vendors/fastclick/lib/fastclick.js",
-              "src/assets/vendors/nprogress/nprogress.js",
-              "src/assets/vendors/Chart.js/dist/Chart.min.js",
-              "src/assets/vendors/echarts/dist/echarts.min.js",
-              "src/assets/vendors/gauge.js/dist/gauge.min.js",
+
+
+
+
               "src/assets/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js",
-              "src/assets/vendors/iCheck/icheck.min.js",
+
               "src/assets/vendors/skycons/skycons.js",
-              "src/assets/vendors/Flot/jquery.flot.js",
-              "src/assets/vendors/Flot/jquery.flot.pie.js",
-              "src/assets/vendors/Flot/jquery.flot.time.js",
-              "src/assets/vendors/Flot/jquery.flot.stack.js",
-              "src/assets/vendors/Flot/jquery.flot.resize.js",
-              "src/assets/vendors/flot.orderbars/js/jquery.flot.orderBars.js",
-              "src/assets/vendors/flot-spline/js/jquery.flot.spline.min.js",
-              "src/assets/vendors/flot.curvedlines/curvedLines.js",
+
+
               "src/assets/vendors/DateJS/build/date.js",
-              "src/assets/vendors/jqvmap/dist/jquery.vmap.js",
-              "src/assets/vendors/jqvmap/dist/maps/jquery.vmap.world.js",
-              "src/assets/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js",
+
               "src/assets/vendors/moment/min/moment.min.js",
               "src/assets/vendors/bootstrap-daterangepicker/daterangepicker.js",
               "src/assets/js/custom.js",
@@ -124,28 +114,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "scripts": [
-              "src/assets/vendors/jquery/dist/jquery.min.js",
-              "src/assets/vendors/bootstrap/dist/js/bootstrap.min.js",
-              "src/assets/vendors/fastclick/lib/fastclick.js",
-              "src/assets/vendors/nprogress/nprogress.js",
-              "src/assets/vendors/Chart.js/dist/Chart.min.js",
-              "src/assets/vendors/echarts/dist/echarts.min.js",
-              "src/assets/vendors/gauge.js/dist/gauge.min.js",
-              "src/assets/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js",
-              "src/assets/vendors/iCheck/icheck.min.js",
-              "src/assets/vendors/skycons/skycons.js",
-              "src/assets/vendors/Flot/jquery.flot.js",
-              "src/assets/vendors/Flot/jquery.flot.pie.js",
-              "src/assets/vendors/Flot/jquery.flot.time.js",
-              "src/assets/vendors/Flot/jquery.flot.resize.js",
-              "src/assets/vendors/flot.orderbars/js/jquery.flot.orderBars.js",
-              "src/assets/vendors/flot-spline/js/jquery.flot.spline.min.js",
-              "src/assets/vendors/flot.curvedlines/curvedLines.js",
-              "src/assets/vendors/jqvmap/dist/jquery.vmap.js",
-              "src/assets/vendors/jqvmap/dist/maps/jquery.vmap.world.js",
-              "src/assets/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js",
-              "src/assets/vendors/bootstrap-daterangepicker/daterangepicker.js",
-              "src/assets/js/custom.min.js"
+
             ],
             "styles": [
               "src/styles.scss"

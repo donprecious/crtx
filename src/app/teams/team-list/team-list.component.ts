@@ -35,13 +35,16 @@ export class TeamListComponent implements OnInit {
     if (this.organisationId != null) {
      // let baseUrl = localStorage.getItem('routeUrl');
 
-     this.teamService.getOrganisationTeams(this.organisationId).subscribe(data=> {
+     this.teamService.getOrganisationTeamsMembers(this.organisationId).subscribe( data => {
        this.teams = data;
+
+       this.pnotify.alert({
+        text: 'Loaded ',
+        type: 'success'
+      });
      });
+
     }
-    this.teamService.getAll().subscribe(data => {
-        this.teams = data;
-    });
   }
 
 }

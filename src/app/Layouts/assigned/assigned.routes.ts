@@ -17,15 +17,15 @@ export const ASSIGNED_ROUTES: Routes = [
       component: CustomerListComponent
     },
     {
-      path: 'Assigned/reminders/',
+      path: 'Assigned/reminders/:isAssigned',
       component: ReminderListComponent
     },
     {
-      path: 'Assigned/payments/',
+      path: 'Assigned/payments/:isAssigned',
       component: PaymentsComponent
     },
     {
-      path: 'Assigned/Reschedule/',
+      path: 'Assigned/Reschedule/:isAssigned',
       component: RescheduleComponent
     }
 ];

@@ -29,23 +29,33 @@ export class AssignedListComponent implements OnInit {
       text: 'Loading Data',
       type: 'notice'
     });
-this.orgService.getUserOrganisation(this.userId).subscribe(data => {
-this.orgainisationId = data.organisationId;
-  this.projectService.getAllOrganisationProject(this.orgainisationId).subscribe(data1 => {
-    this.projects = data1;
+
+this.projectService.getAssignedProject(this.userId).subscribe(data => {
+      this.projects = data;
     this.loading = false;
     this.pnotify.alert({
       text: 'Complete',
       type: 'notice'
     });
-  });
-}, error => {
-  this.loading = false;
-  this.pnotify.alert({
-    text: 'User does not belong to organisation',
-    type: 'error'
-  });
 });
+
+// this.orgService.getUserOrganisation(this.userId).subscribe(data => {
+// this.orgainisationId = data.organisationId;
+//   this.projectService.getAllOrganisationProject(this.orgainisationId).subscribe(data1 => {
+//     this.projects = data1;
+//     this.loading = false;
+//     this.pnotify.alert({
+//       text: 'Complete',
+//       type: 'notice'
+//     });
+//   });
+// }, error => {
+//   this.loading = false;
+//   this.pnotify.alert({
+//     text: 'User does not belong to organisation',
+//     type: 'error'
+//   });
+// });
   }
 
 }

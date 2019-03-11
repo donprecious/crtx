@@ -12,6 +12,7 @@ import { UserService } from '../../services/user.services';
   styleUrls: ['./assign-project.component.scss']
 })
 
+
 export class AssignProjectComponent implements OnInit {
 
   myForm = new FormGroup({
@@ -25,9 +26,9 @@ export class AssignProjectComponent implements OnInit {
 
    projects: IProject[];
    clientId: string;
-   get userId() { return localStorage.getItem('userId').toString(); }
-
+   userId: string;
    organisationId: any;
+  assignedProjects: any[];
   constructor(
     private projectService: ProjectService,
     private pnotifyService: PNotifyService,
@@ -35,6 +36,7 @@ export class AssignProjectComponent implements OnInit {
     private userService: UserService,
      ) {
       this.pnotify = this.pnotifyService.getPNotify();
+      this.userId = localStorage.getItem('userId');
    }
 
   ngOnInit() {
@@ -44,7 +46,7 @@ export class AssignProjectComponent implements OnInit {
     });
    // user organisation and projects
     this.orgService.getUserOrganisation(this.userId).subscribe(data => {
-      this.organisationId = data.organisationId;
+      this.organisationId = data[0].organisationId;
       this.projectService.getAllOrganisationProject(this.organisationId).subscribe( data1 => {
          this.projects = data1;
       });
@@ -76,7 +78,11 @@ export class AssignProjectComponent implements OnInit {
 
         this.projectService.assignProject(assignedProject).subscribe(data3 => {
           console.log(data);
-          this.loading = false;   this.pnotify.alert({
+          this.projectService.getAssignedProject(this.clientId).subscribe(data4 => {
+            this.assignedProjects = data4;
+          });
+          this.loading = false;
+           this.pnotify.alert({
             text: 'Request was succesful',
             type: 'success'
           });

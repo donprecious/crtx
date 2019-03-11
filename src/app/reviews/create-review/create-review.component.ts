@@ -61,7 +61,9 @@ export class CreateReviewComponent implements OnInit {
           teamMemberId: this.teamMemberId
         } as IReview ;
         let startDate = this.startDate.value;
-        if ( startDate == null ) {
+        // tslint:disable-next-line:quotemark
+        // tslint:disable-next-line:triple-equals
+        if ( startDate == null || startDate == "" ) {
 
           startDate = new Date();
 

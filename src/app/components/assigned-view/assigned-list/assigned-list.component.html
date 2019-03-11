@@ -16,11 +16,10 @@
         <table class="table table-striped jambo_table bulk_action">
           <thead>
             <tr class="headings">
-
+              <th class="column-title">Basket/Project Id </th>
               <th class="column-title">Name </th>
 
               <th class="column-title">Description </th>
-              <th class="column-title">Organisation Id</th>
               <th>
 
               </th>
@@ -32,12 +31,12 @@
 
             <tr class="even pointer" *ngFor="let i of projects">
 
-              <td class=" ">{{i.name}}</td>
+              <td class=" ">{{i.project.name}}</td>
 
-              <td class=" "> {{i.description}} </td>
+              <td class=" "> {{i.project.description}} </td>
               <td class=" ">{{i.organisationId}}</td>
               <td>
-                 <a [routerLink]="['/assigned/customer/list/', i.id]">view</a>
+                 <a [routerLink]="['/Assigned/customer/list/', i.project.id]">view baskets</a>
                 <!-- <a [routerLink]="['/${localStorage.getItem("routeUrl")}/customer/list/', i.id]"> view</a> -->
               </td>
 

@@ -56,8 +56,8 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/Assigned']);
 
         } else if ( this.userService.roleMatch('Supervisor') ) {
-          localStorage.setItem('routeUrl', 'supervisor');
-          this.router.navigate(['/supervisor']);
+          localStorage.setItem('routeUrl', 'supervisior');
+          this.router.navigate(['/supervisior']);
         } else if ( this.userService.roleMatch('Client') ) {
           localStorage.setItem('routeUrl', 'Client');
           this.router.navigate(['/Client']);

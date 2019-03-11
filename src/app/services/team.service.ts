@@ -55,4 +55,8 @@ export class TeamService implements ITeam {
       return this.http.get(this.baseUrl + `team/organisation/${id}/list` , httpOptions);
     }
 
+// TeamMember/GetOrganisationTeamMembers/26
+    getOrganisationTeamsMembers(id: any): Observable<ITeam[]> {
+      return this.http.get<any[]>(this.baseUrl + `TeamMember/GetOrganisationTeamMembers/${id}` , httpOptions);
+    }
 }

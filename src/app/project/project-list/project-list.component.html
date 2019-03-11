@@ -39,7 +39,7 @@
               <td class=" "> {{i.description}} </td>
               <td class=" ">{{i.organisationId}}</td>
               <td>
-                 <a [routerLink]="['/master/customer/list/', i.id]">view</a>
+                 <a [routerLink]="['/'+routeUrl+'/customer/list', i.id]">view</a>
                 <!-- <a [routerLink]="['/${localStorage.getItem("routeUrl")}/customer/list/', i.id]"> view</a> -->
 
               </td>

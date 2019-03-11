@@ -27,6 +27,7 @@ import { AddUserToRolesComponent } from './add-user-to-roles/add-user-to-roles.c
 import { LoginComponent } from '../account/login/login.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { AddUserComponent } from '../organisations/add-user/add-user.component';
+import { AssignProjectComponent } from '../project/assign-project/assign-project.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { AddUserComponent } from '../organisations/add-user/add-user.component';
     AddUserToRolesComponent,
     CustomerReviewListComponent,
     UserListComponent,
-    AddUserComponent
+    AddUserComponent,
+    AssignProjectComponent,
   ],
 
   imports: [

@@ -18,6 +18,7 @@ export class CustomerListComponent implements OnInit {
   customers: any[];
   pnotify: any;
   loading: boolean;
+  routeUrl: any;
   constructor(
      private pnotifyService: PNotifyService,
      private customerService: CustomerService,
@@ -28,6 +29,9 @@ export class CustomerListComponent implements OnInit {
 });
       this.pnotify = pnotifyService.getPNotify();
     this.userId = localStorage.getItem('userId');
+
+    this.routeUrl = localStorage.getItem('routeUrl');
+
   }
 
   ngOnInit() {

@@ -46,6 +46,10 @@ export class ProjectService implements IProject {
     assignProject (Assignproject: IAssignProject): Observable<IAssignProject> {
       return this.http.post<IAssignProject>(this.baseUrl + 'project/AssignProject', Assignproject, httpOptions);
       }
+     // getAssignedProject/{userId}
+     getAssignedProject(userId: string): Observable<any[]> {
+      return this.http.get<any[]>(this.baseUrl + `project/GetAssignedProject/${userId}`, httpOptions);
+    }
     getProject(projectId: number): Observable<IProject> {
       return this.http.get<IProject>(this.baseUrl + 'project/' + projectId, httpOptions);
     }

@@ -14,6 +14,7 @@ export class ProjectListComponent implements OnInit {
   pnotify: any;
   loading: boolean;
   organisationIdFromRoute: any;
+  routeUrl: any;
   constructor(private projectService: ProjectService,
     private pnotifyService: PNotifyService,
     private route: ActivatedRoute,
@@ -22,6 +23,8 @@ export class ProjectListComponent implements OnInit {
       route.params.subscribe(data => {
         this. organisationIdFromRoute = data['id'];
       });
+
+      this.routeUrl = localStorage.getItem('routeUrl');
      }
 
   ngOnInit() {

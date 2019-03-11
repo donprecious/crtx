@@ -29,13 +29,11 @@
                 <div class="menu_section">
                   <h3>General</h3>
                   <ul class="nav side-menu">
-                    <li><a router='/Assigned' ><i class="fa fa-file"></i>Baskets</a> </li>
-                    <li><a router='Assigned/reminders'><i class="fa fa-reply"></i>Reminder<span class="badge bg-red">10</span></a> </li>
-                    <li> <a router='/Assigned/payments/'><i class="fa fa-usd"></i>Due Payment <span class="badge bg-orange">1</span></a>  </li>
-                    <li> <a router='/Assigned/Reschedule/'><i class="fa fa-recycle"></i>Reschedule <span class="badge bg-orange">1</span></a>  </li>
-                    <li> <a router='/Assigned'><i class="fa fa-arrow-circle-up"></i>Updates <span class="badge bg-orange">1</span></a>  </li>
-
-
+                    <li><a routerLink='/Assigned' ><i class="fa fa-file"></i>Baskets</a> </li>
+                    <li><a [routerLink]="['/Assigned/reminders', 'true']"><i class="fa fa-reply"></i>Reminder<span class="badge bg-red">{{remiderCount}}</span></a> </li>
+                    <li> <a [routerLink]="['/Assigned/payments', 'true']"><i class="fa fa-usd"></i>Due Payment <span class="badge bg-orange">{{duePaymentCount}}</span></a>  </li>
+                    <li> <a [routerLink]="['/Assigned/Reschedule', 'true']"><i class="fa fa-recycle"></i>Reschedule <span class="badge bg-orange">{{rescheduleCount}}</span></a>  </li>
+                    <li> <a routerLink='/Assigned'><i class="fa fa-arrow-circle-up"></i>Updates <span class="badge bg-orange">{{rescheduleCount}}</span></a>  </li>
                   </ul>
                 </div>
 

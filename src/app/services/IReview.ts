@@ -4,3 +4,11 @@ teamMemberId: number;
 customerId: string;
 comment: string;
 }
+
+
+export interface IReply {
+  id: number;
+  reviewId: number;
+  message: string;
+  replieby: string;
+}

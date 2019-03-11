@@ -58,17 +58,46 @@ export class ReviewService implements IReviewAndNotification {
     getReminder(orgId: number, isToday: boolean): Observable<any[]>  {
       return this.http.get<any[]>(this.baseUrl + `review/GetOrgReminders/${orgId}/${isToday}`, httpOptions);
     }
+    getReminderCount(orgId: number, isToday: boolean): Observable<any>  {
+      return this.http.get<any>(this.baseUrl + `review/GetOrgRemindersCount/${orgId}/${isToday}`, httpOptions);
+    }
     getPayments(orgId: number, isToday: boolean): Observable<any[]>  {
       return this.http.get<any[]>(this.baseUrl + `review/GetDuePayments/${orgId}/${isToday}`, httpOptions);
     }
+    getPaymentsCount(orgId: number, isToday: boolean): Observable<any>  {
+      return this.http.get<any>(this.baseUrl + `review/GetDuePaymentsCount/${orgId}/${isToday}`, httpOptions);
+    }
+
     getReschedule(orgId: number, isToday: boolean): Observable<any[]>  {
       return this.http.get<any[]>(this.baseUrl + `review/GetReschedule/${orgId}/${isToday}`, httpOptions);
     }
+    getRescheduleCount(orgId: number, isToday: boolean): Observable<any>  {
+      return this.http.get<any>(this.baseUrl + `review/GetRescheduleCount/${orgId}/${isToday}`, httpOptions);
+    }
+
     getQueryForUpdate(orgId: number): Observable<any[]>  {
       return this.http.get<any[]>(this.baseUrl + `review/GetQueryReviews/${orgId}`, httpOptions);
     }
     getQueries(orgId: number): Observable<any[]>  {
       return this.http.get<any[]>(this.baseUrl + `review/GetQueryForUpdate/${orgId}/`, httpOptions);
+    }
+    getProjectReviews(projectId: number): Observable<any[]>  {
+      return this.http.get<any[]>(this.baseUrl + `review/GetProjectReview/${projectId}`, httpOptions);
+    }
+
+    getAssignedReviews(projectId: number, reviewActionId: number, status: string, isToday: boolean  ): Observable<any[]>  {
+      // tslint:disable-next-line:max-line-length
+      return this.http.get<any[]>(this.baseUrl + `review/GetProjectRescheduleQuery/${projectId}/${reviewActionId}/${status}/${isToday}`, httpOptions);
+    }
+    // GetProjectTodayReview/{id}
+    GetTodayProjectReview(projectId: number ): Observable<any[]>  {
+      // tslint:disable-next-line:max-line-length
+      return this.http.get<any[]>(this.baseUrl + `review/GetProjectTodayReview/${projectId}`, httpOptions);
+    }
+    // UpdateStatus/{id}
+    UpdateStatus(reviewId: number ): Observable<any>  {
+      // tslint:disable-next-line:max-line-length
+      return this.http.get<any>(this.baseUrl + `review/UpdateStatus/${reviewId}`, httpOptions);
     }
 
 }

@@ -43,11 +43,11 @@ import { ClientViewComponent } from './components/client-view/client-view.compon
 import { SupervisorComponent } from './Layouts/supervisor/supervisor.component';
 import { CustomerListComponent } from './customer/customer-list/customer-list.component';
 import { AssignedViewComponent } from './components/assigned-view/assigned-view.component';
-import { AssignProjectComponent } from './project/assign-project/assign-project.component';
 import { AssignedListComponent } from './components/assigned-view/assigned-list/assigned-list.component';
 import { ReminderListComponent } from './reviews/reminder-list/reminder-list.component';
 import { RescheduleComponent } from './reviews/reschedule/reschedule.component';
 import { QueryListComponent } from './reviews/query-list/query-list.component';
+import { CreateQueryComponent } from './reviews/create-query/create-query.component';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -80,12 +80,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     ClientViewComponent,
     CustomerListComponent,
     AssignedViewComponent,
-    AssignProjectComponent,
     AssignedListComponent,
     ReminderListComponent,
     RescheduleComponent,
     PaymentsComponent,
     QueryListComponent,
+    CreateQueryComponent,
+
   ],
   imports: [
     BrowserModule,
