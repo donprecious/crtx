@@ -1,7 +1,7 @@
 
 
 import { IReviewNotification } from './IReviewNotification';
-import { IReview } from './IReview';
+import { IReview, IReply } from './IReview';
 
 export interface IReviewAndNotification {
 review: IReview;
@@ -100,4 +100,17 @@ export class ReviewService implements IReviewAndNotification {
       return this.http.get<any>(this.baseUrl + `review/UpdateStatus/${reviewId}`, httpOptions);
     }
 
+    createReply (reply: IReply): Observable<IReply> {
+      return this.http.post<IReply>(this.baseUrl + 'Review/CreateReply', reply, httpOptions);
+      }
+
+      // GetOrganisationQuery/{orgId}
+
+      GetOrganisationQuery(orgId: any): Observable<any[]> {
+        return this.http.get<any[]>(this.baseUrl + `Review/GetOrganisationQuery/${orgId}`,  httpOptions);
+        }
+
+        GetOrganisationReview(orgId: any): Observable<any[]> {
+          return this.http.get<any[]>(this.baseUrl + `Review/GetOrganisationReview/${orgId}`,  httpOptions);
+          }
 }

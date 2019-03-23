@@ -18,5 +18,6 @@ export class HttpErrorHandler implements ErrorHandler  {
       type: 'error'
     });
     console.error( 'error occured', err.message);
+    console.log(err);
   }
 }

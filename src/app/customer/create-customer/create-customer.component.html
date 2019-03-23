@@ -1,3 +1,4 @@
+
 <div class="right_col" role="main">
   <div class="">
     <div class="page-title">
@@ -17,7 +18,6 @@
           <div class="x_panel">
             <div class="x_title">
               <h2>Customer Registration Form </h2>
-
               <div class="clearfix"></div>
             </div>
             <div class="x_content">
@@ -25,29 +25,39 @@
               <!-- start form for validation -->
               <form [formGroup]="formGroup">
                  <div>
-                  <!-- <mat-form-field class="example-full-width">
-                    <input type="text" matInput placeholder="Pick one" aria-label="Number"   [formControl]="myControl" [matAutocomplete]="auto">
-                    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" >
-                      <mat-option *ngFor="let option of projects" [value]="option.id">
-                        {{option.name}}
-                      </mat-option>
-                    </mat-autocomplete>
-                  </mat-form-field> -->
-                  <div class="form-group" *ngIf="showOrganisation" >
-                    <label >Select Organisation *:</label>
-                <select  formControlName="OrganisationId" class="form-control" >
-                  <option value="{{i.id}}" *ngFor="let i of organisations">{{i.name}}</option>
-                </select>
-                  </div>
-              <label >Select Project *:</label>
-                <select  formControlName="ProjectId" class="form-control" >
-                  <option value="{{i.id}}" *ngFor="let i of projects">{{i.name}}</option>
-                </select>
+                    <div class ="well ">
+                        <div class="form-group" *ngIf="showOrganisation" >
+                            <label >Select Organisation *:</label>
+                        <select  formControlName="OrganisationId" class="form-control" >
+                          <option value="{{i.id}}" *ngFor="let i of organisations">{{i.name}}</option>
+                        </select>
+                          </div>
+                      <label >Select Project *:</label>
+                        <select  formControlName="ProjectId" class="form-control" >
+                          <option value="{{i.id}}" *ngFor="let i of projects">{{i.name}}</option>
+                        </select>
 
-                <label >Select Team *:</label>
-                <select formControlName="TeamId" class="form-control" >
-                  <option value="{{i.id}}" *ngFor="let i of teams">{{i.name}}</option>
-                </select>
+                        <label >Select Team *:</label>
+                        <select formControlName="TeamId" class="form-control" >
+                          <option value="{{i.id}}" *ngFor="let i of teams">{{i.name}}</option>
+                        </select>
+
+                        <h3>Import Excel File</h3>
+                        <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;">
+                        <button type="button" class="btn btn-success" (click)="file.click()">Import Excel File</button>
+                        <p>
+                          <span class="upload" *ngIf="progress > 0">
+                            <!-- {{progress}}% -->
+                          </span>
+                          <span class="upload" *ngIf="message">
+                            {{message}}
+                          </span>
+                        </p>
+
+                      </div>
+                                                    <hr>
+                                                    <h3>Or</h3>
+
 
               <label for="firstname">Firstname * :</label>
               <label  class="text-right text-danger" *ngIf="firstname.invalid && (firstname.touched || firstname.dirty)">Firstname Invalid</label>
@@ -98,3 +108,4 @@
     </div>
   </div>
 </div>
+

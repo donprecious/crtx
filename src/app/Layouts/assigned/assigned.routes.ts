@@ -1,3 +1,4 @@
+import { CreateReviewComponent } from './../../reviews/create-review/create-review.component';
 import { RescheduleComponent } from './../../reviews/reschedule/reschedule.component';
 import { AssignProjectComponent } from './../../project/assign-project/assign-project.component';
 
@@ -9,12 +10,17 @@ import { AssignedViewComponent } from '../../components/assigned-view/assigned-v
 import { CustomerListComponent } from '../../customer/customer-list/customer-list.component';
 import { ReminderListComponent } from '../../reviews/reminder-list/reminder-list.component';
 import { PaymentsComponent } from '../../reviews/payments/payments.component';
+import { CreateQueryComponent } from '../../reviews/create-query/create-query.component';
 
 export const ASSIGNED_ROUTES: Routes = [
     { path: 'Assigned', component: AssignedViewComponent},
     {
       path: 'Assigned/customer/list/:id',
       component: CustomerListComponent
+    },
+    {
+      path: 'Assigned/review/create/:id',
+      component: CreateReviewComponent
     },
     {
       path: 'Assigned/reminders/:isAssigned',
@@ -27,6 +33,10 @@ export const ASSIGNED_ROUTES: Routes = [
     {
       path: 'Assigned/Reschedule/:isAssigned',
       component: RescheduleComponent
+    },
+    {
+      path: 'Assigned/query/:orgId',
+      component: CreateQueryComponent
     }
 ];
 

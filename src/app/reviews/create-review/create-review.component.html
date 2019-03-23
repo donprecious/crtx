@@ -1,174 +1,167 @@
-<div class="">
-    <img class="img-fluid float-right" width="30" height="30"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
+<div class="right_col" role="main" style="min-height: 799px;">
+<div class="row">
 
-  <div class="page-title">
-    Customer Reviews
-    <div class="title_left">
-      <h3>Account Profile</h3>
-    </div>
+    <div class="">
+        <img class="img-fluid float-right" width="30" height="30"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
 
-    <div class="title_right">
-      <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search for...">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Go!</button>
-          </span>
+        <div class="page-title">
+        Customer Reviews
+        <div class="title_left">
+          <h3>Account Profile</h3>
+        </div>
+
+        <div class="title_right">
+          <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+            <!-- <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+            </div> -->
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="clearfix"></div>
+      <div class="clearfix"></div>
 
-  <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12 pull-left">
-      <div class="x_panel">
-        <div class="x_title">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 pull-left">
+          <div class="x_panel">
+            <div class="x_title">
 
 
-          <div class="clearfix"></div>
-        </div>
-        <div class="x_content">
-          <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
-            <div class="profile_img">
-              <div id="crop-avatar">
-                <!-- Current avatar -->
-                <img class="img-responsive avatar-view" src="images/picture.jpg" alt="Avatar" title="Change the avatar">
-              </div>
+              <div class="clearfix"></div>
             </div>
-            <h3>Samuel Doe</h3>
+            <div class="x_content">
+              <div class="col-md-3 col-sm-3 col-xs-12 profile_left" *ngIf="customer != null"  >
+                <div class="profile_img">
+                  <div id="crop-avatar">
+                    <!-- Current avatar -->
+                    <!-- ../../../assets/Images/user.png -->
+                    <img class="img-responsive avatar-view" src="assets/Images/user.png" alt="Avatar" title="Change the avatar">
 
-            <ul class="list-unstyled user_data">
-              <li><i class="fa fa-map-marker user-profile-icon"></i> San Francisco, California, USA
-              </li>
+                  </div>
+                </div>
+                <h3>{{customer.accountName}}</h3>
 
-              <li>
-                <i class="fa fa-usd user-profile-icon"></i> 2,500,000
-              </li>
+                <ul class="list-unstyled user_data">
+                  <li><i class="fa fa-map-marker user-profile-icon"></i> {{customer.nubaN_NUMBER}}
+                  </li>
 
-              <li class="m-top-xs">
-                <h3> 08029510496</h3>
+                  <li>
 
-              </li>
-              <li>
-                <a class="collapsed" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <h4><strong><span style="color: red; text-decoration: underline; " >View More</span></strong> <i class="fa fa-chevron-down"></i></h4>
-              </a>
-              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div>
 
-                  <p><strong>Principal Amount:</strong> 100,000
-                  </p>
-                  <p><strong>Disbursement Date:</strong> 24/09/17
-                  </p>
-                  <p><strong>Gurantor's Name:</strong> Tony Shaw
-                  </p>
-                  <p><strong>Phone No.:</strong> 07081510037
-                  </p>
-                  <p><strong>Guarantor's Address:</strong> San Francisco, California, USA
-                  </p>
+                      <p><strong>Outstanding balance </strong> {{customer.outstandingBalance}}
+                      </p>
+                      <p><strong>Balance Issued:</strong> {{customer.balanceIssued}}
+                      </p>
+                      <p><strong>Interest:</strong> {{customer.interest}}
+                      </p>
+                      <p><strong>Phone No.:</strong> {{customer.phoneNumber}}
+                      </p>
+                      <p><strong>Recommendation :</strong> {{customer.recommendation}}
+                      </p>
+                    </div>
+
+                  </li>
+                </ul>
+                <a class="btn btn-success"><i class="fa fa-phone m-right-xs"></i> Call</a>
+                <a class="btn btn-primary view" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-edit m-right-xs"></i> Update</a>
+                </div>
+                <!-- end of profile information -->
+
+
+
+                <div class="col-md-9 col-sm-9 col-xs-12 pull-right">
+                <div class="profile_title">
+                  <div class="col-md-6">
+                    <h2>User Activity Report</h2>
+                  </div>
+                  <div class="col-md-6">
+
+                  </div>
                 </div>
 
-              </li>
-            </ul>
-            <a class="btn btn-success"><i class="fa fa-phone m-right-xs"></i> Call</a>
-            <a class="btn btn-primary view" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-edit m-right-xs"></i> Update</a>
-            </div>
-            <!-- end of profile information -->
+                <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                  <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Recent Activity</a>
+                    </li>
+                  </ul>
+                  <div id="myTabContent" class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+
+                      <!-- start recent activity -->
+                     <app-customer-review-list [customerId] = "customerId"></app-customer-review-list>
+                      <!-- end recent activity -->
+
+                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                    </button>
+                      <h4 class="modal-title" id="myModalLabel">Account Name</h4>
+                  </div>
+                  <form [formGroup]="myForm">
+                  <div class="modal-body">
+
+                        <div class="form-group">
+                            <label class="control-label ">Select Date</label>
+
+                           <!-- // <input type="date"   class="form-control" > -->
+                            <input type="date" formControlName="StartDate" id="start_date" class="form-control" >
+                            <!-- //<input type="hidden" formControlName="EndDate" id="end_date" class="form-control"> -->
+
+                          </div>
+
+                      <label for="heard">Action *:</label>
+                      <label  class="text-right text-danger" *ngIf="reviewKindId.invalid && (reviewKindId.touched || reviewKindId.dirty)">Choose Action</label>
+
+                      <select id="reviewKindSelect"  class="form-control" formControlName="ReviewKindId" required>
+
+                        <option value="{{i.id}}" *ngFor="let i of reviewKinds">{{i.name}}</option>
+
+                      </select>
+
+                      <div class="form-group" [hidden]="showItems" id="reviewActionView"  >
+                      <label  class="text-right text-danger" *ngIf="reviewActionId.invalid && (reviewActionId.touched || reviewActionId.dirty)">Choose Action</label>
+                        <div class="form-group">
+                          <div class="radio">
+
+                            <label *ngFor="let i of reviewActions">
+                              <input type="radio" class="flat" value="{{i.id}}" formControlName="ReviewActionId" name="ReviewActionId"><span text-type="block"> {{i.name}}</span>
+                            </label>
+
+                          </div>
+                        </div>
 
 
-
-            <div class="col-md-9 col-sm-9 col-xs-12 pull-right">
-            <div class="profile_title">
-              <div class="col-md-6">
-                <h2>User Activity Report</h2>
-              </div>
-              <div class="col-md-6">
-                <div id="reportrange" class="pull-right" style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED">
-                  <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                  <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
                 </div>
-              </div>
-            </div>
+                <div class="form-group">
 
-            <div class="" role="tabpanel" data-example-id="togglable-tabs">
-              <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Recent Activity</a>
-                </li>
-              </ul>
-              <div id="myTabContent" class="tab-content">
-                <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                    <label for="message">Comment </label>
+                    <label  class="text-right text-danger" *ngIf="comment.invalid && (comment.touched || comment.dirty)">Enter Comment</label>
 
-                  <!-- start recent activity -->
-                 <app-customer-review-list [customerId] = "customerId"></app-customer-review-list>
-                  <!-- end recent activity -->
+                    <textarea id="message" formControlName="Comment" class="form-control" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long comment.."
+                      data-parsley-validation-threshold="10"></textarea>
+                  </div>
 
-            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
-                </button>
-                  <h4 class="modal-title" id="myModalLabel">Account Name</h4>
-              </div>
-              <form [formGroup]="myForm">
-              <div class="modal-body">
-
-                    <div class="form-group">
-                        <label class="control-label ">Select Date</label>
-
-                       <!-- // <input type="date"   class="form-control" > -->
-                        <input type="date" formControlName="StartDate" id="start_date" class="form-control" >
-                        <!-- //<input type="hidden" formControlName="EndDate" id="end_date" class="form-control"> -->
-
-                      </div>
-
-                  <label for="heard">Action *:</label>
-                  <label  class="text-right text-danger" *ngIf="reviewKindId.invalid && (reviewKindId.touched || reviewKindId.dirty)">Choose Action</label>
-
-                  <select id="reviewKindSelect"  class="form-control" formControlName="ReviewKindId" required>
-
-                    <option value="{{i.id}}" *ngFor="let i of reviewKinds">{{i.name}}</option>
-
-                  </select>
-
-                  <div class="form-group hide-div" id="reviewActionView"  >
-                  <label  class="text-right text-danger" *ngIf="reviewActionId.invalid && (reviewActionId.touched || reviewActionId.dirty)">Choose Action</label>
-                    <div class="form-group">
-                      <div class="radio">
-
-                        <label *ngFor="let i of reviewActions">
-                          <input type="radio" class="flat" value="{{i.id}}" formControlName="ReviewActionId" name="ReviewActionId"><span text-type="block"> {{i.name}}</span>
-                        </label>
-
-                      </div>
                     </div>
 
 
-            </div>
-            <div class="form-group">
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary source antosubmit" (click)="onSubmit()" >Save changes</button>
+                  </div>
+                </form>
 
-                <label for="message">Comment </label>
-                <label  class="text-right text-danger" *ngIf="comment.invalid && (comment.touched || comment.dirty)">Enter Comment</label>
-
-                <textarea id="message" formControlName="Comment" class="form-control" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long comment.."
-                  data-parsley-validation-threshold="10"></textarea>
+              </div>
               </div>
 
-                </div>
-
-
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary source antosubmit" [disabled]="loading" (click)="onSubmit()" >Save changes</button>
-              </div>
-
-            </form>
-
-          </div>
-          </div>
-
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -176,6 +169,7 @@
         </div>
       </div>
     </div>
-  </div>
+    </div>
+
 </div>
 </div>

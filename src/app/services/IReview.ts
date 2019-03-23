@@ -10,5 +10,5 @@ export interface IReply {
   id: number;
   reviewId: number;
   message: string;
-  replieby: string;
+  repliedby: string;
 }

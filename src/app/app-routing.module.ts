@@ -1,3 +1,4 @@
+import { GuestComponent } from './account/guest/guest.component';
 import { CST_ROUTES } from './Layouts/cst/cst.route';
 import { CstComponent } from './Layouts/cst/cst.component';
 import { SupervisorComponent } from './Layouts/supervisor/supervisor.component';
@@ -22,6 +23,8 @@ import { LoginComponent } from './account/login/login.component';
 import { AssignedComponent } from './Layouts/assigned/assigned.component';
 import { ASSIGNED_ROUTES} from './Layouts/assigned/assigned.routes';
 import { SUPERVISOR_ROUTES } from './Layouts/supervisor/supervisor.route';
+import { ClientComponent } from './layouts/client/client.component';
+import { CLIENT_ROUTES } from './Layouts/client/client.routes';
 
 
 const routes: Routes = [
@@ -29,13 +32,15 @@ const routes: Routes = [
     path: 'login', component: LoginComponent
   },
   {
-    path: 'home', component: HomeComponent
+    path: 'guest', component: GuestComponent
   },
    { path: '', component: LoginLayoutComponent, children: PUBLIC_ROUTES },
 
   { path: '', component: MasterLayoutComponent, children: MASTER_ROUTES },
   { path: '', component: AssignedComponent, children: ASSIGNED_ROUTES},
   { path: '', component: SupervisorComponent, children:  SUPERVISOR_ROUTES},
+  { path: '', component: ClientComponent, children:  CLIENT_ROUTES},
+
   { path: '', component: CstComponent, children:  CST_ROUTES},
 
   // { path: '**', redirectTo: 'login' }

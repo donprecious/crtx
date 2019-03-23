@@ -1,6 +1,8 @@
+import { OrganisationService } from './../../services/organisation.service';
 import { ReviewService } from './../../services/review.service';
 import { ProjectService } from './../../services/project.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-assigned',
@@ -17,16 +19,24 @@ export class AssignedComponent implements OnInit {
   constructor(
     private projectService: ProjectService,
     private reviewService: ReviewService,
-  ) { }
+    private orgService: OrganisationService,
+    private router: Router,
+  ) {
+   }
 
   userId: any ;
 
+  organisationId: any;
 
   remiderCount: number ;
   rescheduleCount: number;
   duePaymentCount: number;
 
   ngOnInit() {
+    this.userId = localStorage.getItem('userId');
+    this.orgService.getUserOrganisation(this.userId).subscribe( data => {
+      this.organisationId =   data[0].organisationId;
+    });
   }
 
   UpdateReview() {
@@ -87,5 +97,12 @@ export class AssignedComponent implements OnInit {
 
     });
   }
+  logout() {
+    localStorage.setItem('userId', '');
 
+    localStorage.setItem('userToken', '');
+
+    localStorage.setItem('userRoles', '');
+    this.router.navigate(['/login']);
+  }
 }

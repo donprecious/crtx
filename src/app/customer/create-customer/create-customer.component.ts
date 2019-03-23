@@ -8,6 +8,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { OrganisationService } from '../../services/organisation.service';
+import { HttpEventType } from '@angular/common/http';
 
 @Component({
   selector: 'app-create-customer',
@@ -23,6 +24,10 @@ projects: IProject[];
 showOrganisation: boolean;
 routeOrgId: any;
 organisations: any[];
+newOrganisationId: any;
+newTeamId: any;
+
+
 
 teams: ITeam[];
 filteredProjects: Observable<IProject[]>;
@@ -43,6 +48,8 @@ Sex: new FormControl('Male', [Validators.required]),
 });
 
 pnotify: any;
+  progress: number;
+  message: string;
 
 get projectId() {return this.formGroup.get('ProjectId'); }
 get teamId() {return this.formGroup.get('TeamId'); }
@@ -67,13 +74,15 @@ get organisationId () { return this.formGroup.get('OrganisationId'); }
     this.pnotify = this.pnotifyService.getPNotify();
 
     route.params.subscribe(data => {
-      this.routeOrgId  = data['id'];
+      this.routeOrgId  = data['orgId'];
     });
-    if (this.routeOrgId == null) {
-      this.showOrganisation = true;
-    } else {
+    if (this.routeOrgId != null || this.routeOrgId != undefined) {
       this.showOrganisation = false;
+
+    } else {
+      this.showOrganisation = true;
     }
+
   }
 
   ngOnInit() {
@@ -95,7 +104,15 @@ get organisationId () { return this.formGroup.get('OrganisationId'); }
       // get organistion project/baskets
       this.projectService.getAllOrganisationProject(this.routeOrgId).subscribe(data => {
         this.projects = data;
+
+        this.loading = false;
+        this.pnotify.alert({
+        text: 'project Retrived Successfully',
+        type: 'notice'
+
+});
       });
+      this.newOrganisationId = this.routeOrgId;
     } else {
         this.orgService.getAll().subscribe(data => {
           this.organisations = data;
@@ -103,8 +120,15 @@ get organisationId () { return this.formGroup.get('OrganisationId'); }
        this.showOrganisation = true;
         });
         this.organisationId.valueChanges.subscribe(id => {
+          this.newOrganisationId = id;
           this.teamService.getOrganisationTeams(id).subscribe( data => {
            this.teams = data;
+           this.loading = false;
+            this.pnotify.alert({
+              text: 'project Retrived Successfully',
+              type: 'notice'
+
+            });
           });
           this.projectService.getAllOrganisationProject(id).subscribe(data => {
             this.projects = data;
@@ -198,4 +222,35 @@ private _filter(value: string, arr: any[]): string[] {
   return arr.filter(option => option.toLowerCase().includes(filterValue));
 }
 
+uploadFile(files) {
+  if (files.length === 0) {
+    return;
+  }
+  // this.loading = true;
+this.pnotify.alert({
+text: 'uploading',
+type: 'notice'
+
+});
+  const fileToUpload = <File>files[0];
+  const formData = new FormData();
+  formData.append('file', fileToUpload, fileToUpload.name);
+  formData.append('teamId', this.teamId.value);
+
+ this.customerService.UploadFile(formData).subscribe(event => {
+  // if (event.type === HttpEventType.UploadProgress) {
+  //   this.progress = Math.round(100 * event.loaded / event.total);
+  // } else if (event.type === HttpEventType.Response) {
+  //   this.message = 'Upload success.';
+    // this.onUploadFinished.emit(event.body);
+ // }
+ this.message = 'Upload success.';
+ this.pnotify.alert({
+  text: 'uploading',
+  type: 'upload successful'
+
+  });
+});
+
+}
 }

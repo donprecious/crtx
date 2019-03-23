@@ -1,3 +1,41 @@
-<p>
-  create-query works!
-</p>
+<div class="right_col" role="main" style="min-height: 799px;">
+    <div class="row">
+      <img class="img-fluid float-right"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Queries</h2>
+            <div class="clearfix"></div>
+          </div>
+
+          <div class="x_content">
+
+        <p>Queries</p>
+            <div class="well" *ngFor="let i of queries" >
+              <p>Sent by: {{i.review.teamMember.user.email}}</p>
+              <p>To customer account: {{i.review.customer.accountName}}</p>
+              <p>comment</p>
+              <p>{{i.review.comment}}</p>
+              <div class="form-group">
+                <label class="control-label">Send Message</label>
+                <textarea class ="form-control" #message>
+
+                </textarea>
+                <br>
+                <button class="btn btn-primary btn-small" (click)="sendQuery(message, i.review.customer.id, i.review.teamMemberId)" >send query</button>
+              </div>
+
+              <div class="blockquote" *ngIf="i.review.replies != null">
+                <blockquote *ngFor="let r of i.review.replies" >
+                  {{ r.message }}
+                </blockquote>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>

@@ -48,8 +48,12 @@ export class LoginComponent implements OnInit {
         // check roles
         if (this.userService.roleMatch('Admin')) {
           localStorage.setItem('routeUrl', 'Master');
-          this.router.navigate(['/admin']);
-          localStorage.setItem('routeUrl', 'Master');
+          this.router.navigate(['/master']);
+
+
+        } else if (this.userService.roleMatch('Master')) {
+          localStorage.setItem('routeUrl', 'master');
+          this.router.navigate(['/master']);
 
         } else if (this.userService.roleMatch('Assigned')) {
           localStorage.setItem('routeUrl', 'Assigned');
@@ -67,9 +71,8 @@ export class LoginComponent implements OnInit {
         }  else if ( this.userService.roleMatch('COT') ) {
           localStorage.setItem('routeUrl', 'COT');
           this.router.navigate(['/COT']);
-        }
-        else {
-          this.router.navigate(['/master']);
+        } else {
+          this.router.navigate(['/guest']);
         }
         this.loading = false;
       }, error => {

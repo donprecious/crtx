@@ -1,3 +1,4 @@
+import { CustomerService } from './../../services/customer.service';
 import { TeamService } from './../../services/team.service';
 import { IReviewAction } from './../../services/review.service';
 import { IReview } from './../../services/IReview';
@@ -21,6 +22,7 @@ export class CreateReviewComponent implements OnInit {
   teamMemberId: number;
   userId: string;
   customerId: any;
+  customer: any;
   showItems: boolean;
   // customerId = '94af237e-98b8-4b2c-6b0f-08d685fb1a5e';
   myForm = new FormGroup({
@@ -42,14 +44,22 @@ export class CreateReviewComponent implements OnInit {
  // get endDate() { return this.myForm.get('EndDate'); }
 
   loading: boolean;
-  constructor(private reviewService: ReviewService,
+  constructor(
+    private reviewService: ReviewService,
     private teamService: TeamService,
     private route: ActivatedRoute,
     private pnotifyService: PNotifyService,
+    private customerService: CustomerService
     ) {
       this.pnotify = this.pnotifyService.getPNotify();
       route.params.subscribe(data => {
         this.customerId = data['id'];
+
+        this.customerService.getCustomer(this.customerId).subscribe(data1 => {
+          this.customer = data1;
+          console.log(data1);
+        });
+
       });
     }
 
@@ -72,6 +82,7 @@ export class CreateReviewComponent implements OnInit {
 
         const rKindId = this.reviewKindId.value;
         let rActionId = this.reviewActionId.value;
+
         // review Kind equals Query
         if ( rKindId == 2 ) {
           // Set Action to Other
@@ -121,11 +132,13 @@ export class CreateReviewComponent implements OnInit {
     }
 
   ngOnInit() {
+
     this.loading = true;
     this.pnotify.alert({
       text: 'Please Wait while we fetch the data',
       type: 'notice'
     });
+
     this.reviewKindId.valueChanges.subscribe(id => {
       console.log(id);
       if ( id === 1 ) {
@@ -134,6 +147,7 @@ export class CreateReviewComponent implements OnInit {
           this.showItems = false;
         }
     });
+
 
 
     this.userId = localStorage.getItem('userId');

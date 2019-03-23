@@ -49,7 +49,7 @@ export class AddUserComponent implements OnInit {
       this.userService.getUserByEmail(this.email.value).subscribe(data => {
         this.userId = data.id;
         const addUser = {
-          organisationId: this.orgainsationId,
+          organisationId: this.orgainsationId.value,
           userId: this.userId
         } as unknown as IUserOrganisation;
         this.orgService.AddUser(addUser).subscribe(data1 => {

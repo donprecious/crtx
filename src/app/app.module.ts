@@ -48,6 +48,9 @@ import { ReminderListComponent } from './reviews/reminder-list/reminder-list.com
 import { RescheduleComponent } from './reviews/reschedule/reschedule.component';
 import { QueryListComponent } from './reviews/query-list/query-list.component';
 import { CreateQueryComponent } from './reviews/create-query/create-query.component';
+import { CreateBasketComponent } from './customer/create-basket/create-basket.component';
+import { RecentListComponent } from './reviews/recent-list/recent-list.component';
+import { GuestComponent } from './account/guest/guest.component';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -86,6 +89,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     PaymentsComponent,
     QueryListComponent,
     CreateQueryComponent,
+    CreateBasketComponent,
+    RecentListComponent,
+    GuestComponent,
 
   ],
   imports: [
@@ -106,7 +112,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
 
   providers: [ElectronService,
-  {provide: 'API_URL', useValue: 'http://localhost:54741/api/'},
+  {provide: 'API_URL', useValue: 'http://crextapicore20190322102801.azurewebsites.net/api/'},
   {provide: ErrorHandler, useClass: HttpErrorHandler},
     {
       provide: HTTP_INTERCEPTORS,

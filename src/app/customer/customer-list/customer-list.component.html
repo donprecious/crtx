@@ -1,49 +1,62 @@
+<div class="right_col" role="main" style="min-height: 799px;">
 
-<div class="col-md-12 col-sm-12 col-xs-12">
-  <div class="x_panel">
-      <img class="img-fluid float-right"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <img class="img-fluid float-right"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
 
-    <div class="x_title">
-      <h2>Baskets</h2>
+      <div class="x_title">
+        <h2>Baskets</h2>
 
-      <div class="clearfix"></div>
-    </div>
-
-    <div class="x_content">
-
-      <div class="table-responsive">
-        <table class="table table-striped jambo_table bulk_action">
-          <thead>
-            <tr class="headings">
-
-              <th class="column-title">Name </th>
-
-              <th class="column-title">Description </th>
-              <th class="column-title">Organisation Id</th>
-              <th>
-
-              </th>
-
-            </tr>
-          </thead>
-
-          <tbody>
-
-            <tr class="even pointer" *ngFor="let i of customers">
-
-              <td class=" ">{{i.firstName}} , {{i.lastName}}</td>
-              <td class=" "> {{i.phoneNumber}} </td>
-              <td class=" ">{{i.address}}</td>
-              <td>
-                <a [routerLink]="['/'+routeUrl+'/review/create/', i.id]">View</a>
-              </td>
-            </tr>
-
-          </tbody>
-        </table>
+        <div class="clearfix"></div>
       </div>
 
+      <div class="x_content">
 
+        <div class="table-responsive">
+          <table class="table table-striped jambo_table bulk_action">
+            <thead>
+              <tr class="headings">
+
+                <th class="column-title">Account Name </th>
+
+                <th class="column-title">NUBAN NUMBER</th>
+                <th class="column-title">PHONE NUMBER
+                </th>
+               <th class="column-title">OUTSTANDING BALANCE</th>
+                <th class="column-title">BALANCE ISSUED</th>
+
+                <th class="column-title"> INTEREST</th>
+                <th class="column-title">RECOMMENDATION</th>
+
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr class="even pointer" *ngFor="let i of customers">
+
+                <td class=" ">{{i.accountName}}</td>
+                <td class=" "> {{i.nubaN_NUMBER}} </td>
+                <td class=" ">{{i.outstandingBalance}}</td>
+                <td class=" ">{{i.balanceIssued}}</td>
+                <td class=" ">{{i.interest}}</td>
+                <td class=" ">{{i.recommendation}}</td>
+
+                <td>
+                  <a [routerLink]="['/'+routeUrl+'/review/create/', i.id]">View</a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+
+      </div>
     </div>
   </div>
 </div>
+
+</div>
+

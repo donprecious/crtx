@@ -5,7 +5,9 @@
           <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
               <div class="navbar nav_title" style="border: 0;">
-                <a href="mgr.html" class="site_title"><img src="images/crext2.png"></a>
+                <a href="#" class="site_title">
+                  <img src="assets/Images/CREXTwhite.png" height="40">
+                </a>
               </div>
 
               <div class="clearfix"></div>
@@ -29,15 +31,19 @@
                 <div class="menu_section">
                   <h3>General</h3>
                   <ul class="nav side-menu">
+                    <li><a routerLink='/supervisior' ><i class="fa fa-home"></i>Home</a> </li>
                     <li><a [routerLink]="['/supervisior/project/', orgainisationId]" ><i class="fa fa-file"></i>Portfolio</a> </li>
 
                     <li> <a [routerLink]="['/supervisior/reminders/', orgainisationId]"><i class="fa fa-reply"></i>Reminder<span class="badge bg-red">{{remiderCount}}</span></a> </li>
                     <li> <a [routerLink]="['/supervisior/payments/', orgainisationId]"><i class="fa fa-usd"></i>Due Payment <span class="badge bg-orange">{{duePaymentCount}}</span></a>  </li>
                     <li> <a [routerLink]="['/supervisior/Reschedule/', orgainisationId]"><i class="fa fa-recycle"></i>Reschedule <span class="badge bg-orange">{{rescheduleCount}}</span></a>  </li>
-                    <li> <a routerLink="#"><i class="fa fa-arrow-circle-up"></i>Updates <span class="badge bg-orange">1</span></a>  </li>
+                    <li> <a [routerLink]="['/supervisior/query/', orgainisationId]"><i class="fa fa-recycle"></i>Query <span class="badge bg-orange">{{rescheduleCount}}</span></a>  </li>
+
+                    <li> <a [routerLink]="['/supervisior/updates/', orgainisationId]" ><i class="fa fa-arrow-circle-up"></i>Updates <span class="badge bg-orange"></span></a>  </li>
                     <li><a [routerLink]="['/supervisior/team/list/', orgainisationId]"><i class="fa fa-users"></i>Team<span class="badge bg-red"></span></a> </li>
                     <li><a routerLink="/supervisior/customer/create"><i class="fa fa-plus-circle"></i>Create Basket <span class="badge bg-red"></span></a> </li>
                     <li><a routerLink="/supervisior/AssignBasket"><i class="fa fa-train"></i>Assign Basket <span class="badge bg-red"></span></a> </li>
+                    <li> <a href="#" (click)="logout()"><i class="fa fa-signout"></i>Logout </a>  </li>
 
                   </ul>
                 </div>
@@ -215,12 +221,9 @@
             </div>
           </div>
 
-          <div class="right_col" role="main">
-              <!-- top tiles -->
-              <div class="row tile_count">
+
                   <router-outlet></router-outlet>
-              </div>
-        </div>
+
 
 
 

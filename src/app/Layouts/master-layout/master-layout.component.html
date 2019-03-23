@@ -5,7 +5,9 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="mgr.html" class="site_title"><img src="images/crext2.png"></a>
+              <a href="mgr.html" class="site_title">
+                  <img src="assets/Images/CREXTwhite.png" height="40">
+              </a>
             </div>
 
             <div class="clearfix"></div>
@@ -31,7 +33,7 @@
                 <ul class="nav side-menu">
                   <li><a routerLink="/master/organisation/list" ><i class="fa fa-users"></i>Clients / Organisations </a>
 
-                  <li><a href="#"><i class="fa fa-reply"></i>Reminder<span class="badge bg-red">6</span></a>
+                  <!-- <li><a href="#"><i class="fa fa-reply"></i>Reminder<span class="badge bg-red">6</span></a>
                   </li>
                   <li><a href="#"><i class="fa fa-usd"></i>Due Payment<span class="badge bg-red">9</span></a>
                   </li>
@@ -43,7 +45,7 @@
 
                   <li><a href="#"><i class="fa fa-recycle"></i>Reschedule</a>
 
-                  </li>
+                  </li> -->
 
                 </ul>
               </div>
@@ -57,6 +59,7 @@
 
                       <li><a  routerLink="/master/user/create" ><i class="fa fa-suitcase"></i>Create User </a></li>
                       <li><a  routerLink="/master/user/addRoles" ><i class="fa fa-suitcase"></i>Assign User to role </a></li>
+                      <li><a  routerLink="/master/user/list" ><i class="fa fa-users"></i>View Users </a></li>
 
 
                       <li><a  routerLink="/master/team/create" ><i class="fa fa-users"></i>Create Team</a></li>
@@ -67,7 +70,7 @@
                   </li>
                   <li><a href="#"><i class="fa fa-money"></i>Billing</a>
                   </li>
-                  <li><a href="#"><i class="fa fa-sign-out"></i>Sign out</a>
+                  <li><a href="#" (click)="logout()" ><i class="fa fa-sign-out"></i>Sign out</a>
                   </li>
                   </ul>
                   </div>
@@ -246,12 +249,12 @@
           </div>
         </div>
 
-        <div class="right_col" role="main">
-            <!-- top tiles -->
+        <!-- <div class="right_col" role="main">
+         -->
             <div class="row tile_count">
                 <router-outlet></router-outlet>
-            </div>
-      </div>
+            <!-- </div>
+      </div> -->
 
 
 

@@ -1,3 +1,47 @@
-<p>
-  query-list works!
-</p>
+<div class="right_col" role="main" style="min-height: 799px;">
+  <div class="row">
+    <img class="img-fluid float-right"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Queries</h2>
+          <div class="clearfix"></div>
+        </div>
+
+        <div class="x_content">
+
+
+          <div class="well" *ngFor="let i of queries" >
+            <p>Sent by: <b>{{i.review.teamMember.user.email}}</b> </p>
+            <p>To customer account: <b>{{i.review.customer.accountName}}</b></p>
+
+            <p class="block Quote">
+                comment <br>
+              {{i.review.comment}}
+            </p>
+
+            <div class="blockquote" *ngIf="i.review.replies != null" >
+              <h4>Replies</h4>
+              <blockquote *ngFor="let r of i.review.replies" >
+                {{ r.message }}
+              </blockquote>
+
+            </div>
+            <div class="form-group">
+                <label class="control-label">Send Message</label>
+                <textarea class ="form-control" #message>
+
+                </textarea>
+                <br>
+                <button class="btn btn-small btn-success" (click) = "sendRely(i.review.id, message)" >send Reply</button>
+              </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,57 +1,42 @@
 
+
     <div class="container body">
         <div class="main_container">
 
           <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
               <div class="navbar nav_title" style="border: 0;">
-                <a href="mgr.html" class="site_title"><img src="images/crext2.png"></a>
+                <a routerLink='/Client' class="site_title">
+                  <img src="assets/Images/CREXTwhite.png" height="40">
+                </a>
               </div>
 
               <div class="clearfix"></div>
 
-              <!-- menu profile quick info -->
-              <!-- <div class="profile clearfix">
-                <div class="profile_pic">
-                  <img src="images/img.jpg" alt="..." class="img-circle profile_img">
-                </div>
-                <div class="profile_info">
-                  <span>Welcome,</span>
-                  <h2>John Doe</h2>
-                </div>
-              </div> -->
-              <!-- /menu profile quick info -->
-
               <br />
+
 
               <!-- sidebar menu -->
               <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                 <div class="menu_section">
                   <h3>General</h3>
                   <ul class="nav side-menu">
-                    <li><a href="#" ><i class="fa fa-folder"></i>Portfolio</a> </li>
-                    <li><a routerLink = "/Client/reminders/"><i class="fa fa-reply"></i>Reminder<span class="badge bg-red">10</span></a> </li>
-                    <li> <a routerLink="/Client/payments/"><i class="fa fa-usd"></i>Due Payment <span class="badge bg-orange">1</span></a>  </li>
-                    <li> <a routerLink="/Client/Reschedule/"><i class="fa fa-recycle"></i>Reschedule <span class="badge bg-orange">1</span></a>  </li>
-                    <li> <a routerLink="#"><i class="fa fa-arrow-circle-up"></i>Updates <span class="badge bg-orange">1</span></a>  </li>
-                    <li> <a routerLink="#"><i class="fa fa-exclamation"></i>Query <span class="badge bg-orange">1</span></a>  </li>
+                      <li><a routerLink='/Client' ><i class="fa fa-home"></i>Home</a> </li>
+                      <li><a [routerLink]="['/Client/project/', orgainisationId]" ><i class="fa fa-file"></i>Portfolio</a> </li>
 
-                  </ul>
+                      <li> <a [routerLink]="['/Client/reminders/', orgainisationId]"><i class="fa fa-reply"></i>Reminder<span class="badge bg-red">{{remiderCount}}</span></a> </li>
+                      <li> <a [routerLink]="['/Client/payments/', orgainisationId]"><i class="fa fa-usd"></i>Due Payment <span class="badge bg-orange">{{duePaymentCount}}</span></a>  </li>
+                      <li> <a [routerLink]="['/Client/Reschedule/', orgainisationId]"><i class="fa fa-recycle"></i>Reschedule <span class="badge bg-orange">{{rescheduleCount}}</span></a>  </li>
+                      <li> <a [routerLink]="['/Client/query/', orgainisationId]"><i class="fa fa-recycle"></i>Query <span class="badge bg-orange">{{rescheduleCount}}</span></a>  </li>
+                      <li> <a href="#" (click)="logout()"><i class="fa fa-signout"></i>Logout </a>  </li>
+                    </ul>
                 </div>
 
+              </div>
               <!-- /sidebar menu -->
-
               <!-- /menu footer buttons -->
               <div class="sidebar-footer hidden-small">
-                <a data-toggle="tooltip" data-placement="top" title="Settings">
-                  <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                </a>
-                <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                  <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                </a>
-                <a data-toggle="tooltip" data-placement="top" title="Lock">
-                  <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                </a>
+
                 <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
                   <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                 </a>
@@ -68,7 +53,7 @@
                   <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                 </div>
 
-                <ul class="nav navbar-nav navbar-right">
+                <!-- <ul class="nav navbar-nav navbar-right">
                   <li >
                     <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                       <img src="images/img.jpg" alt="">John Doe
@@ -215,14 +200,16 @@
                         </div>
                 </ul>
                 </li>
-                </ul>
+                </ul> -->
               </nav>
             </div>
           </div>
 
 
+                  <router-outlet></router-outlet>
 
-              <router-outlet></router-outlet>
+
+
 
 
         </div>

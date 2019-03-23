@@ -61,4 +61,20 @@ export class CustomerService implements ICustomer {
 getCustomersInProject(id): Observable<any[]> {
   return this.http.get<any[]>(this.baseUrl + `customers/project/${id}/List`, httpOptions);
 }
+getCustomer(id): Observable<any> {
+  return this.http.get<any>(this.baseUrl + `customers/${id}`, httpOptions);
+}
+
+UploadFile(formData: any): Observable<any> {
+ return this.http.post(this.baseUrl + `excel/import`, formData);
+//   {
+//     // reportProgress: true,
+//     // observe: 'events',
+//   //   headers: new HttpHeaders({
+//   //   'Content-Type':  'application/json'
+//   // })
+// });
+
+}
+
 }

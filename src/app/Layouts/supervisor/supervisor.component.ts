@@ -2,6 +2,7 @@ import { OrganisationService } from './../../services/organisation.service';
 import { Component, OnInit } from '@angular/core';
 import { PNotifyService } from '../../services/pNotifyService.service';
 import { ReviewService } from '../../services/review.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-supervisor',
@@ -24,7 +25,7 @@ export class SupervisorComponent implements OnInit {
     private orgService: OrganisationService,
     private pnotifyService: PNotifyService,
     private reviewService: ReviewService,
-
+    private router: Router,
   ) {
     this.userId = localStorage.getItem('userId');
     this.pnotify = this.pnotifyService.getPNotify();
@@ -56,6 +57,7 @@ export class SupervisorComponent implements OnInit {
      this.reviewService.getRescheduleCount(this.orgainisationId, true).subscribe(data => {
        this.rescheduleCount = data;
      });
+
       }, error => {
         this.loading = false;
         this.pnotify.alert({
@@ -68,5 +70,13 @@ export class SupervisorComponent implements OnInit {
   }
 
 
+  logout() {
+    localStorage.setItem('userId', '');
+
+    localStorage.setItem('userToken', '');
+
+    localStorage.setItem('userRoles', '');
+    this.router.navigate(['/login']);
+  }
 
 }
