@@ -1,0 +1,67 @@
+<img class="img-fluid float-right" width="20" height="20"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
+
+<ul class="messages">
+
+  <li *ngFor="let i of reviews" >
+    <img src="assets/Images/user.png" class="avatar" alt="Avatar">
+    <!-- <div class="message_date">
+      <h3 class="date text-info">24</h3>
+      <p class="month">May</p>
+    </div> -->
+    <div class="message_wrapper">
+      <h4 class="heading"> {{i.review.teamMember.user.email}}</h4>
+      <blockquote class="message">{{i.review.comment}}</blockquote>
+      <br>
+      <p>
+        <span class="fs1 text-info" aria-hidden="true" data-icon=""></span><i class="fa fa-clock-o" style="color: red;"></i><span style="color: red; font-style: italic; font-weight: bold;">
+          {{i.dateAdded | date}}</span>
+      </p>
+    </div>
+  </li>
+  <!-- <li>
+    <img src="images/img.jpg" class="avatar" alt="Avatar">
+    <div class="message_date">
+      <h3 class="date text-error">21</h3>
+      <p class="month">May</p>
+    </div>
+    <div class="message_wrapper">
+      <h4 class="heading">COT</h4>
+      <blockquote class="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
+      <br>
+      <p>
+        <span class="fs1 text-info" aria-hidden="true" data-icon=""></span><i class="fa fa-clock-o" style="color: red;"></i><span style="color: red;"> 5:30pm</span>
+      </p>
+    </div>
+  </li>
+  <li>
+    <img src="images/img.jpg" class="avatar" alt="Avatar">
+    <div class="message_date">
+      <h3 class="date text-info">24</h3>
+      <p class="month">May</p>
+    </div>
+    <div class="message_wrapper">
+      <h4 class="heading">CST</h4>
+      <blockquote class="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
+      <br>
+      <p>
+        <span class="fs1 text-info" aria-hidden="true" data-icon=""></span><i class="fa fa-clock-o" style="color: red;"></i><span style="color: red;"> 5:30pm</span>
+      </p>
+    </div>
+  </li>
+  <li>
+    <img src="images/img.jpg" class="avatar" alt="Avatar">
+    <div class="message_date">
+      <h3 class="date text-error">21</h3>
+      <p class="month">May</p>
+    </div>
+    <div class="message_wrapper">
+      <h4 class="heading">CST</h4>
+      <blockquote class="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
+      <br>
+      <p>
+        <span class="fs1 text-info" aria-hidden="true" data-icon=""></span><i class="fa fa-clock-o" style="color: red;"></i><span style="color: red;"> 5:30pm</span>
+      </p>
+    </div>
+  </li> -->
+
+</ul>
