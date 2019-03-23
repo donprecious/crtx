@@ -1,54 +1,83 @@
-<div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="x_panel">
-        <img class="img-fluid float-right"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
-
-      <div class="x_title">
-        <h2>Clients / Organisations</h2>
-
-        <div class="clearfix"></div>
-      </div>
-
-      <div class="x_content">
 
 
-        <div class="table-responsive">
-          <table class="table table-striped jambo_table bulk_action">
-            <thead>
-              <tr class="headings">
+  <div class="right_col" role="main">
+      <div class="">
+        <div class="page-title">
+          <div class="title_left">
+            <h3>Create A New User</h3>
+          </div>
 
-                <th class="column-title">Name </th>
-
-                <th class="column-title">User email </th>
-                <th class="column-title">Business Address </th>
-                <th class="column-title">Nature of Business </th>
-                <th class="column-title">Phone number </th>
-                <th class="column-title">RC number </th>
-                <th class="column-title"> No Project </th>
-                <th class="column-title no-link last"><span class="nobr">Action</span>
-                </th>
-
-              </tr>
-            </thead>
-
-            <tbody>
-
-              <tr class="even pointer" *ngFor="let i of organisations">
-
-                <td class=" ">{{i.name}}</td>
-
-                <td class=" "> {{i.id}} </td>
-                <td class=" ">{{i.businnessAddress}}</td>
-                <td class=" ">{{i.natureOfBusiness}}</td>
-                <td class="a-right a-right ">{{i.phone}}</td>
-                <td class=" last"><a href="#">{{i.rcNumber}}</a>
-                </td>
-              </tr>
-
-            </tbody>
-          </table>
+          <!-- <div class="title_right">
+            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                          <button class="btn btn-default" type="button">Go!</button>
+                      </span>
+              </div>
+            </div>
+          </div> -->
         </div>
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <img class="img-fluid float-right"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
+
+                  <div class="x_title">
+                    <h2>Clients / Organisations</h2>
+
+                    <div class="clearfix"></div>
+                  </div>
+
+                  <div class="x_content">
 
 
-      </div>
+                    <div class="table-responsive">
+                      <table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                          <tr class="headings">
+
+                            <th class="column-title">Name </th>
+
+                            <th class="column-title">User email </th>
+                            <th class="column-title">Business Address </th>
+                            <th class="column-title">Nature of Business </th>
+                            <th class="column-title">Phone number </th>
+                            <th class="column-title">RC number </th>
+                            <th class="column-title"> No Project </th>
+                            <th class="column-title no-link last"><span class="nobr">Action</span>
+                            </th>
+
+                          </tr>
+                        </thead>
+
+                        <tbody>
+
+                          <tr class="even pointer" *ngFor="let i of organisations">
+
+                            <td class=" ">{{i.name}}</td>
+
+                            <td class=" "> {{i.id}} </td>
+                            <td class=" ">{{i.businnessAddress}}</td>
+                            <td class=" ">{{i.natureOfBusiness}}</td>
+                            <td class="a-right a-right ">{{i.phone}}</td>
+                            <td class=" last"><a href="#">{{i.rcNumber}}</a>
+                            </td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+        </div>
     </div>
-  </div>
+    </div>
+
+
+
