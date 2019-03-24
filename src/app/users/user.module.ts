@@ -1,3 +1,4 @@
+
 import { CustomerReviewListComponent } from './../reviews/customer-review-list/customer-review-list.component';
 import { CreateProjectComponent } from './../project/create-project/create-project.component';
 import { HttpErrorHandler } from './../services/httpErrorHandler.service';
@@ -12,7 +13,6 @@ import { OrganisationService } from '../services/organisation.service';
 import { PackageService } from '../services/package.service';
 import { CreatePackageComponent } from '../Packages/create-package/create-package.component';
 import { CreateOrgComponent } from '../organisations/create-org/create-org.component';
-import { SetPackageRoleComponent } from '../packages/set-package-role/set-package-role.component';
 import { PackageRoleService } from '../services/packageRole.service';
 import { PNotifyService } from '../services/pNotifyService.service';
 import { CreateTeamComponent } from '../teams/create-team/create-team.component';
@@ -28,14 +28,14 @@ import { LoginComponent } from '../account/login/login.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { AddUserComponent } from '../organisations/add-user/add-user.component';
 import { AssignProjectComponent } from '../project/assign-project/assign-project.component';
-
+import { SetPackageRoleComponent } from '../Packages/set-package-role/set-package-role.component';
+// import { SetPackageRoleComponent } from './../Packages/set-package-role/set-package-role.component';
 
 @NgModule({
   declarations: [
     CreateUserComponent,
     CreateOrgComponent,
     CreatePackageComponent,
-    SetPackageRoleComponent,
     CreateOrganisationComponent,
     CreateTeamComponent,
     CreateProjectComponent,
@@ -48,6 +48,7 @@ import { AssignProjectComponent } from '../project/assign-project/assign-project
     UserListComponent,
     AddUserComponent,
     AssignProjectComponent,
+    SetPackageRoleComponent
   ],
 
   imports: [

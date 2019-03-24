@@ -1,3 +1,4 @@
+
 import { PaymentsComponent } from './reviews/payments/payments.component';
 import { CstComponent } from './Layouts/cst/cst.component';
 import 'reflect-metadata';
@@ -30,8 +31,7 @@ import { LoginLayoutComponent } from './Layouts/login-layout/login-layout.compon
 import { MasterComponent } from './components/master/master.component';
 import { MasterLayoutComponent } from './Layouts/master-layout/master-layout.component';
 import { SiginComponent } from './account/sigin/sigin.component';
-import { ClientComponent } from './layouts/client/client.component';
-import { CotComponent } from './layouts/cot/cot.component';
+
 import { SupervisorHomeComponent } from './components/supervisor-home/supervisor-home.component';
 import { AssignedComponent } from './Layouts/assigned/assigned.component';
 import { OrganisationListComponent } from './organisations/organisation-list/organisation-list.component';
@@ -51,6 +51,9 @@ import { CreateQueryComponent } from './reviews/create-query/create-query.compon
 import { CreateBasketComponent } from './customer/create-basket/create-basket.component';
 import { RecentListComponent } from './reviews/recent-list/recent-list.component';
 import { GuestComponent } from './account/guest/guest.component';
+import { CotComponent } from './Layouts/cot/cot.component';
+import { ClientComponent } from './Layouts/client/client.component';
+
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -69,8 +72,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     MasterLayoutComponent,
     MasterComponent,
     SiginComponent,
-    ClientComponent,
-    CotComponent,
     CstComponent,
     SupervisorComponent,
     SupervisorHomeComponent,
@@ -92,7 +93,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     CreateBasketComponent,
     RecentListComponent,
     GuestComponent,
-
+    ClientComponent,
+    CotComponent
   ],
   imports: [
     BrowserModule,

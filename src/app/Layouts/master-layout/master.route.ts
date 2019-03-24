@@ -8,7 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../../auth.guard';
 import { MasterComponent } from '../../components/master/master.component';
 import { CreateUserComponent } from '../../users/create-user/create-user.component';
-import { SetPackageRoleComponent } from '../../packages/set-package-role/set-package-role.component';
+import { SetPackageRoleComponent } from '../../Packages/set-package-role/set-package-role.component';
 import { CreateOrganisationComponent } from '../../organisations/create-organisation/create-organisation.component';
 import { CreateProjectComponent } from '../../project/create-project/create-project.component';
 import { CreateTeamComponent } from '../../teams/create-team/create-team.component';

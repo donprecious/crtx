@@ -13,7 +13,6 @@ import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CreateUserComponent } from './users/create-user/create-user.component';
-import { SetPackageRoleComponent } from './packages/set-package-role/set-package-role.component';
 import { CreateOrgComponent } from './organisations/create-org/create-org.component';
 import { CreateOrganisationComponent } from './organisations/create-organisation/create-organisation.component';
 import { CreateTeamMemberComponent } from './teams/team-memeber/create-team-member/create-team-member.component';
@@ -23,7 +22,7 @@ import { LoginComponent } from './account/login/login.component';
 import { AssignedComponent } from './Layouts/assigned/assigned.component';
 import { ASSIGNED_ROUTES} from './Layouts/assigned/assigned.routes';
 import { SUPERVISOR_ROUTES } from './Layouts/supervisor/supervisor.route';
-import { ClientComponent } from './layouts/client/client.component';
+import { ClientComponent } from './Layouts/client/client.component';
 import { CLIENT_ROUTES } from './Layouts/client/client.routes';
 
 

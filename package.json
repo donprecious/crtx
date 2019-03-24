@@ -1,8 +1,8 @@
 {
-  "name": "angular-electron",
+  "name": "crext-app",
   "version": "5.1.0",
-  "description": "Angular 7 with Electron (Typescript + SASS + Hot Reload)",
-  "homepage": "https://github.com/maximegris/angular-electron",
+  "description": "Built with Angular and Electorn",
+  "homepage": "https://github.com/donprecious/crtx",
   "author": {
     "name": "Donprecious Iyeritufu",
     "email": "iyeritufu@gmail.com"
