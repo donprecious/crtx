@@ -74,8 +74,7 @@ export class CreateTeamComponent implements OnInit {
           type: 'success'
         });
         // get user route
-        const userRoute = localStorage.getItem('routeUrl');
-        this.router.navigate([`${userRoute}/team/list/${this.organisationId}`]);
+
       });
     });
 
@@ -97,7 +96,8 @@ export class CreateTeamComponent implements OnInit {
           text: 'Team was created Successfully',
           type: 'success'
         });
-
+        const userRoute = localStorage.getItem('routeUrl');
+        this.router.navigate([`${userRoute}/team/list/${this.organisationId}`]);
       });
 
     }

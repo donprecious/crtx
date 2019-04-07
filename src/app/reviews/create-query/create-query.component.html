@@ -22,14 +22,16 @@
 
                 </textarea>
                 <br>
-                <button class="btn btn-primary btn-small" (click)="sendQuery(message, i.review.customer.id, i.review.teamMemberId)" >send query</button>
+                <div class="blockquote" *ngIf="i.review.replies != null">
+                  <blockquote *ngFor="let r of i.review.replies" >
+                    {{ r.message }}
+                  </blockquote>
+                </div>
+                <button class="btn btn-primary btn-small" (click)="sendQuery(i.review.id, message, i.review.customer.id, i.review.teamMemberId)" >send query</button> | 
+                <button class = "btn btn-primary btn-small" (click) = "sendOK(i.review.id)">Satisified</button>
               </div>
 
-              <div class="blockquote" *ngIf="i.review.replies != null">
-                <blockquote *ngFor="let r of i.review.replies" >
-                  {{ r.message }}
-                </blockquote>
-              </div>
+             
             </div>
 
           </div>

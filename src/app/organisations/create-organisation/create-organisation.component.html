@@ -136,7 +136,7 @@
 
                               <div class="form-group">
                                 <button (click)="showView('existingUser')" class="btn btn-outline-warning" >Previous</button>
-                                <button class="btn btn-primary" [disabled]=loading click="onCreateUser()">Next</button>
+                                <button class="btn btn-primary" (click)="onCreateUser()" >Next (Create User and Continue)</button>
                               </div>
                 </form>
                 </div>

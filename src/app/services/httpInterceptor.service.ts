@@ -9,7 +9,7 @@ import {
 } from '@angular/common/http';
 
 // import { Observable } from 'rxjs/Observable';
-import { tap } from 'rxjs/operators';
+import { tap, retry } from 'rxjs/operators';
 
 import { HttpErrorHandler } from './httpErrorHandler.service';
 import { Observable } from 'rxjs';
@@ -23,12 +23,20 @@ export class RequestInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    return next.handle(request).pipe(tap((err: any) => {
+    return next.handle(request).pipe(retry(3), tap((err: any) => {
       if (err instanceof HttpErrorResponse) {
+
         console.error(err);
         this.errorHandler.handleError(err);
+
       }
     }));
+    // return next.handle(request).pipe(tap((err: any) => {
+    //   if (err instanceof HttpErrorResponse) {
+    //     console.error(err);
+    //     this.errorHandler.handleError(err);
+    //   }
+    // }));
 
   }
 }

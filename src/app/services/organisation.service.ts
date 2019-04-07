@@ -61,4 +61,8 @@ export class OrganisationService implements IOrganisation {
     return this.http.get<any>(this.baseUrl + `Organisation/GetUserOrganisation/${userid}`, httpOptions);
   }
 
+  Delete(orgid: number) {
+    return this.http.get(this.baseUrl + 'Organisation/Delete/' + orgid , httpOptions);
+   }
+
 }

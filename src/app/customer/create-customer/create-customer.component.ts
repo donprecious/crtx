@@ -76,6 +76,7 @@ get organisationId () { return this.formGroup.get('OrganisationId'); }
     route.params.subscribe(data => {
       this.routeOrgId  = data['orgId'];
     });
+    // tslint:disable-next-line:triple-equals
     if (this.routeOrgId != null || this.routeOrgId != undefined) {
       this.showOrganisation = false;
 
@@ -226,7 +227,15 @@ uploadFile(files) {
   if (files.length === 0) {
     return;
   }
-  // this.loading = true;
+
+if (this.teamId.value == null) {
+  this.pnotify.alert({
+    text: 'Team Not Selected',
+    type: 'error'
+
+    });
+  } else {
+      // this.loading = true;
 this.pnotify.alert({
 text: 'uploading',
 type: 'notice'
@@ -246,11 +255,13 @@ type: 'notice'
  // }
  this.message = 'Upload success.';
  this.pnotify.alert({
-  text: 'uploading',
-  type: 'upload successful'
+  text: 'upload successful',
+  type: 'success'
 
   });
 });
+  }
+
 
 }
 }

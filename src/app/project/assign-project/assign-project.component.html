@@ -1,26 +1,43 @@
 
       <img class="img-fluid float-right"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
-<div class="well">
-  <form [formGroup]="myForm">
-    <div class="form-group">
-      <label class="control-label">Enter Assigned User Email Address </label>
-      <label  class="text-right text-danger" *ngIf="email.invalid && (email.touched || email.dirty)">email Invalid</label>
-      <input type="email" formControlName="Email" class="form-control" />
+      <div class="right_col" role="main" style="min-height: 799px;">
+        <div class="row" id="ChoosePackage">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h4>Create Project</h4>
+                </div>
 
-    </div>
-    <div class="form-group">
-      <label class="control-label">Select a basket(project)   to Assign </label>
-      <label  class="text-right text-danger" *ngIf="projectId.invalid && (projectId.touched || projectId.dirty)">Choose Project</label>
-      <select class="form-control" placeholder="Choose Organisation"  formControlName="ProjectId">
-        <option value="{{i.id}}" *ngFor="let i of projects" > {{i.name}} </option>
-      </select>
-    </div>
-    <button class="btn btn-primary" (click) ="onAssign()" > Ok </button>
-   <div class ="well" *ngIf="assignedProjects != null">
+                <div class="x_content">
+                    <div >
+                        <div class="well">
+                            <form [formGroup]="myForm">
+                              <div class="form-group">
+                                <label class="control-label">Enter Assigned User Email Address </label>
+                                <label  class="text-right text-danger" *ngIf="email.invalid && (email.touched || email.dirty)">email Invalid</label>
+                                <input type="email" formControlName="Email" class="form-control" />
 
-    <p>assign basket/project</p>
-      <span *ngFor="let i of assignedProjects"> {{i.project.name}}</span>
-   </div>
-  </form>
+                              </div>
+                              <div class="form-group">
+                                <label class="control-label">Select a basket(project)   to Assign </label>
+                                <label  class="text-right text-danger" *ngIf="projectId.invalid && (projectId.touched || projectId.dirty)">Choose Project</label>
+                                <select class="form-control" placeholder="Choose Organisation"  formControlName="ProjectId">
+                                  <option value="{{i.id}}" *ngFor="let i of projects" > {{i.name}} </option>
+                                </select>
+                              </div>
+                              <button class="btn btn-primary" (click) ="onAssign()" > Ok </button>
+                             <div class ="well" *ngIf="assignedProjects != null">
 
-</div>
+                              <p>assign basket/project</p>
+                                <span *ngFor="let i of assignedProjects"> {{i.project.name}}</span>
+                             </div>
+                            </form>
+
+                          </div>
+                    </div>
+                </div>
+              </div>
+           </div>
+        </div>
+      </div>
+

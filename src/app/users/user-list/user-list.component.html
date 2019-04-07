@@ -41,6 +41,7 @@
                 <th class="column-title">Name </th>
 
                 <th class="column-title">email </th>
+                <th class="column-title">phone </th>
 
                 <th>
 
@@ -53,12 +54,12 @@
 
               <tr class="even pointer" *ngFor="let i of users ">
 
-                <td class=" ">{{i.firstName}}| {{i.lastName}}</td>
-
+                <td class=" ">{{i.firstName}} | {{i.lastName}}</td>
                 <td class=" "> {{i.email}} </td>
+                <td class=" "> {{i.phoneNumber}} </td>
 
                 <td>
-
+       <a (click)="deleteUser(i.id)" class="btn btn-danger btn-xm"> Delete </a>
 
                 </td>
 

@@ -32,4 +32,21 @@ this.userService.getAllUser().subscribe(data => {
 });
   }
 
+  deleteUser(id: string) {
+    this.loading = true;
+    this.pnotify.alert({
+      text: 'Deleting Please wait',
+      type: 'notice'
+    });
+  this.userService.Delete(id).subscribe(data => {
+    this.loading = true;
+    this.pnotify.alert({
+      text: 'Delete Successful',
+      type: 'success'
+    });
+
+  });
+  }
+
+
 }

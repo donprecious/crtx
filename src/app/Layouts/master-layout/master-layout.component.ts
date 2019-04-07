@@ -7,7 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./master-layout.component.scss']
 })
 export class MasterLayoutComponent implements OnInit {
-
+  organisations: any[];
+  organisationCount: any;
   constructor(
     private router: Router,
   ) { }

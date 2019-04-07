@@ -1,4 +1,3 @@
-<img class="img-fluid float-right"  *ngIf="loading" src="../../../assets/ajax/loader.gif" >
 <div class="right_col" role="main" style="min-height: 799px;">
 <div class="row" id="ChoosePackage">
     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -9,8 +8,10 @@
 
         <div class="x_content">
             <div >
+          <img class="img-fluid float-right"  *ngIf="loading" src="assets/ajax/loader.gif" >
+
                 <form [formGroup]="formGroup" >
-                  <div class="form-group">
+                  <div class="form-group"  *ngIf="showOrganisation" >
                     <label class="control-label">Choose Organisation </label>
                     <label  class="text-right text-danger" *ngIf="organisationId.invalid && (organisationId.touched || organisationId.dirty)">Choose Organisation</label>
                     <select class="form-control" placeholder="Choose Organisation"  formControlName="OrganisationId">

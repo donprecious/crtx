@@ -109,12 +109,12 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     BrowserAnimationsModule,
-
     UserModule,
   ],
 
   providers: [ElectronService,
-  {provide: 'API_URL', useValue: 'http://crextapicore20190322102801.azurewebsites.net/api/'},
+  // {provide: 'API_URL', useValue: 'http://crextapicore20190322102801.azurewebsites.net/api/'},
+     {provide: 'API_URL', useValue: 'http://localhost:54741//api/'},
   {provide: ErrorHandler, useClass: HttpErrorHandler},
     {
       provide: HTTP_INTERCEPTORS,
@@ -129,6 +129,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
 
 }

@@ -4,7 +4,7 @@
       <div class="">
         <div class="page-title">
           <div class="title_left">
-            <h3>Create A New User</h3>
+            <h3>Created Organisations</h3>
           </div>
 
           <!-- <div class="title_right">
@@ -38,15 +38,15 @@
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>
                           <tr class="headings">
-
+                            <th class="column-title">ID </th>
                             <th class="column-title">Name </th>
-
-                            <th class="column-title">User email </th>
+                            <th class="column-title">Registered by </th>
                             <th class="column-title">Business Address </th>
                             <th class="column-title">Nature of Business </th>
                             <th class="column-title">Phone number </th>
                             <th class="column-title">RC number </th>
-                            <th class="column-title"> No Project </th>
+                            <th class="column-title">Package </th>
+
                             <th class="column-title no-link last"><span class="nobr">Action</span>
                             </th>
 
@@ -57,14 +57,16 @@
 
                           <tr class="even pointer" *ngFor="let i of organisations">
 
-                            <td class=" ">{{i.name}}</td>
-
                             <td class=" "> {{i.id}} </td>
-                            <td class=" ">{{i.businnessAddress}}</td>
+                            <td class=" ">{{i.name}}</td>
+                            <td class=" ">{{i.user.email}}</td>
+                            <td class=" ">{{i.businessAddress}}</td>
                             <td class=" ">{{i.natureOfBusiness}}</td>
-                            <td class="a-right a-right ">{{i.phone}}</td>
-                            <td class=" last"><a href="#">{{i.rcNumber}}</a>
-                            </td>
+                            <td class="">{{i.phoneNumber}}</td>
+                            <td class="">{{i.package.name}}</td>
+                            <td class="">{{i.rcNumber}} </td>
+                            <td> <a (click)="deleteOrg(i.id)" class ="btn btn-danger btn-xs">Delete</a></td>
+                            <td> <a [routerLink]="['/master/project/', i.id]" class ="btn btn-primary btn-xs">View baskets</a></td>
                           </tr>
 
                         </tbody>

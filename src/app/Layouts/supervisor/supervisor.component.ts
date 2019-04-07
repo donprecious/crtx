@@ -20,7 +20,8 @@ export class SupervisorComponent implements OnInit {
   remiderCount: number ;
   rescheduleCount: number;
   duePaymentCount: number;
-
+  queryCount: number;
+  UpdateCount: number;
   constructor(
     private orgService: OrganisationService,
     private pnotifyService: PNotifyService,
@@ -29,16 +30,8 @@ export class SupervisorComponent implements OnInit {
   ) {
     this.userId = localStorage.getItem('userId');
     this.pnotify = this.pnotifyService.getPNotify();
-
-
-    // this.orgService.getUserOrganisation(this.userId).subscribe(data => {
-    //   this.orgainisationId = data.organisationId;
-    //   }, error => {
-    //     this.loading = false;
-    //     this.pnotify.alert({
-    //       text: 'User does not belong to organisation',
-    //       type: 'error'
-    //     });
+    this.UpdateCount = 0;
+    this.queryCount = 0;
     //   });
 
    }
@@ -57,7 +50,12 @@ export class SupervisorComponent implements OnInit {
      this.reviewService.getRescheduleCount(this.orgainisationId, true).subscribe(data => {
        this.rescheduleCount = data;
      });
-
+     this.reviewService.getQueryForUpdate(this.orgainisationId).subscribe(data => {
+       this.queryCount = data.length;
+     });
+     this.reviewService.GetOrganisationReplies(this.orgainisationId, 'UNREAD').subscribe(data => {
+      this.UpdateCount = data.length;
+     });
       }, error => {
         this.loading = false;
         this.pnotify.alert({

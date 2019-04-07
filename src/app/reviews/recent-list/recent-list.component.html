@@ -9,12 +9,13 @@
       <p class="month">May</p>
     </div> -->
     <div class="message_wrapper">
+      <h4 class="heading"> {{i.review.customer.accountName}}</h4>
       <h4 class="heading"> {{i.review.teamMember.user.email}}</h4>
       <blockquote class="message">{{i.review.comment}}</blockquote>
       <br>
       <p>
         <span class="fs1 text-info" aria-hidden="true" data-icon=""></span><i class="fa fa-clock-o" style="color: red;"></i><span style="color: red; font-style: italic; font-weight: bold;">
-          {{i.dateAdded | date}}</span>
+          {{i.dateAdded | date:'medium'}}</span>
       </p>
     </div>
   </li>

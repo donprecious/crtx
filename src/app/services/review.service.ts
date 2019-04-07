@@ -113,4 +113,11 @@ export class ReviewService implements IReviewAndNotification {
         GetOrganisationReview(orgId: any): Observable<any[]> {
           return this.http.get<any[]>(this.baseUrl + `Review/GetOrganisationReview/${orgId}`,  httpOptions);
           }
+          GetAllReview(): Observable<any[]> {
+            return this.http.get<any[]>(this.baseUrl + `Review/GetAll`,  httpOptions);
+        }
+        GetOrganisationReplies(orgId: any, status: any): Observable<any[]> {
+          return this.http.get<any[]>(this.baseUrl + `Review/GetOrgReply/${orgId}/${status}`,  httpOptions);
+          }
+
 }

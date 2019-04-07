@@ -35,7 +35,7 @@
                     <li><a [routerLink]="['/Assigned/reminders', 'true']"><i class="fa fa-reply"></i>Reminder<span class="badge bg-red">{{remiderCount}}</span></a> </li>
                     <li> <a [routerLink]="['/Assigned/payments', 'true']"><i class="fa fa-usd"></i>Due Payment <span class="badge bg-orange">{{duePaymentCount}}</span></a>  </li>
                     <li> <a [routerLink]="['/Assigned/Reschedule', 'true']"><i class="fa fa-recycle"></i>Reschedule <span class="badge bg-orange">{{rescheduleCount}}</span></a>  </li>
-                    <li> <a [routerLink]="['/Assigned/query', organisationId]"><i class="fa fa-arrow-circle-up"></i>Updates <span class="badge bg-orange"></span></a>  </li>
+                    <li> <a [routerLink]="['/Assigned/update', organisationId]"><i class="fa fa-arrow-circle-up"></i>Updates <span class="badge bg-orange"></span></a>  </li>
                     <li> <a href="#" (click)="logout()"><i class="fa fa-signout"></i>Logout </a>  </li>
 
                   </ul>

@@ -37,6 +37,11 @@ export const ASSIGNED_ROUTES: Routes = [
     {
       path: 'Assigned/query/:orgId',
       component: CreateQueryComponent
+    },
+    {
+      path: 'Assigned/update/:orgId',
+      component: CreateQueryComponent
     }
+
 ];
 

@@ -52,6 +52,7 @@ export class CreateReviewComponent implements OnInit {
     private customerService: CustomerService
     ) {
       this.pnotify = this.pnotifyService.getPNotify();
+      this.showItems = false;
       route.params.subscribe(data => {
         this.customerId = data['id'];
 
@@ -141,7 +142,7 @@ export class CreateReviewComponent implements OnInit {
 
     this.reviewKindId.valueChanges.subscribe(id => {
       console.log(id);
-      if ( id === 1 ) {
+      if ( id == 1 ) {
           this.showItems = true;
         } else {
           this.showItems = false;

@@ -20,6 +20,7 @@ export class OrganisationListComponent implements OnInit {
      }
 
   ngOnInit() {
+    this.loading  = true;
     this.pnotify.alert({
       text: 'Please wait retrieving organisations',
       type: 'notice'
@@ -30,5 +31,23 @@ export class OrganisationListComponent implements OnInit {
       console.log(data);
       this.loading  = false;
   });
+}
+deleteOrg(id: number) {
+  this.loading  = true;
+
+  this.pnotify.alert({
+    text: 'Please wait Deleting .......',
+    type: 'notice'
+  });
+  this.loading  = false;
+  this.orgServices.Delete(id).subscribe(data => {
+
+    console.log(data);
+    this.loading  = false;
+    this.pnotify.alert({
+      text: 'Delete Successful',
+      type: 'success'
+    });
+});
 }
 }

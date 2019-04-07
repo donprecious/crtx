@@ -13,6 +13,7 @@ import { ProjectListComponent } from '../../project/project-list/project-list.co
 import { CustomerListComponent } from '../../customer/customer-list/customer-list.component';
 import { CreateReviewComponent } from '../../reviews/create-review/create-review.component';
 import { CreateQueryComponent } from '../../reviews/create-query/create-query.component';
+import { CreateProjectComponent } from '../../project/create-project/create-project.component';
 
 export const SUPERVISOR_ROUTES: Routes = [
 
@@ -23,6 +24,10 @@ export const SUPERVISOR_ROUTES: Routes = [
      {
       path: 'supervisior/project/:id',
       component: ProjectListComponent
+    },
+    {
+      path: 'supervisior/project/create/:orgId',
+      component: CreateProjectComponent
     },
      {
       path: 'supervisior/reminders/:orgId',
@@ -42,7 +47,7 @@ export const SUPERVISOR_ROUTES: Routes = [
       component: QueryListComponent
     },
     {
-      path: 'supervisior/customer/create',
+      path: 'supervisior/customer/create/:orgId',
       component: CreateCustomerComponent
     },
     {

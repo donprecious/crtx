@@ -76,6 +76,11 @@ RemoveUserFromRole(userId: string, roleName: string ) {
   return this.http.post(this.baseUrl + 'user/RemoveFromRole', userRole, httpOptions);
  }
 
+ Delete(userId: string) {
+  return this.http.get(this.baseUrl + 'user/Delete/' + userId , httpOptions);
+ }
+
+
 roleMatch(allowedRoles: string): boolean {
 
   let isMatch = false;

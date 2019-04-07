@@ -96,7 +96,7 @@ Note that you can't use Electron or NodeJS native libraries in this case. Please
 [license-badge]: https://img.shields.io/badge/license-Apache2-blue.svg?style=flat
 [license]: https://github.com/maximegris/angular-electron/blob/master/LICENSE.md
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
-[prs]: http://makeapullrequest.com
+[prs]:  http://makeapullrequest.com
 [github-watch-badge]: https://img.shields.io/github/watchers/maximegris/angular-electron.svg?style=social
 [github-watch]: https://github.com/maximegris/angular-electron/watchers
 [github-star-badge]: https://img.shields.io/github/stars/maximegris/angular-electron.svg?style=social

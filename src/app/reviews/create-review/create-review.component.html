@@ -66,7 +66,7 @@
 
                   </li>
                 </ul>
-                <a class="btn btn-success"><i class="fa fa-phone m-right-xs"></i> Call</a>
+                <a class="btn btn-success" href="tel:{{customer.phoneNumber}}"><i class="fa fa-phone m-right-xs"></i> Call</a>
                 <a class="btn btn-primary view" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-edit m-right-xs"></i> Update</a>
                 </div>
                 <!-- end of profile information -->
@@ -119,13 +119,13 @@
                       <label for="heard">Action *:</label>
                       <label  class="text-right text-danger" *ngIf="reviewKindId.invalid && (reviewKindId.touched || reviewKindId.dirty)">Choose Action</label>
 
-                      <select id="reviewKindSelect"  class="form-control" formControlName="ReviewKindId" required>
+                      <select  class="form-control" formControlName="ReviewKindId" required>
 
                         <option value="{{i.id}}" *ngFor="let i of reviewKinds">{{i.name}}</option>
 
                       </select>
 
-                      <div class="form-group" [hidden]="showItems" id="reviewActionView"  >
+                      <div class="form-group" *ngIf="showItems" id="reviewActionView"  >
                       <label  class="text-right text-danger" *ngIf="reviewActionId.invalid && (reviewActionId.touched || reviewActionId.dirty)">Choose Action</label>
                         <div class="form-group">
                           <div class="radio">

@@ -48,7 +48,7 @@ export class CreateQueryComponent implements OnInit {
      }
   }
 
-  sendQuery(message: HTMLInputElement, customerId: string, teamMemberId: number) {
+  sendQuery(id: any, message: HTMLInputElement, customerId: string, teamMemberId: number) {
     if (message.value != null) {
       const review = {
         comment: message.value,
@@ -91,7 +91,9 @@ export class CreateQueryComponent implements OnInit {
 
 
   }
-
+  sendOK(id: any){
+  
+  }
   SetOrganisationQuery()  {
     this.reviewService.GetOrganisationQuery(this.orgainisationId).subscribe(data => {
       this.queries = data;

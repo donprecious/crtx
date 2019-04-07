@@ -15,15 +15,6 @@ export class AssignedComponent implements OnInit {
 
   projectIds: any[];
   reviews: any[];
-
-  constructor(
-    private projectService: ProjectService,
-    private reviewService: ReviewService,
-    private orgService: OrganisationService,
-    private router: Router,
-  ) {
-   }
-
   userId: any ;
 
   organisationId: any;
@@ -31,11 +22,30 @@ export class AssignedComponent implements OnInit {
   remiderCount: number ;
   rescheduleCount: number;
   duePaymentCount: number;
+  queryCount: number;
+  updateCount: number;
+
+  constructor(
+    private projectService: ProjectService,
+    private reviewService: ReviewService,
+    private orgService: OrganisationService,
+    private router: Router,
+  ) {
+    this.rescheduleCount = 0;
+      this.remiderCount = 0;
+      this.duePaymentCount = 0;
+      this.queryCount = 0;
+      this.updateCount = 0;
+   }
+
+
 
   ngOnInit() {
     this.userId = localStorage.getItem('userId');
     this.orgService.getUserOrganisation(this.userId).subscribe( data => {
       this.organisationId =   data[0].organisationId;
+
+      this.SetReviews();
     });
   }
 
@@ -62,8 +72,12 @@ export class AssignedComponent implements OnInit {
           if ( a.reviewActionId == 3) {
             this.duePaymentCount++;
            // this.duePayments.push(a);
+          } else
+          // tslint:disable-next-line:triple-equals
+          if ( a.reviewKindId == 2) {
+            this.queryCount++;
           }
-          // else
+
           // if ( a.reviewActionId == 4) {
 
           // } else
@@ -87,11 +101,25 @@ export class AssignedComponent implements OnInit {
         this.reviewService.GetTodayProjectReview(id).subscribe( data1 => {
           this.reviews.push(data1);
           this.UpdateReview();
+
+          this.reviewService.getProjectReviews(id).subscribe(data2 => {
+            for ( const i of data2) {
+                if (i.review.replies != null) {
+                  for ( const r of i.review.replies) {
+                    if (r.status == 'UNREAD') {
+                      this.updateCount++;
+                    }
+                  }
+
+                }
+            }
+          });
         },
         error => {
           this.loading = false;
          });
       }
+
     }, error => {
       this.loading = false;
 

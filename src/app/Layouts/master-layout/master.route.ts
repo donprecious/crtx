@@ -56,6 +56,10 @@ export const MASTER_ROUTES: Routes = [
       component: ProjectListComponent
     },
     {
+      path: 'master/project/:id',
+      component: ProjectListComponent
+    },
+    {
       path: 'master/project/list/:id',
       component: ProjectListComponent
     },
