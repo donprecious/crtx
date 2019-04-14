@@ -1,6 +1,7 @@
 input[type="text"].ng-invalid{
   border: 1px solid rgb(199, 39, 27);
 
+
 }
 input[type="text"].ng-valid{
   border: 1px solid rgb(25, 218, 121);

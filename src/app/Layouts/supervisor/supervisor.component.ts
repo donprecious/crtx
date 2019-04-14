@@ -51,10 +51,16 @@ export class SupervisorComponent implements OnInit {
        this.rescheduleCount = data;
      });
      this.reviewService.getQueryForUpdate(this.orgainisationId).subscribe(data => {
-       this.queryCount = data.length;
+       if (data != null || data != undefined ) {
+        this.queryCount = data.length;
+
+       }
      });
      this.reviewService.GetOrganisationReplies(this.orgainisationId, 'UNREAD').subscribe(data => {
-      this.UpdateCount = data.length;
+      if (data != null || data != undefined ) {
+        this.UpdateCount = data.length;
+      }
+
      });
       }, error => {
         this.loading = false;

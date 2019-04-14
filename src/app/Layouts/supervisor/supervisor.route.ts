@@ -52,7 +52,7 @@ export const SUPERVISOR_ROUTES: Routes = [
     },
     {
       path: 'supervisior/query/:orgId',
-      component: CreateQueryComponent
+      component: QueryListComponent
     },
     {
       path: 'supervisior/review/create/:id',

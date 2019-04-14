@@ -8,7 +8,7 @@ import { PNotifyService } from '../../services/pNotifyService.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { IReviewNotification } from '../../services/IReviewNotification';
 import { ActivatedRoute } from '@angular/router';
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-create-review',
   templateUrl: './create-review.component.html',
@@ -61,6 +61,23 @@ export class CreateReviewComponent implements OnInit {
           console.log(data1);
         });
 
+      });
+    }
+
+
+    Update(id: number) {
+      this.reviewService.UpdateStatus(id).subscribe(data => {
+        this.pnotify.alert({
+          text: 'Updated successfully',
+          type: 'success'
+        });
+      },
+      error => {
+        this.loading = false;
+        this.pnotify.alert({
+          text: 'Unable Failed to Update',
+          type: 'error'
+        });
       });
     }
 

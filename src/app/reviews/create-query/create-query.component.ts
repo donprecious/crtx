@@ -4,7 +4,7 @@ import { PNotifyService } from '../../services/pNotifyService.service';
 import { ReviewService, IReviewAndNotification } from '../../services/review.service';
 import { IReview } from '../../services/IReview';
 import { IReviewNotification } from '../../services/IReviewNotification';
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-create-query',
   templateUrl: './create-query.component.html',
@@ -80,6 +80,7 @@ export class CreateQueryComponent implements OnInit {
             text: 'Sent',
             type: 'success'
           });
+          this.Update(id);
         });
     } else {
       this.loading = false ;
@@ -91,12 +92,34 @@ export class CreateQueryComponent implements OnInit {
 
 
   }
-  sendOK(id: any){
-  
+
+  Update(id: number) {
+    this.reviewService.UpdateStatus(id).subscribe(data => {
+      $('#item_' + id).remove();
+      this.pnotify.alert({
+        text: 'Updated successfully',
+        type: 'success'
+      });
+    },
+    error => {
+      this.loading = false;
+      this.pnotify.alert({
+        text: 'Unable Failed to Update',
+        type: 'error'
+      });
+    });
   }
+
+
   SetOrganisationQuery()  {
     this.reviewService.GetOrganisationQuery(this.orgainisationId).subscribe(data => {
-      this.queries = data;
+      this.queries = [];
+      for (const i of data) {
+        // tslint:disable-next-line:triple-equals
+        if (i.review.status == 'UNREAD') {
+          this.queries.push(i);
+        }
+      }
     });
   }
 }

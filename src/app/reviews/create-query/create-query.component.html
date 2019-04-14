@@ -10,8 +10,8 @@
 
           <div class="x_content">
 
-        <p>Queries</p>
-            <div class="well" *ngFor="let i of queries" >
+        <p>Updates </p>
+            <div class="well" id="item_{{i.review.id}}" *ngFor="let i of queries" >
               <p>Sent by: {{i.review.teamMember.user.email}}</p>
               <p>To customer account: {{i.review.customer.accountName}}</p>
               <p>comment</p>
@@ -27,11 +27,11 @@
                     {{ r.message }}
                   </blockquote>
                 </div>
-                <button class="btn btn-primary btn-small" (click)="sendQuery(i.review.id, message, i.review.customer.id, i.review.teamMemberId)" >send query</button> | 
-                <button class = "btn btn-primary btn-small" (click) = "sendOK(i.review.id)">Satisified</button>
+                <button class="btn btn-primary btn-small" (click)="sendQuery(i.review.id, message, i.review.customer.id, i.review.teamMemberId)" >send query</button> |
+                <button class = "btn btn-primary btn-small" (click)="Update(i.review.id)" >Satisified </button>
               </div>
 
-             
+
             </div>
 
           </div>
