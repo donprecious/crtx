@@ -113,8 +113,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
 
   providers: [ElectronService,
-  // {provide: 'API_URL', useValue: 'http://crextapicore20190322102801.azurewebsites.net/api/'},
-     {provide: 'API_URL', useValue: 'http://localhost:54741//api/'},
+  {provide: 'API_URL', useValue: 'http://crextapicore20190322102801.azurewebsites.net/api/'},
+    //  {provide: 'API_URL', useValue: 'http://localhost:54741//api/'},
   {provide: ErrorHandler, useClass: HttpErrorHandler},
     {
       provide: HTTP_INTERCEPTORS,
