@@ -7,6 +7,9 @@
     "name": "Donprecious Iyeritufu",
     "email": "iyeritufu@gmail.com"
   },
+  "engines": {
+    "node": "10.3.0"
+  },
   "keywords": [
     "angular",
     "angular 7",
